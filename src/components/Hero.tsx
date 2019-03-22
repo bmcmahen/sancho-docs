@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, css, keyframes } from "@emotion/core";
 import * as React from "react";
-import { Article } from "../components/layout";
+import { Article } from "../components/Layout";
 import { theme, Text, Container, Button, Divider, Link } from "sancho";
 import { ComponentMDXProvider } from "./ExamplePreview";
 import { Nav } from "./Nav";

@@ -1,5 +1,5 @@
 import * as React from "react";
-import SEO from "../components/Seo";
+import SEO from "../components/SEO";
 import { Text, theme, Link } from "sancho";
 
 const NotFoundPage = () => (
