@@ -52,7 +52,7 @@
   "license": "MIT",
   "scripts": {
     "build-for-docgen": "cd ../ && yarn run build-for-docgen",
-    "generate-props": "react-docgen ../node_modules/sancho/build -e /stories/ --out ./src/pages/components/props.json --resolver=findAllComponentDefinitions",
+    "generate-props": "node docgen",
     "build": "gatsby build",
     "develop": "gatsby develop",
     "develop-phone": "gatsby develop -H 0.0.0.0",

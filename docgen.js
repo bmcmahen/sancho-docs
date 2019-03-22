@@ -3,6 +3,7 @@ const reactDocgenTs = require("react-docgen-typescript");
 const ts = require("typescript");
 const fastglob = require("fast-glob");
 const path = require("path");
+const fs = require("fs");
 
 function tsProgram(files) {
   return ts.createProgram(files, {
@@ -64,7 +65,10 @@ const docgen = async () => {
     {}
   );
 
-  console.log(result);
+  fs.writeFileSync(
+    path.resolve("src/pages/components", "props.json"),
+    JSON.stringify(result)
+  );
 };
 
 docgen();

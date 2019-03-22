@@ -7,7 +7,7 @@ import { anchorPadding } from "./ExamplePreview.jsx";
 
 // pretty lame
 function getKey(name: string) {
-  return `../build/${name}.jsx`;
+  return `${name}.tsx`;
 }
 
 interface PropsProps {
@@ -81,7 +81,7 @@ export function Props({ names }: PropsProps) {
                           </Text>
                           <Text
                             css={{
-                              fontSize: "small",
+                              fontSize: theme.sizes[0],
                               background: theme.colors.background.tint1,
                               padding: "3px",
                               borderRadius: theme.radii.sm
@@ -91,6 +91,31 @@ export function Props({ names }: PropsProps) {
 
                             {type === "enum" ? " " + getEnumString(val) : ""}
                           </Text>
+                          {row.defaultValue && (
+                            <Text
+                              css={{
+                                fontSize: theme.sizes[0],
+
+                                padding: "3px",
+                                borderRadius: theme.radii.sm
+                              }}
+                            >
+                              {" "}
+                              ={" "}
+                            </Text>
+                          )}
+                          {row.defaultValue && (
+                            <Text
+                              css={{
+                                fontSize: theme.sizes[0],
+                                background: theme.colors.background.tint1,
+                                padding: "3px",
+                                borderRadius: theme.radii.sm
+                              }}
+                            >
+                              {row.defaultValue.value}
+                            </Text>
+                          )}
                         </div>
                         <div>
                           <Text
