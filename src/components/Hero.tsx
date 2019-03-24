@@ -129,6 +129,7 @@ export const Hero = ({ children }) => (
           { id: "Installation", name: "Installation" },
           { id: "Styling and Emotion", name: "Styling and Emotion" },
           { id: "Theme", name: "Theme" },
+          { id: "Example projects", name: "Example projects" },
           { id: "Prior art", name: "Prior art", parent: true },
           { id: "About", name: "About", parent: true }
         ]}

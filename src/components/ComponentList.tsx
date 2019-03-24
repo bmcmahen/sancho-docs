@@ -110,7 +110,8 @@ function ListGroup({ label, children }) {
 const about = [
   { title: "Installation", path: "/#installation" },
   { title: "Styling and emotion", path: "/#styling%20and%20emotion" },
-  { title: "Theme", path: "/#theme" }
+  { title: "Theme", path: "/#theme" },
+  { title: "Example projects", path: "/#example%20projects" }
 ];
 
 const components = [
