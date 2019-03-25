@@ -144,6 +144,7 @@ export const Examples = () => (
       <Example
         title="Julienne"
         href="http://julienne.app"
+        source="http://github.com/bmcmahen/julienne"
         subtitle="The easiest way to share recipes with family and friends."
         image={require("./julienne.jpg")}
       />
