@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Sancho`,
-    description: `A beautiful design system built with React`,
-    author: `@benmcmahen`,
+    title: `Sancho-UI`,
+    description: `Sancho is a responsive and accessible design system built with React, Typescript and Emotion.`,
+    author: `@benmcmahen`
   },
 
   plugins: [
@@ -11,23 +11,23 @@ module.exports = {
     {
       resolve: `gatsby-plugin-layout`,
       options: {
-        component: require.resolve("./src/components/Layout.tsx"),
-      },
+        component: require.resolve("./src/components/Layout.tsx")
+      }
     },
     {
       resolve: `gatsby-mdx`,
       options: {
         defaultLayouts: {
-          default: require.resolve("./src/components/ComponentLayout.tsx"),
-        },
-      },
+          default: require.resolve("./src/components/ComponentLayout.tsx")
+        }
+      }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
-      },
+        path: `${__dirname}/src/images`
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -41,14 +41,14 @@ module.exports = {
         include_favicon: true,
         theme_color: `#228be6`,
         display: `minimal-ui`,
-        icon: `src/images/donkey.svg`, // This path is relative to the root of the site.
-      },
+        icon: `src/images/donkey.svg` // This path is relative to the root of the site.
+      }
     },
 
-    `gatsby-plugin-emotion`,
+    `gatsby-plugin-emotion`
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
-  ],
-}
+  ]
+};
