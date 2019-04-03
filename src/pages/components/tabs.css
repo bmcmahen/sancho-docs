@@ -1,5 +1,5 @@
 .Tabs-example.dark {
-  background-color: #1070ca;
+  /* background-color: #1070ca; */
   border-radius: 2px;
 }
 
@@ -12,14 +12,21 @@
 }
 
 .Tabs-sliding .Tabs-toolbar {
-  background-color: #1070ca;
+  /* background-color: #1070ca; */
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
   padding-top: 1rem;
 }
 
+.Tabs-sliding .Tabs-example {
+  border-bottom: 1px solid #eee;
+}
+
+.dark .Tabs-sliding .Tabs-example {
+  border-bottom: none;
+}
+
 .Tabs-sliding .Tabs-toolbar h5 {
-  color: white;
   margin: 0;
 }
 

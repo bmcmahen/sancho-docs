@@ -65,7 +65,7 @@ Sliding content is a nice option when working with smaller panels or mobile appl
   <Component initialState={{ value: 0 }}>
     {({ state, setState }) => (
       <React.Fragment>
-        <div className="Tabs-example dark">
+        <div className="Tabs-example">
           <Tabs dark value={state.value} onChange={i => setState({ value: i })}>
             <Tab id="you">For you</Tab>
             <Tab id="sports">Sports</Tab>
@@ -100,32 +100,30 @@ Sliding content is a nice option when working with smaller panels or mobile appl
 #### With anchors
 
 ```jsx
-<div className="Tabs-example dark">
-  <DarkMode>
-    <Component initialState={{ value: 0 }}>
-      {({ state, setState }) => (
-        <Tabs
-          dark
-          variant="evenly-spaced"
-          value={state.value}
-          onChange={i => setState({ value: i })}
-        >
-          <Tab component="a" href="#yup">
-            I will
-          </Tab>
-          <Tab component="a" href="#another">
-            Take you places
-          </Tab>
-          <Tab component="a" href="#another">
-            You ain't never
-          </Tab>
-          <Tab component="a" href="#another">
-            Been
-          </Tab>
-        </Tabs>
-      )}
-    </Component>
-  </DarkMode>
+<div className="Tabs-example">
+  <Component initialState={{ value: 0 }}>
+    {({ state, setState }) => (
+      <Tabs
+        dark
+        variant="evenly-spaced"
+        value={state.value}
+        onChange={i => setState({ value: i })}
+      >
+        <Tab component="a" href="#yup">
+          I will
+        </Tab>
+        <Tab component="a" href="#another">
+          Take you places
+        </Tab>
+        <Tab component="a" href="#another">
+          You ain't never
+        </Tab>
+        <Tab component="a" href="#another">
+          Been
+        </Tab>
+      </Tabs>
+    )}
+  </Component>
 </div>
 ```
 
@@ -134,25 +132,23 @@ Sliding content is a nice option when working with smaller panels or mobile appl
 The `evenly-spaced` variant is sometimes a nice option and works particularly well when utilizing icons. The tabs will scroll horizontally if overflowing.
 
 ```jsx
-<div className="Tabs-example dark">
-  <DarkMode>
-    <Component initialState={{ value: 0 }}>
-      {({ state, setState }) => (
-        <Tabs
-          dark
-          variant="evenly-spaced"
-          value={state.value}
-          onChange={i => setState({ value: i })}
-        >
-          <Tab>For you</Tab>
-          <Tab>Sports</Tab>
-          <Tab>Entertainment</Tab>
-          <Tab>News</Tab>
-          <Tab>Fun</Tab>
-        </Tabs>
-      )}
-    </Component>
-  </DarkMode>
+<div className="Tabs-example ">
+  <Component initialState={{ value: 0 }}>
+    {({ state, setState }) => (
+      <Tabs
+        dark
+        variant="evenly-spaced"
+        value={state.value}
+        onChange={i => setState({ value: i })}
+      >
+        <Tab>For you</Tab>
+        <Tab>Sports</Tab>
+        <Tab>Entertainment</Tab>
+        <Tab>News</Tab>
+        <Tab>Fun</Tab>
+      </Tabs>
+    )}
+  </Component>
 </div>
 ```
 
