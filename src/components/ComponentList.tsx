@@ -56,7 +56,9 @@ function MenuLink({ to, children }) {
         }}
         activeStyle={{
           fontWeight: 500,
-          background: theme.colors.background.tint2,
+          background: dark
+            ? theme.colors.background.tint1
+            : theme.colors.background.tint2,
           color: theme.colors.text.default
         }}
         css={{
@@ -66,10 +68,14 @@ function MenuLink({ to, children }) {
           color: theme.colors.text.muted,
           WebkitTapHighlightColor: "transparent",
           ":active": {
-            background: theme.colors.background.tint2
+            background: dark
+              ? theme.colors.background.tint1
+              : theme.colors.background.tint2
           },
           ":focus": {
-            background: theme.colors.background.tint2
+            background: dark
+              ? theme.colors.background.tint1
+              : theme.colors.background.tint2
           },
           outline: "none",
           ["@media (hover: hover)"]: {

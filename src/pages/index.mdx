@@ -21,16 +21,16 @@ Install Sancho using Yarn or NPM. Sancho works well with [Gatsby](https://www.ga
 yarn add sancho
 ```
 
-Import Sancho components into your project.
+Import Sancho components into your project and wrap your project with the `ThemeProvider`.
 
 ```.jsx
-import { Button } from "sancho"
+import { Button, ThemeProvider } from "sancho"
 
 function Project() {
   return (
-    <div>
+    <ThemeProvider>
       <Button>Hello world!</Button>
-    </div>
+    </ThemeProvider>
   )
 }
 ```
@@ -82,14 +82,15 @@ For a full explanation of why Emotion was chosen, read this [blog post](https://
 
 #### Theme
 
-Sancho uses a main `theme` object which contains global theming variables related to typography, color, spacing, and breakpoints. View the [default theme here](https://github.com/bmcmahen/sancho/blob/master/src/Theme/index.ts).
+Sancho uses a main `theme` object which contains global theming variables related to typography, color, spacing, and breakpoints. To access the theme, use the provided `useTheme` hook. View the [default theme here](https://github.com/bmcmahen/sancho/blob/master/src/Theme/index.ts).
 
 ```.jsx
 /** @jsx jsx */
 import { jsx } from "@emotion/core"
-import { theme } from 'sancho'
+import { useTheme } from 'sancho'
 
 function Component() {
+  const theme = useTheme()
   return (
     <div css={{
       padding: theme.spaces.sm,
@@ -104,7 +105,51 @@ function Component() {
 }
 ```
 
-There is currently no way to override theme variables other than forking the repo. This will change soon as we migrate to using Emotion's theme provider.
+The default theme comes with a dark and light mode. You can use `DarkMode` and `LightMode` to toggle between the two.
+
+```.jsx
+/** @jsx jsx */
+import { jsx } from "@emotion/core"
+import { DarkMode, LightMode } from 'sancho'
+
+function Component() {
+  return (
+    <DarkMode>
+      <div css={{ background: 'black }}>
+        <Text>This text will be white</Text>
+        <LightMode>
+          <Text>But this text will be dark</Text>
+        </LightMode>
+      </div>
+    </DarkMode>
+  )
+}
+```
+
+You can customize the theme using the `createTheme` and `generateColorsFromScales` functions. The example below demonstrates generating our own
+color scales using [palx](https://palx.jxnblk.com/) and setting a custom font:
+
+```
+import { createTheme, generateColorsFromScales, ThemeProvider } from 'sancho'
+import palx from 'palx'
+
+const scales = palx('#08e')
+const colors = generateColorsFromScales(scales)
+const theme = createTheme({
+  ...colors,
+  fonts: {
+    sans: 'Roboto, sans-serif',
+    base: 'Roboto, sans-serif',
+    monospace: 'monospace'
+  }
+})
+
+function App() {
+  <ThemeProvider theme={theme}>
+    <MyAppContents />
+  </ThemeProvider>
+}
+```
 
 ### Example projects
 

@@ -7,7 +7,8 @@ import {
   NegativeMarginsContainer,
   Text,
   Button,
-  useResponsiveContainerPadding
+  useResponsiveContainerPadding,
+  useTheme
 } from "sancho";
 
 export interface ExampleProps {
@@ -26,7 +27,8 @@ export const Example: React.FunctionComponent<ExampleProps> = ({
   source
 }) => {
   const responsiveContainerPadding = useResponsiveContainerPadding();
-
+  const theme = useTheme();
+  const dark = theme.colors.mode === "dark";
   return (
     <div
       css={[
@@ -58,14 +60,16 @@ export const Example: React.FunctionComponent<ExampleProps> = ({
             display: inline-block;
             position: relative;
             border-radius: 5px;
-            box-shadow: 0 0 20px #a3a2c070;
+            box-shadow: ${dark ? "none" : "0 0 20px #a3a2c070"};
             overflow: hidden;
           `}
         >
           <div
             css={css`
               border-radius: 5px 5px 0 0;
-              background: rgba(255, 255, 255, 0.5);
+              background-color: ${dark
+                ? theme.colors.background.tint1
+                : "rgba(0, 0, 0, 0.5)"};
             `}
           >
             <div
@@ -77,7 +81,7 @@ export const Example: React.FunctionComponent<ExampleProps> = ({
                   display: inline-block;
                   margin-right: 4px;
                   border-radius: 50%;
-                  background-color: rgba(0, 0, 0, 0.4);
+                  background-color: ${dark ? "white" : "rgba(0, 0, 0, 0.4)"};
                 }
               `}
             >
@@ -104,11 +108,9 @@ export const Example: React.FunctionComponent<ExampleProps> = ({
       <div
         css={{
           display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
           flexDirection: "column",
           marginTop: theme.spaces.sm,
-          textAlign: "center"
+          textAlign: "left"
         }}
       >
         <Text gutter={false} variant="h5">
@@ -117,7 +119,7 @@ export const Example: React.FunctionComponent<ExampleProps> = ({
         <Text variant="subtitle">{subtitle}</Text>
 
         {source && (
-          <div css={{ marginTop: theme.spaces.xs }}>
+          <div css={{ marginTop: theme.spaces.sm }}>
             <Button variant="outline" size="sm" component="a" href={source}>
               View the source
             </Button>

@@ -1,9 +1,9 @@
-import { Button, Divider, Container } from "sancho"
-import "./layer.css"
-import { Article } from "../../components/Layout"
-import { Props } from "../../components/Props"
-import SEO from "../../components/SEO"
-import { Nav } from "../../components/Nav"
+import { Button, Divider, Container } from "sancho";
+import "./layer.css";
+import { Article } from "../../components/Layout";
+import { Props } from "../../components/Props";
+import SEO from "../../components/SEO";
+import { Nav } from "../../components/Nav";
 
 <Nav title="Layer" />
 <SEO title="Layer" />
@@ -25,11 +25,21 @@ The `elevation` prop determines the size of the `box-shadow` and provides a sens
 
 ```jsx
 <div className="Layer-example">
-  <Layer elevation="xs">xs</Layer>
-  <Layer elevation="sm">sm</Layer>
-  <Layer elevation="md">md</Layer>
-  <Layer elevation="lg">lg</Layer>
-  <Layer elevation="xl">xl</Layer>
+  <Layer elevation="xs">
+    <Text>xs</Text>
+  </Layer>
+  <Layer elevation="sm">
+    <Text>sm</Text>
+  </Layer>
+  <Layer elevation="md">
+    <Text>md</Text>
+  </Layer>
+  <Layer elevation="lg">
+    <Text>lg</Text>
+  </Layer>
+  <Layer elevation="xl">
+    <Text>xl</Text>
+  </Layer>
 </div>
 ```
 
