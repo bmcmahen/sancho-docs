@@ -17,7 +17,7 @@ import { SpyList } from "./SpyList";
 
 const Layout = ({ children }) => {
   const theme = useTheme();
-  const dark = true;
+  const dark = false;
   const Mode = dark ? DarkMode : LightMode;
 
   return (

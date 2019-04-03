@@ -27,9 +27,9 @@ p code {
     "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono",
     "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L",
     "Courier New", Courier, monospace;
-  color: #5e6687;
-  background: #f8f9fa;
-  font-size: small;
+  color: #4491d2;
+  background: #f0f3f5;
+  font-size: 14px;
   padding: 3px;
   border-radius: 2px;
 }

@@ -29,7 +29,7 @@ export const Nav: React.FunctionComponent<NavProps> = ({ title }) => {
         left: "auto",
         width: "100%",
         boxShadow: "none",
-        borderBottom: `1px solid ${theme.colors.border.muted}`,
+        borderBottom: `1px solid ${theme.colors.border.default}`,
         background: dark
           ? theme.colors.palette.gray.dark
           : theme.colors.background.default,

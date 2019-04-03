@@ -258,7 +258,7 @@ export function ComponentList(_props: ComponentListProps) {
             </MenuLink>
           ))}
         </ListGroup>
-        <Divider muted={dark} />
+        <Divider muted />
         <ListGroup label="Components">
           {componentList.map(entry => (
             <MenuLink key={entry.path} to={entry.path}>
@@ -266,7 +266,7 @@ export function ComponentList(_props: ComponentListProps) {
             </MenuLink>
           ))}
         </ListGroup>
-        <Divider muted={dark} />
+        <Divider muted />
         <Text
           muted
           css={{
