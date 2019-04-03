@@ -7,7 +7,7 @@ import {
   NegativeMarginsContainer,
   Text,
   Button,
-  responsiveContainerPadding
+  useResponsiveContainerPadding
 } from "sancho";
 
 export interface ExampleProps {
@@ -25,6 +25,8 @@ export const Example: React.FunctionComponent<ExampleProps> = ({
   subtitle,
   source
 }) => {
+  const responsiveContainerPadding = useResponsiveContainerPadding();
+
   return (
     <div
       css={[

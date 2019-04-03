@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import * as React from "react";
-import { theme, Text } from "sancho";
+import { Text, useTheme } from "sancho";
 import { getId } from "./ExamplePreview";
 
 export interface Item {
@@ -15,6 +15,7 @@ interface SpyListProps {
 }
 
 export function SpyList({ items }: SpyListProps) {
+  const theme = useTheme();
   const [ids] = React.useState(() => items.map(item => item.id));
 
   return (

@@ -1,17 +1,9 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import * as React from "react";
-import {
-  IconNames,
-  Icon,
-  IconName,
-  theme,
-  Tooltip,
-  Text,
-  NegativeMarginsContainer
-} from "sancho";
+import { IconNames, Icon, theme, Text } from "sancho";
 
-const keys: IconName[] = Object.values(IconNames) as IconName[];
+const keys = Object.keys(IconNames).map(key => IconNames[key]);
 
 interface IconListProps {}
 

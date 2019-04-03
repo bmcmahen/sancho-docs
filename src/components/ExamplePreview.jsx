@@ -6,7 +6,7 @@ import { MDXProvider } from "@mdx-js/tag";
 import * as components from "sancho";
 import "./ExamplePreview.css";
 import Component from "react-component-component";
-import { Text, theme, Link } from "sancho";
+import { Text, Link, useTheme } from "sancho";
 import faker from "faker";
 
 export const anchorPadding = css`
@@ -24,6 +24,7 @@ export const anchorPadding = css`
  */
 
 export function ComponentPreview({ className, ...props }) {
+  const theme = useTheme();
   const isJSX = props.children.props.props.className === "language-jsx";
 
   if (props.children.props.props) {
@@ -90,13 +91,20 @@ export function getId(children) {
  */
 
 const MDXComponents = {
-  code: ({ children }) => (
-    <code css={{ background: theme.colors.background.tint2 }}>{children}</code>
-  ),
+  code: ({ children }) => {
+    const theme = useTheme();
+    return (
+      <code css={{ background: theme.colors.background.tint2 }}>
+        {children}
+      </code>
+    );
+  },
   pre: ComponentPreview,
-  ul: props => (
-    <ul css={{ paddingLeft: "1.5rem", marginBottom: "1rem" }} {...props} />
-  ),
+  ul: props => {
+    return (
+      <ul css={{ paddingLeft: "1.5rem", marginBottom: "1rem" }} {...props} />
+    );
+  },
   li: ({ children, ...other }) => (
     <li {...other} css={{ maxWidth: "43rem", marginBottom: "0.5rem" }}>
       <Text>{children}</Text>
@@ -113,33 +121,39 @@ const MDXComponents = {
       {children}
     </Text>
   ),
-  h3: ({ children }) => (
-    <Text
-      id={getId(children)}
-      css={[{ marginTop: theme.spaces.md }, anchorPadding]}
-      variant="h3"
-    >
-      {children}
-    </Text>
-  ),
-  h4: ({ children }) => (
-    <Text
-      id={getId(children)}
-      css={[
-        {
-          marginBottom: theme.spaces.sm,
-          marginTop: theme.spaces.lg,
-          [theme.breakpoints.md]: {
-            marginTop: theme.spaces.lg
-          }
-        },
-        anchorPadding
-      ]}
-      variant="h4"
-    >
-      {children}
-    </Text>
-  ),
+  h3: ({ children }) => {
+    const theme = useTheme();
+    return (
+      <Text
+        id={getId(children)}
+        css={[{ marginTop: theme.spaces.md }, anchorPadding]}
+        variant="h3"
+      >
+        {children}
+      </Text>
+    );
+  },
+  h4: ({ children }) => {
+    const theme = useTheme();
+    return (
+      <Text
+        id={getId(children)}
+        css={[
+          {
+            marginBottom: theme.spaces.sm,
+            marginTop: theme.spaces.lg,
+            [theme.breakpoints.md]: {
+              marginTop: theme.spaces.lg
+            }
+          },
+          anchorPadding
+        ]}
+        variant="h4"
+      >
+        {children}
+      </Text>
+    );
+  },
   p: ({ children }) => (
     <Text css={{ maxWidth: "43rem" }} variant="paragraph">
       {children}

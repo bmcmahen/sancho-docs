@@ -5,12 +5,12 @@ import {
   Navbar,
   Toolbar,
   Text,
-  theme,
   Link as StyledLink,
   Tooltip,
   IconButton,
   Breadcrumbs,
-  BreadcrumbItem
+  BreadcrumbItem,
+  useTheme
 } from "sancho";
 import { SideMenu } from "./SideMenu";
 import { DocSearch } from "./DocSearch";
@@ -20,6 +20,7 @@ export interface NavProps {
 }
 
 export const Nav: React.FunctionComponent<NavProps> = ({ title }) => {
+  const theme = useTheme();
   return (
     <Navbar
       css={{

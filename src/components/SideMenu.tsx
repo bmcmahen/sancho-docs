@@ -1,12 +1,13 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import * as React from "react";
-import { IconButton, theme, Sheet } from "sancho";
+import { IconButton, Sheet, useTheme } from "sancho";
 import { ComponentList } from "./ComponentList";
 
 interface SideMenuProps {}
 
 export function SideMenu({  }: SideMenuProps) {
+  const theme = useTheme();
   const [isOpen, setIsOpen] = React.useState(false);
   return (
     <React.Fragment>

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Global, css } from "@emotion/core";
+import { jsx, Global } from "@emotion/core";
 import * as React from "react";
 import { InputBase, theme, Icon } from "sancho";
 import "./DocSearch.css";

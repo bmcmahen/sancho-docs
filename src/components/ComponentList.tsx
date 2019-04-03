@@ -4,19 +4,19 @@ import * as React from "react";
 import { Link } from "gatsby";
 import {
   Text,
-  theme,
   MenuLabel,
   Link as StyleLink,
   Divider,
-  RequestCloseContext
+  RequestCloseContext,
+  useTheme
 } from "sancho";
 
 interface ComponentListProps {}
 
-const padding = `${theme.spaces.xs} ${theme.spaces.lg}`;
-
 function MenuLink({ to, children }) {
   const closeParent = React.useContext(RequestCloseContext);
+  const theme = useTheme();
+  const padding = `${theme.spaces.xs} ${theme.spaces.lg}`;
 
   return (
     <li
@@ -95,10 +95,13 @@ function MenuLink({ to, children }) {
 }
 
 function Label({ children }) {
+  const theme = useTheme();
+  const padding = `${theme.spaces.xs} ${theme.spaces.lg}`;
   return <MenuLabel css={{ padding }}>{children}</MenuLabel>;
 }
 
 function ListGroup({ label, children }) {
+  const theme = useTheme();
   return (
     <div css={{ margin: `${theme.spaces.md} 0` }}>
       <Label>{label}</Label>
@@ -149,6 +152,7 @@ const components = [
 ];
 
 export function ComponentList(_props: ComponentListProps) {
+  const theme = useTheme();
   const [search, setSearch] = React.useState("");
   const [componentList, setComponentList] = React.useState(components);
   const [aboutList, setAboutList] = React.useState(about);

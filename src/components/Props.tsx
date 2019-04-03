@@ -2,7 +2,7 @@
 import { jsx } from "@emotion/core";
 import * as React from "react";
 import table from "../pages/components/props.json";
-import { theme, Text, Divider } from "sancho";
+import { Text, Divider, useTheme } from "sancho";
 import { anchorPadding } from "./ExamplePreview.jsx";
 
 // pretty lame
@@ -15,6 +15,7 @@ interface PropsProps {
 }
 
 export function Props({ names }: PropsProps) {
+  const theme = useTheme();
   return (
     <div>
       <div
