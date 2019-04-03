@@ -8,6 +8,12 @@
   background: #fafafa;
 }
 
+.dark .List-tabs,
+.dark .List-toolbar {
+  background: #08e;
+  border-bottom: none;
+}
+
 .List-toolbar {
   justify-content: center;
   background: #fafafa;

@@ -16,6 +16,7 @@ interface PropsProps {
 
 export function Props({ names }: PropsProps) {
   const theme = useTheme();
+  const dark = theme.colors.mode === "dark";
   return (
     <div>
       <div
@@ -71,7 +72,9 @@ export function Props({ names }: PropsProps) {
                             css={{
                               padding: "3px",
                               borderRadius: theme.radii.sm,
-                              background: theme.colors.palette.blue.lightest,
+                              background: dark
+                                ? theme.colors.palette.blue.dark
+                                : theme.colors.palette.blue.lightest,
                               fontWeight: 500,
                               fontSize: theme.sizes[0],
                               marginRight: theme.spaces.sm

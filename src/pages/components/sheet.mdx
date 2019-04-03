@@ -1,8 +1,8 @@
-import { Container } from "sancho"
-import { Article } from "../../components/Layout"
-import { Props } from "../../components/Props"
-import SEO from "../../components/SEO"
-import { Nav } from "../../components/Nav"
+import { Container } from "sancho";
+import { Article } from "../../components/Layout";
+import { Props } from "../../components/Props";
+import SEO from "../../components/SEO";
+import { Nav } from "../../components/Nav";
 
 <Nav title="Sheet" />
 <SEO title="Sheet" />
@@ -33,7 +33,7 @@ By default, a sheet will open to the right with its width adjusting to the width
         isOpen={state.isOpen}
       >
         <div tabIndex={0} style={{ padding: "3rem" }}>
-          Hello world
+          <Text>Hello world</Text>
         </div>
       </Sheet>
     </React.Fragment>
@@ -58,7 +58,9 @@ You can display sheets from the `left`, `top`, `bottom`, or `right`.
         onRequestClose={() => setState({ isOpen: false })}
         isOpen={state.isOpen}
       >
-        <div style={{ padding: "3rem" }}>Hello world</div>
+        <div style={{ padding: "3rem" }}>
+          <Text>Hello world</Text>
+        </div>
       </Sheet>
     </React.Fragment>
   )}

@@ -5,6 +5,7 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import { MDXProvider } from "@mdx-js/tag";
 import * as components from "sancho";
 import "./ExamplePreview.css";
+import "./ExamplePreviewDark.css";
 import Component from "react-component-component";
 import { Text, Link, useTheme } from "sancho";
 import faker from "faker";
@@ -25,15 +26,19 @@ export const anchorPadding = css`
 
 export function ComponentPreview({ className, ...props }) {
   const theme = useTheme();
+  const dark = theme.colors.mode === "dark";
   const isJSX = props.children.props.props.className === "language-jsx";
 
   if (props.children.props.props) {
     return (
       <div
+        className={dark ? "dark" : ""}
         css={{
           marginTop: theme.spaces.md,
-          padding: theme.spaces.sm,
-          background: theme.colors.background.tint1,
+          padding: dark ? 0 : theme.spaces.sm,
+          background: dark
+            ? theme.colors.background.default
+            : theme.colors.background.tint1,
           borderRadius: 0,
           marginLeft: "-1rem",
           marginRight: "-1rem",
@@ -60,8 +65,11 @@ export function ComponentPreview({ className, ...props }) {
               css={{
                 padding: theme.spaces.md,
                 background: theme.colors.background.default,
-                marginBottom: theme.spaces.sm,
-                borderRadius: theme.radii.sm
+                marginBottom: dark ? 0 : theme.spaces.sm,
+                borderRadius: theme.radii.sm,
+                borderBottom: dark
+                  ? `1px solid ${theme.colors.border.muted}`
+                  : undefined
               }}
             />
           )}

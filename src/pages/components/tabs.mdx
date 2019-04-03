@@ -1,9 +1,9 @@
-import { Tabs, Tab, Button, Divider, Container } from "sancho"
-import "./tabs.css"
-import { Article } from "../../components/Layout"
-import { Props } from "../../components/Props"
-import SEO from "../../components/SEO"
-import { Nav } from "../../components/Nav"
+import { Tabs, Tab, Button, Divider, Container } from "sancho";
+import "./tabs.css";
+import { Article } from "../../components/Layout";
+import { Props } from "../../components/Props";
+import SEO from "../../components/SEO";
+import { Nav } from "../../components/Nav";
 
 <Nav title="Tabs" />
 <SEO title="Tabs" />
@@ -12,7 +12,6 @@ import { Nav } from "../../components/Nav"
 <Article sidebar={[
   { id: 'Tabs', name: 'Tabs' },
   { id: 'Basic usage', name: 'Basic usage' },
-  { id: 'Dark background', name: 'Dark background' },
   { id: 'Sliding content', name: 'Sliding content' },
   { id: 'With anchors', name: 'Using anchors' },
   { id: 'Evenly spaced', name: 'Evenly spaced' },
@@ -41,26 +40,6 @@ For accessibility purposes you should provide a unique `id` to each tab. That id
   <Component initialState={{ value: 0 }}>
     {({ state, setState }) => (
       <Tabs value={state.value} onChange={i => setState({ value: i })}>
-        <Tab id="you">For you</Tab>
-        <Tab id="sports">Sports</Tab>
-        <Tab id="entertainment">Entertainment</Tab>
-        <Tab id="news">News</Tab>
-        <Tab id="fun" badge={7}>
-          Fun
-        </Tab>
-      </Tabs>
-    )}
-  </Component>
-</div>
-```
-
-#### Dark background
-
-```jsx
-<div className="Tabs-example dark">
-  <Component initialState={{ value: 0 }}>
-    {({ state, setState }) => (
-      <Tabs dark value={state.value} onChange={i => setState({ value: i })}>
         <Tab id="you">For you</Tab>
         <Tab id="sports">Sports</Tab>
         <Tab id="entertainment">Entertainment</Tab>
@@ -122,29 +101,31 @@ Sliding content is a nice option when working with smaller panels or mobile appl
 
 ```jsx
 <div className="Tabs-example dark">
-  <Component initialState={{ value: 0 }}>
-    {({ state, setState }) => (
-      <Tabs
-        dark
-        variant="evenly-spaced"
-        value={state.value}
-        onChange={i => setState({ value: i })}
-      >
-        <Tab component="a" href="#yup">
-          I will
-        </Tab>
-        <Tab component="a" href="#another">
-          Take you places
-        </Tab>
-        <Tab component="a" href="#another">
-          You ain't never
-        </Tab>
-        <Tab component="a" href="#another">
-          Been
-        </Tab>
-      </Tabs>
-    )}
-  </Component>
+  <DarkMode>
+    <Component initialState={{ value: 0 }}>
+      {({ state, setState }) => (
+        <Tabs
+          dark
+          variant="evenly-spaced"
+          value={state.value}
+          onChange={i => setState({ value: i })}
+        >
+          <Tab component="a" href="#yup">
+            I will
+          </Tab>
+          <Tab component="a" href="#another">
+            Take you places
+          </Tab>
+          <Tab component="a" href="#another">
+            You ain't never
+          </Tab>
+          <Tab component="a" href="#another">
+            Been
+          </Tab>
+        </Tabs>
+      )}
+    </Component>
+  </DarkMode>
 </div>
 ```
 
@@ -154,22 +135,24 @@ The `evenly-spaced` variant is sometimes a nice option and works particularly we
 
 ```jsx
 <div className="Tabs-example dark">
-  <Component initialState={{ value: 0 }}>
-    {({ state, setState }) => (
-      <Tabs
-        dark
-        variant="evenly-spaced"
-        value={state.value}
-        onChange={i => setState({ value: i })}
-      >
-        <Tab>For you</Tab>
-        <Tab>Sports</Tab>
-        <Tab>Entertainment</Tab>
-        <Tab>News</Tab>
-        <Tab>Fun</Tab>
-      </Tabs>
-    )}
-  </Component>
+  <DarkMode>
+    <Component initialState={{ value: 0 }}>
+      {({ state, setState }) => (
+        <Tabs
+          dark
+          variant="evenly-spaced"
+          value={state.value}
+          onChange={i => setState({ value: i })}
+        >
+          <Tab>For you</Tab>
+          <Tab>Sports</Tab>
+          <Tab>Entertainment</Tab>
+          <Tab>News</Tab>
+          <Tab>Fun</Tab>
+        </Tabs>
+      )}
+    </Component>
+  </DarkMode>
 </div>
 ```
 

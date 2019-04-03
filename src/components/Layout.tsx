@@ -9,13 +9,17 @@ import {
   ThemeProvider,
   useTheme,
   DarkMode,
-  Theme
+  Theme,
+  LightMode
 } from "sancho";
 import { ComponentList } from "./ComponentList";
 import { SpyList } from "./SpyList";
 
 const Layout = ({ children }) => {
   const theme = useTheme();
+  const dark = true;
+  const Mode = dark ? DarkMode : LightMode;
+
   return (
     <StaticQuery
       query={graphql`
@@ -29,7 +33,7 @@ const Layout = ({ children }) => {
       `}
       render={data => (
         <ThemeProvider>
-          <DarkMode>
+          <Mode>
             {(theme: Theme) => (
               <React.Fragment>
                 <Global
@@ -37,7 +41,10 @@ const Layout = ({ children }) => {
                     html: {
                       fontFamily: "sans-serif",
                       textSizeAdjust: "100%",
-                      backgroundColor: theme.colors.background.default
+                      backgroundColor:
+                        theme.colors.mode === "dark"
+                          ? theme.colors.palette.gray.dark
+                          : theme.colors.background.default
                     },
                     body: {
                       margin: 0,
@@ -48,6 +55,7 @@ const Layout = ({ children }) => {
                 <SkipNavLink />
 
                 <div
+                  className={theme.colors.mode === "dark" ? "dark" : "light"}
                   css={[
                     {
                       justifyContent: "space-between",
@@ -73,7 +81,7 @@ const Layout = ({ children }) => {
                 </div>
               </React.Fragment>
             )}
-          </DarkMode>
+          </Mode>
         </ThemeProvider>
       )}
     />
@@ -108,7 +116,15 @@ interface ArticleProps {
 export const Article = ({ children, sidebar }: ArticleProps) => {
   const theme = useTheme();
   return (
-    <div css={{ display: "flex" }}>
+    <div
+      className="Article"
+      css={{
+        display: "flex",
+        "& ul": {
+          color: theme.colors.mode === "dark" ? "white" : undefined
+        }
+      }}
+    >
       <SkipNavContent />
       <div
         css={{

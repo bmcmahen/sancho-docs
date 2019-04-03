@@ -1,8 +1,8 @@
-import { Button, Divider, Container } from "sancho"
-import { Article } from "../../components/Layout"
-import { Props } from "../../components/Props"
-import SEO from "../../components/SEO"
-import { Nav } from "../../components/Nav"
+import { Button, Divider, Container } from "sancho";
+import { Article } from "../../components/Layout";
+import { Props } from "../../components/Props";
+import SEO from "../../components/SEO";
+import { Nav } from "../../components/Nav";
 
 <Nav title="Positioner" />
 <SEO title="Positioner" />
@@ -33,10 +33,10 @@ Position an element around another one. This component uses [react-popper](https
         data-placement={placement}
         style={{
           ...style,
-          padding: "1rem",
+          padding: "1rem"
         }}
       >
-        Put me in my place
+        <Text>Put me in my place</Text>
       </Layer>
     )}
   </Positioner>

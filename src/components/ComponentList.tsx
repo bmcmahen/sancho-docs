@@ -17,6 +17,7 @@ function MenuLink({ to, children }) {
   const closeParent = React.useContext(RequestCloseContext);
   const theme = useTheme();
   const padding = `${theme.spaces.xs} ${theme.spaces.lg}`;
+  const dark = theme.colors.mode === "dark";
 
   return (
     <li
@@ -34,7 +35,9 @@ function MenuLink({ to, children }) {
         getProps={options => {
           const activeStyle = {
             fontWeight: 500,
-            background: theme.colors.background.tint2,
+            background: dark
+              ? theme.colors.background.tint1
+              : theme.colors.background.tint2,
             color: theme.colors.text.default
           };
 
@@ -71,7 +74,9 @@ function MenuLink({ to, children }) {
           outline: "none",
           ["@media (hover: hover)"]: {
             ":hover": {
-              background: theme.colors.background.tint2
+              background: dark
+                ? theme.colors.background.tint1
+                : theme.colors.background.tint2
             }
           }
         }}
@@ -157,6 +162,7 @@ export function ComponentList(_props: ComponentListProps) {
   const [componentList, setComponentList] = React.useState(components);
   const [aboutList, setAboutList] = React.useState(about);
   const closeParent = React.useContext(RequestCloseContext);
+  const dark = theme.colors.mode === "dark";
 
   React.useEffect(() => {
     if (!search) {
@@ -184,14 +190,18 @@ export function ComponentList(_props: ComponentListProps) {
         display: "flex",
         flexDirection: "column",
         width: "14rem",
-        background: theme.colors.background.tint1
+        background: dark
+          ? theme.colors.background.default
+          : theme.colors.background.tint1
       }}
     >
       <div
         css={{
           height: "64px",
           borderBottom: "1px solid",
-          borderColor: theme.colors.border.default,
+          borderColor: dark
+            ? theme.colors.border.muted
+            : theme.colors.border.default,
           display: "flex",
           alignItems: "center",
           paddingLeft: theme.spaces.lg
@@ -230,14 +240,19 @@ export function ComponentList(_props: ComponentListProps) {
           WebkitOverflowScrolling: "touch"
         }}
       >
-        <ListGroup label="Getting started">
+        <ListGroup
+          css={{
+            borderColor: theme.colors.border.muted
+          }}
+          label="Getting started"
+        >
           {aboutList.map(entry => (
             <MenuLink to={entry.path} key={entry.path}>
               {entry.title}
             </MenuLink>
           ))}
         </ListGroup>
-        <Divider />
+        <Divider muted={dark} />
         <ListGroup label="Components">
           {componentList.map(entry => (
             <MenuLink key={entry.path} to={entry.path}>
@@ -245,7 +260,7 @@ export function ComponentList(_props: ComponentListProps) {
             </MenuLink>
           ))}
         </ListGroup>
-        <Divider />
+        <Divider muted={dark} />
         <Text
           muted
           css={{

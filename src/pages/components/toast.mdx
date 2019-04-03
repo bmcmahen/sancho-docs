@@ -1,9 +1,9 @@
-import { Button, Divider, Container } from "sancho"
-import "./button.css"
-import { Article } from "../../components/Layout"
-import { Props } from "../../components/Props"
-import SEO from "../../components/SEO"
-import { Nav } from "../../components/Nav"
+import { Button, Divider, Container } from "sancho";
+import "./button.css";
+import { Article } from "../../components/Layout";
+import { Props } from "../../components/Props";
+import SEO from "../../components/SEO";
+import { Nav } from "../../components/Nav";
 
 <Nav title="Toast" />
 <SEO title="Toast" />
@@ -33,19 +33,15 @@ Toast accepts the following options:
 
 #### Basic usage
 
-```jsx
-<Button
-  onClick={() => {
-    toast({
-      title: "Hello world!",
-      duration: 3000,
-      subtitle:
-        "Quis anim consectetur consectetur ea. Deserunt nulla tempor est et laborum.",
-    })
-  }}
->
-  Show toast
-</Button>
+```jsx.
+const toast = useToast();
+
+toast({
+  title: "Hello world!",
+  duration: 3000,
+  subtitle:
+    "Quis anim consectetur consectetur ea. Deserunt nulla tempor est et laborum."
+});
 ```
 
 #### Altering positions
@@ -53,20 +49,20 @@ Toast accepts the following options:
 ```jsx
 <Button
   onClick={() => {
-    ;[
+    [
       "top-left",
       "top",
       "top-right",
       "bottom-left",
       "bottom",
-      "bottom-right",
+      "bottom-right"
     ].map(position => {
       toast({
         title: "Hello world!",
         duration: 3000,
-        position,
-      })
-    })
+        position
+      });
+    });
   }}
 >
   Show all the toasts
@@ -78,16 +74,16 @@ Toast accepts the following options:
 ```jsx
 <Button
   onClick={() => {
-    ;["info", "success", "question", "danger", "warning"].map((intent, i) => {
+    ["info", "success", "question", "danger", "warning"].map((intent, i) => {
       setTimeout(() => {
         toast({
           title: intent,
 
           intent,
-          position: "top-left",
-        })
-      }, i * 500)
-    })
+          position: "top-left"
+        });
+      }, i * 500);
+    });
   }}
 >
   Show toast
@@ -102,8 +98,8 @@ You can supply a custom element by providing a render option.
 <Button
   onClick={() => {
     toast({
-      render: () => <div>Hello world!</div>,
-    })
+      render: () => <div>Hello world!</div>
+    });
   }}
 >
   Show toast
@@ -123,8 +119,8 @@ Using a render callback allows you to control when the toast is closed.
           <Text>Hello world</Text>
           <Button onClick={onClose}>Close me</Button>
         </div>
-      ),
-    })
+      )
+    });
   }}
 >
   Show toast

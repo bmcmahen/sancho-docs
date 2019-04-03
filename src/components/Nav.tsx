@@ -30,7 +30,9 @@ export const Nav: React.FunctionComponent<NavProps> = ({ title }) => {
         width: "100%",
         boxShadow: "none",
         borderBottom: `1px solid ${theme.colors.border.muted}`,
-        background: theme.colors.background.default,
+        background: dark
+          ? theme.colors.palette.gray.dark
+          : theme.colors.background.default,
         backdropFilter: "blur(8px)",
         ["@supports (backdrop-filter: blur(8px))"]: {
           background: dark ? "rgba(0,0,0,0,0.6)" : "rgba(255,255,255,0.6)"

@@ -1,0 +1,173 @@
+/**
+ * atom-dark theme for `prism.js`
+ * Based on Atom's `atom-dark` theme: https://github.com/atom/atom-dark-syntax
+ * @author Joe Gibson (@gibsjose)
+ */
+
+.dark .react-live-error {
+  font-size: small;
+  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono",
+    "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono",
+    "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L",
+    "Courier New", Courier, monospace;
+  margin-top: 0.5rem;
+  padding: 20px;
+  padding-bottom: 10px;
+  white-space: pre;
+  border-radius: 0.5rem;
+}
+.dark p code {
+  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono",
+    "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono",
+    "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L",
+    "Courier New", Courier, monospace;
+
+  background: #4a4a4a;
+  color: white;
+  font-size: small;
+  padding: 3px;
+  border-radius: 2px;
+}
+
+.dark code[class*="language-"],
+.dark pre[class*="language-"] {
+  color: #c5c8c6;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: Inconsolata, Monaco, Consolas, "Courier New", Courier, monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  font-size: 14px;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+.dark pre[class*="language-"] {
+  padding: 1em;
+  margin: 0.5em 0;
+  margin: 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+
+.dark :not(pre) > code[class*="language-"],
+.dark pre[class*="language-"] {
+  background: #343a40;
+}
+
+/* Inline code */
+.dark :not(pre) > code[class*="language-"] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+}
+
+.dark .token.comment,
+.dark .token.prolog,
+.dark .token.doctype,
+.dark .token.cdata {
+  color: #7c7c7c;
+}
+
+.dark .token.punctuation {
+  color: #c5c8c6;
+}
+
+.dark .namespace {
+  opacity: 0.7;
+}
+
+.dark .token.property,
+.dark .token.keyword,
+.dark .token.tag {
+  color: #96cbfe;
+}
+
+.dark .token.class-name {
+  color: #ffffb6;
+  text-decoration: underline;
+}
+
+.dark .token.boolean,
+.dark .token.constant {
+  color: #99cc99;
+}
+
+.dark .token.symbol,
+.dark .token.deleted {
+  color: #f92672;
+}
+
+.dark .token.number {
+  color: #ff73fd;
+}
+
+.dark .token.selector,
+.dark .token.attr-name,
+.dark .token.string,
+.dark .token.char,
+.dark .token.builtin,
+.dark .token.inserted {
+  color: #a8ff60;
+}
+
+.dark .token.variable {
+  color: #c6c5fe;
+}
+
+.dark .token.operator {
+  color: #ededed;
+}
+
+.dark .token.entity {
+  color: #ffffb6;
+  /* text-decoration: underline; */
+}
+
+.dark .token.url {
+  color: #96cbfe;
+}
+
+.dark .language-css .token.string,
+.dark .style .token.string {
+  color: #87c38a;
+}
+
+.dark .token.atrule,
+.dark .token.attr-value {
+  color: #f9ee98;
+}
+
+.dark .token.function {
+  color: #dad085;
+}
+
+.dark .token.regex {
+  color: #e9c062;
+}
+
+.dark .token.important {
+  color: #fd971f;
+}
+
+.dark .token.important,
+.dark .token.bold {
+  font-weight: bold;
+}
+.dark .token.italic {
+  font-style: italic;
+}
+
+.dark .token.entity {
+  cursor: help;
+}
