@@ -197,7 +197,7 @@ export function ComponentList(_props: ComponentListProps) {
         flexDirection: "column",
         width: "14rem",
         background: dark
-          ? theme.colors.background.default
+          ? theme.colors.background.layer
           : theme.colors.background.tint1
       }}
     >

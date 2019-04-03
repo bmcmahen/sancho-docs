@@ -29,7 +29,12 @@
   background: white;
 }
 
+.dark .Tabs-example.icons > :first-child {
+  height: 200px;
+  border: none;
+  background: black;
+}
+
 .Tabs-example.icons {
-  border: 1px solid #eee;
   max-width: 500px;
 }

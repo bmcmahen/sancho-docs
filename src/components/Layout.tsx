@@ -41,10 +41,7 @@ const Layout = ({ children }) => {
                     html: {
                       fontFamily: "sans-serif",
                       textSizeAdjust: "100%",
-                      backgroundColor:
-                        theme.colors.mode === "dark"
-                          ? theme.colors.palette.gray.dark
-                          : theme.colors.background.default
+                      backgroundColor: theme.colors.background.default
                     },
                     body: {
                       margin: 0,

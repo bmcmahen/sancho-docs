@@ -1,13 +1,14 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import * as React from "react";
-import { IconNames, Icon, theme, Text } from "sancho";
+import { IconNames, Icon, Text, useTheme } from "sancho";
 
 const keys = Object.keys(IconNames).map(key => IconNames[key]);
 
 interface IconListProps {}
 
 export function IconList({  }: IconListProps) {
+  const theme = useTheme();
   return (
     <div
       css={{
