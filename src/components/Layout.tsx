@@ -15,10 +15,15 @@ import {
 import { ComponentList } from "./ComponentList";
 import { SpyList } from "./SpyList";
 
+export const ToggleModeContext = React.createContext(null);
+
 const Layout = ({ children }) => {
-  const theme = useTheme();
-  const dark = false;
+  const [dark, setDark] = React.useState(false);
   const Mode = dark ? DarkMode : LightMode;
+
+  function toggleMode() {
+    setDark(!dark);
+  }
 
   return (
     <StaticQuery
@@ -33,52 +38,54 @@ const Layout = ({ children }) => {
       `}
       render={data => (
         <ThemeProvider>
-          <Mode>
-            {(theme: Theme) => (
-              <React.Fragment>
-                <Global
-                  styles={{
-                    html: {
-                      fontFamily: "sans-serif",
-                      textSizeAdjust: "100%",
-                      backgroundColor: theme.colors.background.default
-                    },
-                    body: {
-                      margin: 0,
-                      WebkitFontSmoothing: "antialiased"
-                    }
-                  }}
-                />
-                <SkipNavLink />
-
-                <div
-                  className={theme.colors.mode === "dark" ? "dark" : "light"}
-                  css={[
-                    {
-                      justifyContent: "space-between",
-                      padding: 0,
-                      display: "flex"
-                    }
-                  ]}
-                >
-                  <div
-                    css={{
-                      display: "none",
-                      position: "sticky",
-                      top: "0",
-                      height: "100vh",
-                      [theme.breakpoints.lg]: {
-                        display: "block"
+          <ToggleModeContext.Provider value={toggleMode}>
+            <Mode>
+              {(theme: Theme) => (
+                <React.Fragment>
+                  <Global
+                    styles={{
+                      html: {
+                        fontFamily: "sans-serif",
+                        textSizeAdjust: "100%",
+                        backgroundColor: theme.colors.background.default
+                      },
+                      body: {
+                        margin: 0,
+                        WebkitFontSmoothing: "antialiased"
                       }
                     }}
+                  />
+                  <SkipNavLink />
+
+                  <div
+                    className={theme.colors.mode === "dark" ? "dark" : "light"}
+                    css={[
+                      {
+                        justifyContent: "space-between",
+                        padding: 0,
+                        display: "flex"
+                      }
+                    ]}
                   >
-                    <ComponentList />
+                    <div
+                      css={{
+                        display: "none",
+                        position: "sticky",
+                        top: "0",
+                        height: "100vh",
+                        [theme.breakpoints.lg]: {
+                          display: "block"
+                        }
+                      }}
+                    >
+                      <ComponentList />
+                    </div>
+                    <Main>{children}</Main>
                   </div>
-                  <Main>{children}</Main>
-                </div>
-              </React.Fragment>
-            )}
-          </Mode>
+                </React.Fragment>
+              )}
+            </Mode>
+          </ToggleModeContext.Provider>
         </ThemeProvider>
       )}
     />

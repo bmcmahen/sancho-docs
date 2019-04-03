@@ -8,8 +8,10 @@ import {
   Link as StyleLink,
   Divider,
   RequestCloseContext,
-  useTheme
+  useTheme,
+  MenuItem
 } from "sancho";
+import { ToggleModeContext } from "./Layout";
 
 interface ComponentListProps {}
 
@@ -172,6 +174,7 @@ export function ComponentList(_props: ComponentListProps) {
   const [aboutList, setAboutList] = React.useState(about);
   const closeParent = React.useContext(RequestCloseContext);
   const dark = theme.colors.mode === "dark";
+  const toggle = React.useContext(ToggleModeContext);
 
   React.useEffect(() => {
     if (!search) {
@@ -191,6 +194,10 @@ export function ComponentList(_props: ComponentListProps) {
       );
     }
   }, [search]);
+
+  function toggleMode() {
+    toggle();
+  }
 
   return (
     <div
@@ -249,6 +256,50 @@ export function ComponentList(_props: ComponentListProps) {
           WebkitOverflowScrolling: "touch"
         }}
       >
+        <MenuItem
+          css={{
+            marginTop: theme.spaces.md,
+            display: "block",
+            fontSize: theme.sizes[0],
+            padding: `${theme.spaces.xs} ${theme.spaces.lg} !important`,
+            textDecoration: "none",
+            color: theme.colors.text.muted,
+            WebkitTapHighlightColor: "transparent",
+            ":active": {
+              background: dark
+                ? theme.colors.background.tint1
+                : theme.colors.background.tint2
+            },
+            ":focus": {
+              background: dark
+                ? theme.colors.background.tint1
+                : theme.colors.background.tint2
+            },
+            outline: "none",
+            ["@media (hover: hover)"]: {
+              ":hover": {
+                background: dark
+                  ? theme.colors.background.tint1
+                  : theme.colors.background.tint2
+              }
+            }
+          }}
+          onClick={toggleMode}
+        >
+          <Text
+            css={{
+              fontWeight: "inherit",
+              color: "inherit",
+              fontSize: theme.sizes[1],
+              [theme.breakpoints.lg]: {
+                fontSize: theme.sizes[0]
+              }
+            }}
+          >
+            {dark ? "Light theme" : "Dark theme"}
+          </Text>
+        </MenuItem>
+        <Divider muted />
         <ListGroup
           css={{
             borderColor: theme.colors.border.muted
