@@ -1,12 +1,13 @@
 /** @jsx jsx */
 import { jsx, Global } from "@emotion/core";
 import * as React from "react";
-import { InputBase, theme, Icon } from "sancho";
+import { InputBase, theme, Icon, useTheme } from "sancho";
 import "./DocSearch.css";
 
 export interface DocSearchProps {}
 
 export const DocSearch: React.FunctionComponent<DocSearchProps> = props => {
+  const theme = useTheme();
   const [enabled, setEnabled] = React.useState();
 
   React.useEffect(() => {
@@ -127,7 +128,11 @@ export const DocSearch: React.FunctionComponent<DocSearchProps> = props => {
         <Icon
           icon="search"
           css={{
-            fill: theme.colors.palette.gray[3],
+            fill:
+              theme.colors.mode === "dark"
+                ? "white"
+                : theme.colors.palette.gray[3],
+
             position: "absolute",
             left: "0.75rem",
             top: "50%",

@@ -59,7 +59,7 @@ export function ComponentPreview({ className, ...props }) {
             <LivePreview
               css={{
                 padding: theme.spaces.md,
-                background: "white",
+                background: theme.colors.background.default,
                 marginBottom: theme.spaces.sm,
                 borderRadius: theme.radii.sm
               }}

@@ -7,7 +7,9 @@ import {
   SkipNavContent,
   useResponsiveBodyPadding,
   ThemeProvider,
-  useTheme
+  useTheme,
+  DarkMode,
+  Theme
 } from "sancho";
 import { ComponentList } from "./ComponentList";
 import { SpyList } from "./SpyList";
@@ -27,47 +29,51 @@ const Layout = ({ children }) => {
       `}
       render={data => (
         <ThemeProvider>
-          <React.Fragment>
-            <Global
-              styles={{
-                html: {
-                  fontFamily: "sans-serif",
-                  textSizeAdjust: "100%"
-                },
-                body: {
-                  margin: 0,
-                  WebkitFontSmoothing: "antialiased",
-                  background: "white"
-                }
-              }}
-            />
-            <SkipNavLink />
+          <DarkMode>
+            {(theme: Theme) => (
+              <React.Fragment>
+                <Global
+                  styles={{
+                    html: {
+                      fontFamily: "sans-serif",
+                      textSizeAdjust: "100%",
+                      backgroundColor: theme.colors.background.default
+                    },
+                    body: {
+                      margin: 0,
+                      WebkitFontSmoothing: "antialiased"
+                    }
+                  }}
+                />
+                <SkipNavLink />
 
-            <div
-              css={[
-                {
-                  justifyContent: "space-between",
-                  padding: 0,
-                  display: "flex"
-                }
-              ]}
-            >
-              <div
-                css={{
-                  display: "none",
-                  position: "sticky",
-                  top: "0",
-                  height: "100vh",
-                  [theme.breakpoints.lg]: {
-                    display: "block"
-                  }
-                }}
-              >
-                <ComponentList />
-              </div>
-              <Main>{children}</Main>
-            </div>
-          </React.Fragment>
+                <div
+                  css={[
+                    {
+                      justifyContent: "space-between",
+                      padding: 0,
+                      display: "flex"
+                    }
+                  ]}
+                >
+                  <div
+                    css={{
+                      display: "none",
+                      position: "sticky",
+                      top: "0",
+                      height: "100vh",
+                      [theme.breakpoints.lg]: {
+                        display: "block"
+                      }
+                    }}
+                  >
+                    <ComponentList />
+                  </div>
+                  <Main>{children}</Main>
+                </div>
+              </React.Fragment>
+            )}
+          </DarkMode>
         </ThemeProvider>
       )}
     />
