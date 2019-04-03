@@ -1,7 +1,8 @@
 .Avatar-example {
   display: flex;
+  align-items: center;
 }
 
 .Avatar-example > * {
-  margin-right: 2px;
+  margin-right: 0.5rem;
 }

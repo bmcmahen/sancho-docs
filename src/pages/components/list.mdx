@@ -1,9 +1,9 @@
-import { Container } from "sancho"
-import "./list.css"
-import { Article } from "../../components/Layout"
-import { Props } from "../../components/Props"
-import SEO from "../../components/SEO"
-import { Nav } from "../../components/Nav"
+import { Container } from "sancho";
+import "./list.css";
+import { Article } from "../../components/Layout";
+import { Props } from "../../components/Props";
+import SEO from "../../components/SEO";
+import { Nav } from "../../components/Nav";
 
 <Nav title="List" />
 <SEO title="List" />
@@ -13,7 +13,7 @@ import { Nav } from "../../components/Nav"
   { id: 'List', name: 'List'},
   { id: 'Basic usage', name: 'Basic usage' },
   { id: 'Using sections', name: 'Using sections'},
-  { id: 'No wrap', name: 'No wrap' },
+  { id: 'Disabling wrap', name: 'Disabling wrap' },
   { id: 'Using links', name: 'Using links'},
   { id: 'Non interactive', name: 'Non interactive'},
   { id: 'Props', name: 'Props table'}
@@ -21,7 +21,7 @@ import { Nav } from "../../components/Nav"
 
 # List
 
-Lists are useful for rendering things like lists of emails, actions, documents, and so on.
+Lists are useful for rendering collections of documents or references, like emails, actions, documents, and so on.
 
 Sancho exports the following components to create lists:
 
@@ -117,13 +117,15 @@ Sancho exports the following components to create lists:
 
 #### Using sections
 
+Sections provide sticky headers via the `title` prop.
+
 ```jsx
 <Layer
   style={{
     overflowY: "scroll",
     maxHeight: "300px",
     maxWidth: "100%",
-    width: "450px",
+    width: "450px"
   }}
 >
   <List>
@@ -181,7 +183,9 @@ Sancho exports the following components to create lists:
 </Layer>
 ```
 
-#### No wrap
+#### Disabling wrap
+
+You can disable text wrapping via the `wrap` prop.
 
 ```jsx
 <Layer style={{ overflow: "hidden", maxWidth: "100%", width: "450px" }}>
@@ -201,6 +205,8 @@ Sancho exports the following components to create lists:
 
 #### Using links
 
+You can use an anchor by setting the `component` and `href` props. Alternatively, you could use something like React-router's Link component.
+
 ```jsx
 <List>
   <ListItem
@@ -217,7 +223,7 @@ Sancho exports the following components to create lists:
 
 #### Non interactive
 
-By default, list items are treated as interactive buttons. You can turn disable this.
+By default, list items are treated as interactive buttons. You can disable this.
 
 ```jsx
 <List>

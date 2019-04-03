@@ -21,7 +21,8 @@ import { ToastExample } from "../../components/ToastExample";
 
 # Toast
 
-A toast is used to notify users about a particular event. We built this with an imperative API mostly because it's way easier to invoke in response to API errors or user events. As a result, we export the lowercase `toast` function which you can use to invoke notifications. We use the library [toasted-notes](https://github.com/bmcmahen/toasted-notes) under the hood.
+A toast is used to notify users about a particular event. We built this with an imperative API
+exposted via the `useToast` hook. We use the library [toasted-notes](https://github.com/bmcmahen/toasted-notes) under the hood.
 
 Toast accepts the following options:
 
@@ -36,15 +37,28 @@ Toast accepts the following options:
 
 #### Basic usage
 
-```jsx.
-const toast = useToast();
+Import the `useToast` hook within a React function component and trigger it in response to errors or user events.
 
-toast({
-  title: "Hello world!",
-  duration: 3000,
-  subtitle:
-    "Quis anim consectetur consectetur ea. Deserunt nulla tempor est et laborum."
-});
+```jsx.
+import { useToast } from "sancho";
+
+function Example() {
+  const toast = useToast();
+
+  return (
+    <Button
+      onClick={() => {
+        toast({
+          title: "My primary message for the user.",
+          duration: 3000,
+          subtitle: "Details to report to the user."
+        });
+      }}
+    >
+      Trigger
+    </Button>
+  );
+}
 ```
 
 #### Altering positions
@@ -62,7 +76,6 @@ toast({
     ].map(position => {
       toast({
         title: "Hello world!",
-        duration: 3000,
         position
       });
     });
@@ -78,14 +91,10 @@ toast({
 <Button
   onClick={() => {
     ["info", "success", "question", "danger", "warning"].map((intent, i) => {
-      setTimeout(() => {
-        toast({
-          title: intent,
-
-          intent,
-          position: "top-left"
-        });
-      }, i * 500);
+      toast({
+        title: intent,
+        intent,
+      });
     });
   }}
 >
@@ -111,7 +120,7 @@ You can supply a custom element by providing a render option.
 
 #### Using a render callback
 
-Using a render callback allows you to control when the toast is closed.
+Using a render callback allows you to supply a custom element and control when the toast is closed.
 
 ```.jsx
 <Button
