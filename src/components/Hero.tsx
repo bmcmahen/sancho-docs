@@ -5,14 +5,18 @@ import { Article } from "../components/Layout";
 import { Text, Container, Button, Divider, Link, useTheme } from "sancho";
 import { ComponentMDXProvider } from "./ExamplePreview";
 import { Nav } from "./Nav";
+import background from "./background.svg";
+import backgroundLight from "./background-light.svg";
 
 export const Hero = ({ children }) => {
   const theme = useTheme();
+  const dark = theme.colors.mode === "dark";
   return (
     <React.Fragment>
       <Nav />
       <div
         css={{
+          backgroundImage: `url(${dark ? background : backgroundLight})`,
           padding: `${theme.spaces.lg} 0`,
           borderBottom: `1px solid ${theme.colors.border.muted}`
         }}

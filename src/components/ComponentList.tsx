@@ -123,8 +123,8 @@ function ListGroup({ label, children }) {
 
 const about = [
   { title: "Installation", path: "/#installation" },
-  { title: "Styling and emotion", path: "/#styling%20and%20emotion" },
-  { title: "Theme", path: "/#theme" },
+  { title: "Styling with emotion", path: "/#styling%20and%20emotion" },
+  { title: "Using a theme", path: "/#theme" },
   { title: "Example projects", path: "/#example%20projects" }
 ];
 
@@ -146,19 +146,22 @@ const components = [
   { title: "Menu", path: "/components/menu/" },
   { title: "Modal", path: "/components/modal/" },
   { title: "Navbar", path: "/components/navbar/" },
-  { title: "Overlay", path: "/components/overlay/" },
   { title: "Popover", path: "/components/popover/" },
-  { title: "Portal", path: "/components/portal/" },
-  { title: "Positioner", path: "/components/positions/" },
   { title: "Sheet", path: "/components/sheet/" },
-  { title: "SkipNav", path: "/components/skipnav/" },
   { title: "Spinner", path: "/components/spinner/" },
   { title: "Table", path: "/components/table/" },
   { title: "Tabs", path: "/components/tabs/" },
   { title: "Text", path: "/components/text/" },
   { title: "Toast", path: "/components/toast/" },
   { title: "Toolbar", path: "/components/toolbar/" },
-  { title: "Tooltip", path: "/components/tooltip/" },
+  { title: "Tooltip", path: "/components/tooltip/" }
+];
+
+const helpers = [
+  { title: "Overlay", path: "/components/overlay/" },
+  { title: "Portal", path: "/components/portal/" },
+  { title: "Positioner", path: "/components/positions/" },
+  { title: "SkipNav", path: "/components/skipnav/" },
   { title: "VisuallyHidden", path: "/components/visually-hidden/" }
 ];
 
@@ -266,6 +269,20 @@ export function ComponentList(_props: ComponentListProps) {
             </MenuLink>
           ))}
         </ListGroup>
+        <Divider muted />
+        <ListGroup
+          css={{
+            borderColor: theme.colors.border.muted
+          }}
+          label="Helpers"
+        >
+          {helpers.map(entry => (
+            <MenuLink to={entry.path} key={entry.path}>
+              {entry.title}
+            </MenuLink>
+          ))}
+        </ListGroup>
+
         <Divider muted />
         <Text
           muted

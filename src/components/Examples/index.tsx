@@ -69,7 +69,7 @@ export const Example: React.FunctionComponent<ExampleProps> = ({
               border-radius: 5px 5px 0 0;
               background-color: ${dark
                 ? theme.colors.background.tint1
-                : "rgba(0, 0, 0, 0.5)"};
+                : "white"};
             `}
           >
             <div
