@@ -59,12 +59,8 @@ export const Hero = ({ children }) => {
             >
               Sancho is a responsive and accessible design system built with
               React, Typescript and Emotion. Named after the ever-faithful,
-              hilariously acerbic{" "}
-              <Link href="https://en.wikipedia.org/wiki/Sancho_Panza">
-                sidekick
-              </Link>{" "}
-              of Don Quixote, Sancho is designed to help you no matter how
-              quixotic your dreams may be.
+              hilariously acerbic sidekick of Don Quixote, Sancho is designed to
+              help you no matter how quixotic your dreams may be.
             </Text>
             <Button
               intent="primary"

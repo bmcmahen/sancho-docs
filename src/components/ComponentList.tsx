@@ -232,16 +232,20 @@ export function ComponentList(_props: ComponentListProps) {
           }}
           to="/"
         >
-          <img
+          {/* <img
             css={{
               width: "30px",
               height: "30px",
               marginRight: theme.spaces.sm
             }}
             src={require("../images/donkey.svg")}
-          />
+          /> */}
           <Text
-            css={{ color: theme.colors.text.default }}
+            css={{
+              color: dark
+                ? theme.colors.palette.blue.light
+                : theme.colors.text.selected
+            }}
             gutter={false}
             variant="h5"
           >
