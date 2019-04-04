@@ -300,7 +300,7 @@ export function ComponentList(_props: ComponentListProps) {
               }
             }}
           >
-            {dark ? "Light theme" : "Dark theme"}
+            {dark ? "LightMode" : "DarkMode"}
           </Text>
         </MenuItem>
         <Divider muted />

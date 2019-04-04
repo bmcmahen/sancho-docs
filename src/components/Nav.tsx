@@ -54,7 +54,7 @@ export const Nav: React.FunctionComponent<NavProps> = ({ title }) => {
           }}
         >
           {title && (
-            <BreadcrumbItem inverted>
+            <BreadcrumbItem>
               <Text gutter={false} variant="h5">
                 {title}
               </Text>
