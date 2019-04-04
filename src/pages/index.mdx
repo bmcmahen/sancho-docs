@@ -24,14 +24,14 @@ yarn add sancho
 Import Sancho components into your project and wrap your project with the `ThemeProvider`.
 
 ```.jsx
-import { Button, ThemeProvider } from "sancho"
+import { Button, ThemeProvider } from "sancho";
 
 function Project() {
   return (
     <ThemeProvider>
       <Button>Hello world!</Button>
     </ThemeProvider>
-  )
+  );
 }
 ```
 
@@ -41,15 +41,13 @@ Sancho uses CSS-in-JS and [Emotion](https://emotion.sh/docs/introduction) for st
 
 ```.jsx
 /** @jsx jsx */
-import { jsx } from "@emotion/core"
-import { Button } from 'sancho'
+import { jsx } from "@emotion/core";
+import { Button } from "sancho";
 
 function MyCustomButton() {
   return (
-    <Button css={{ background: '#08e' }}>
-      I have a blue background!
-    </Button>
-  )
+    <Button css={{ color: "red" }}>I have red text!</Button>
+  );
 }
 ```
 
@@ -57,24 +55,24 @@ Most Sancho components provide BEM-style class names. This allows you to configu
 
 ```.jsx
 /** @jsx jsx */
-import { jsx } from "@emotion/core"
-import { Alert, theme } from 'sancho'
+import { jsx } from "@emotion/core";
+import { Alert, theme } from "sancho";
 
 function MyCustomAlert() {
   return (
     <Alert
-      title='Hello world!'
+      title="Hello world!"
       css={{
-        maxWidth: '100vw',
-        '& .Alert__bar': {
-          display: 'none'
+        maxWidth: "100vw",
+        "& .Alert__bar": {
+          display: "none"
         },
-        '& .Alert__content': {
+        "& .Alert__content": {
           padding: theme.spaces.sm
         }
       }}
     />
-  )
+  );
 }
 ```
 
@@ -86,22 +84,24 @@ Sancho uses a main `theme` object which contains global theming variables relate
 
 ```.jsx
 /** @jsx jsx */
-import { jsx } from "@emotion/core"
-import { useTheme } from 'sancho'
+import { jsx } from "@emotion/core";
+import { useTheme } from "sancho";
 
 function Component() {
-  const theme = useTheme()
+  const theme = useTheme();
   return (
-    <div css={{
-      padding: theme.spaces.sm,
-      color: theme.colors.text.muted,
-      [theme.breakpoints.md]: {
-        padding: theme.spaces.md
-      }
-    }}>
+    <div
+      css={{
+        padding: theme.spaces.sm,
+        color: theme.colors.text.muted,
+        [theme.breakpoints.md]: {
+          padding: theme.spaces.md
+        }
+      }}
+    >
       Hello world
     </div>
-  )
+  );
 }
 ```
 
@@ -109,40 +109,40 @@ The default theme comes with a dark and light mode. You can use `DarkMode` and `
 
 ```.jsx
 /** @jsx jsx */
-import { jsx } from "@emotion/core"
-import { DarkMode, LightMode } from 'sancho'
+import { jsx } from "@emotion/core";
+import { DarkMode, LightMode } from "sancho";
 
 function Component() {
   return (
     <DarkMode>
-      <div css={{ background: 'black }}>
-        <Text>This text will be white</Text>
-        <LightMode>
-          <Text>But this text will be dark</Text>
-        </LightMode>
-      </div>
+      <Text>This text will be white</Text>
+      <LightMode>
+        <Text>But this text will be dark</Text>
+      </LightMode>
     </DarkMode>
-  )
+  );
 }
 ```
 
-You can customize the theme using the `createTheme` and `generateColorsFromScales` functions. The example below demonstrates generating our own
-color scales using [palx](https://palx.jxnblk.com/) and setting a custom font:
+You can customize the default theme by overriding the properties you want.
+The example below creates custom colors by providing [palx](https://palx.jxnblk.com/) generated color scales to the `generateColorsFromScales` function.
 
-```
-import { createTheme, generateColorsFromScales, ThemeProvider } from 'sancho'
-import palx from 'palx'
+```.jsx
+import { generateColorsFromScales, ThemeProvider, defaultTheme } from "sancho";
+import palx from "palx";
 
-const scales = palx('#08e')
-const colors = generateColorsFromScales(scales)
-const theme = createTheme({
+const scales = palx("#08e");
+const colors = generateColorsFromScales(scales);
+
+const theme = {
+  ...defaultTheme,
   ...colors,
   fonts: {
-    sans: 'Roboto, sans-serif',
-    base: 'Roboto, sans-serif',
-    monospace: 'monospace'
+    ...defaultTheme.fonts,
+    sans: "Roboto, sans-serif",
+    base: "Roboto, sans-serif"
   }
-})
+};
 
 function App() {
   <ThemeProvider theme={theme}>

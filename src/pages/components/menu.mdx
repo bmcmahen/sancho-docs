@@ -1,9 +1,9 @@
-import { Button, Divider, Container } from "sancho"
-import "./button.css"
-import { Article } from "../../components/Layout"
-import { Props } from "../../components/Props"
-import SEO from "../../components/SEO"
-import { Nav } from "../../components/Nav"
+import { Button, Divider, Container } from "sancho";
+import "./menu.css";
+import { Article } from "../../components/Layout";
+import { Props } from "../../components/Props";
+import SEO from "../../components/SEO";
+import { Nav } from "../../components/Nav";
 
 <Nav title="Menu" />
 <SEO title="Menu" />
@@ -29,16 +29,19 @@ A menu is used to create popover content with a list of options. To create a men
 #### Basic usage
 
 ```jsx
-<MenuList>
-  <MenuLabel>Options</MenuLabel>
-  <MenuItem onSelect={() => alert("Hello 1")}>I will trigger an alert</MenuItem>
-  <MenuItem component="a" href="/bacon">
-    I'm a link
-  </MenuItem>
-  <MenuDivider />
-  <MenuLabel>More</MenuLabel>
-  <MenuItem>Item three</MenuItem>
-</MenuList>
+<div className="MenuList-example">
+  <MenuList>
+    <MenuLabel>Document</MenuLabel>
+    <MenuItem onSelect={() => alert("Hello")}>Share</MenuItem>
+    <MenuItem component="a" href="/bacon">
+      Edit
+    </MenuItem>
+    <MenuDivider />
+    <MenuLabel>Account</MenuLabel>
+    <MenuItem contentAfter="⌘S">Settings</MenuItem>
+    <MenuItem>Sign out</MenuItem>
+  </MenuList>
+</div>
 ```
 
 #### Dropdown menu
@@ -49,18 +52,19 @@ Combine a MenuList with a Popover to create a dropdown menu.
 <Popover
   content={
     <MenuList>
-      <MenuItem onSelect={() => alert("Hello 1")}>
-        I will trigger an alert
-      </MenuItem>
+      <MenuLabel>Document</MenuLabel>
+      <MenuItem onSelect={() => alert("Hello")}>Share</MenuItem>
       <MenuItem component="a" href="/bacon">
-        I'm a link
+        Edit
       </MenuItem>
       <MenuDivider />
-      <MenuItem>Item three</MenuItem>
+      <MenuLabel>Account</MenuLabel>
+      <MenuItem contentAfter="⌘S">Settings</MenuItem>
+      <MenuItem>Sign out</MenuItem>
     </MenuList>
   }
 >
-  <Button>See my menu</Button>
+  <Button iconAfter="chevron-down">See my menu</Button>
 </Popover>
 ```
 
@@ -68,9 +72,9 @@ Combine a MenuList with a Popover to create a dropdown menu.
 
 You can use a custom component such as an `a` or `Link`.
 
-```jsx
+```.jsx
 <MenuItem component="a" href="#">
-  MenuItem as an anchor
+  This is an anchor element
 </MenuItem>
 ```
 
