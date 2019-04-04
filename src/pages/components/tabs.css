@@ -4,7 +4,11 @@
 }
 
 .Tabs-example {
-  /* background-color: #fafafa; */
+  background-color: #f1f3f5;
+}
+
+.dark .Tabs-example {
+  background-color: transparent;
 }
 
 .Tab-panel {
@@ -12,10 +16,14 @@
 }
 
 .Tabs-sliding .Tabs-toolbar {
-  /* background-color: #1070ca; */
+  background-color: #f1f3f5;
   border-top-right-radius: 1rem;
   border-top-left-radius: 1rem;
   padding-top: 1rem;
+}
+
+.dark .Tabs-sliding .Tabs-toolbar {
+  background-color: transparent;
 }
 
 .Tabs-sliding .Tabs-example {

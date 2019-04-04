@@ -44,9 +44,7 @@ For accessibility purposes you should provide a unique `id` to each tab. That id
         <Tab id="sports">Sports</Tab>
         <Tab id="entertainment">Entertainment</Tab>
         <Tab id="news">News</Tab>
-        <Tab id="fun" badge={7}>
-          Fun
-        </Tab>
+        <Tab id="about">About</Tab>
       </Tabs>
     )}
   </Component>
@@ -71,7 +69,7 @@ Sliding content is a nice option when working with smaller panels or mobile appl
             <Tab id="sports">Sports</Tab>
             <Tab id="entertainment">Entertainment</Tab>
             <Tab id="news">News</Tab>
-            <Tab id="fun">Fun</Tab>
+            <Tab id="about">About</Tab>
           </Tabs>
         </div>
         <TabContent value={state.value} onChange={i => setState({ value: i })}>

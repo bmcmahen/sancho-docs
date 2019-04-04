@@ -9,7 +9,10 @@ import {
   Divider,
   RequestCloseContext,
   useTheme,
-  MenuItem
+  MenuItem,
+  Icon,
+  IconButton,
+  Tooltip
 } from "sancho";
 import { ToggleModeContext } from "./Layout";
 
@@ -219,8 +222,10 @@ export function ComponentList(_props: ComponentListProps) {
             ? theme.colors.border.muted
             : theme.colors.border.default,
           display: "flex",
+          justifyContent: "space-between",
           alignItems: "center",
-          paddingLeft: theme.spaces.lg
+          paddingLeft: theme.spaces.lg,
+          paddingRight: theme.spaces.md
         }}
       >
         <Link
@@ -232,14 +237,6 @@ export function ComponentList(_props: ComponentListProps) {
           }}
           to="/"
         >
-          {/* <img
-            css={{
-              width: "30px",
-              height: "30px",
-              marginRight: theme.spaces.sm
-            }}
-            src={require("../images/donkey.svg")}
-          /> */}
           <Text
             css={{
               color: dark
@@ -252,6 +249,14 @@ export function ComponentList(_props: ComponentListProps) {
             Sancho UI
           </Text>
         </Link>
+        <Tooltip content="Toggle dark mode">
+          <IconButton
+            onClick={toggleMode}
+            label="Toggle dark mode"
+            variant="ghost"
+            icon="lightbulb"
+          />
+        </Tooltip>
       </div>
       <div
         css={{
@@ -260,50 +265,6 @@ export function ComponentList(_props: ComponentListProps) {
           WebkitOverflowScrolling: "touch"
         }}
       >
-        <MenuItem
-          css={{
-            marginTop: theme.spaces.md,
-            display: "block",
-            fontSize: theme.sizes[0],
-            padding: `${theme.spaces.xs} ${theme.spaces.lg} !important`,
-            textDecoration: "none",
-            color: theme.colors.text.muted,
-            WebkitTapHighlightColor: "transparent",
-            ":active": {
-              background: dark
-                ? theme.colors.background.tint1
-                : theme.colors.background.tint2
-            },
-            ":focus": {
-              background: dark
-                ? theme.colors.background.tint1
-                : theme.colors.background.tint2
-            },
-            outline: "none",
-            ["@media (hover: hover)"]: {
-              ":hover": {
-                background: dark
-                  ? theme.colors.background.tint1
-                  : theme.colors.background.tint2
-              }
-            }
-          }}
-          onClick={toggleMode}
-        >
-          <Text
-            css={{
-              fontWeight: "inherit",
-              color: "inherit",
-              fontSize: theme.sizes[1],
-              [theme.breakpoints.lg]: {
-                fontSize: theme.sizes[0]
-              }
-            }}
-          >
-            {dark ? "LightMode" : "DarkMode"}
-          </Text>
-        </MenuItem>
-        <Divider muted />
         <ListGroup
           css={{
             borderColor: theme.colors.border.muted
