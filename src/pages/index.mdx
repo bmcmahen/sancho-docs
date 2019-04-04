@@ -37,7 +37,7 @@ function Project() {
 
 #### Styling and Emotion
 
-Sancho uses CSS-in-JS and [Emotion](https://emotion.sh/docs/introduction) for styling, and it’s recommended (though not required) to use Sancho within projects that use Emotion. Emotion allows us to style components using the `css` prop - a bit like styling elements using the `style` prop, but with the benefits of pseudo selectors and the full power of css. Emotion also provides powerful and predictable composition. This means that you can pass css attributes into our components to override their styles.
+Sancho uses CSS-in-JS and [Emotion](https://emotion.sh/docs/introduction) for styling, and it’s recommended (though not required) to use Sancho within projects that use Emotion. Emotion allows us to style components using the `css` prop - a bit like styling elements using the `style` prop, but with the added benefit of pseudo selectors and the full power of css. Emotion also provides powerful and predictable composition. This means that you can pass css attributes into our components to override their styles.
 
 ```.jsx
 /** @jsx jsx */
@@ -51,7 +51,7 @@ function MyCustomButton() {
 }
 ```
 
-Most Sancho components provide BEM-style class names. This allows you to configure the styles of elements contained within components.
+Most Sancho components provide BEM-style class names. This allows you to style nested elements within components.
 
 ```.jsx
 /** @jsx jsx */
@@ -124,8 +124,9 @@ function Component() {
 }
 ```
 
-You can customize the default theme by overriding the properties you want.
-The example below creates custom colors by providing [palx](https://palx.jxnblk.com/) generated color scales to the `generateColorsFromScales` function.
+You can customize the default theme by overriding its properties.
+The example below uses [palx](https://palx.jxnblk.com/) and `generateColorsFromScales` to create a custom color palette. We also
+override some font properties.
 
 ```.jsx
 import { generateColorsFromScales, ThemeProvider, defaultTheme } from "sancho";
@@ -150,6 +151,8 @@ function App() {
   </ThemeProvider>
 }
 ```
+
+For performance reasons, the custom theme should be constructed outside of the React render cycle or memoized using something like `useMemo`.
 
 ### Example projects
 
