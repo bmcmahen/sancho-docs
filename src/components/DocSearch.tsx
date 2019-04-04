@@ -1,13 +1,13 @@
 /** @jsx jsx */
 import { jsx, Global } from "@emotion/core";
 import * as React from "react";
-import { InputBase, theme, Icon, useTheme } from "sancho";
+import { InputBase, Icon, theme, useTheme } from "sancho";
 import "./DocSearch.css";
 
 export interface DocSearchProps {}
 
 export const DocSearch: React.FunctionComponent<DocSearchProps> = props => {
-  const theme = useTheme();
+  // const theme = useTheme();
   const [enabled, setEnabled] = React.useState();
 
   React.useEffect(() => {
