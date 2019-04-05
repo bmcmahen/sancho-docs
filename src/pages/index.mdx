@@ -17,19 +17,17 @@ export default Hero;
 Install Sancho using Yarn or NPM.
 
 ```
-yarn add sancho
+yarn add sancho @emotion/core @emotion/css
 ```
 
 Import Sancho components into your project and wrap your project with the `ThemeProvider`.
 
 ```.jsx
-import { Button, ThemeProvider } from "sancho";
+import { Button } from "sancho";
 
 function Project() {
   return (
-    <ThemeProvider>
-      <Button>Hello world!</Button>
-    </ThemeProvider>
+    <Button>Hello world!</Button>
   );
 }
 ```
