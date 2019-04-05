@@ -24,11 +24,10 @@
     "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L",
     "Courier New", Courier, monospace;
 
-  background: #2b303a;
-  color: #4597e4;
   font-size: 14px;
   padding: 3px;
-  border-radius: 2px;
+  border-radius: 4px;
+  background: #3d9af061;
 }
 
 .dark code[class*="language-"],

@@ -254,7 +254,7 @@ export function ComponentList(_props: ComponentListProps) {
             onClick={toggleMode}
             label="Toggle dark mode"
             variant="ghost"
-            icon={dark ? <FiSun /> : <FiMoon />}
+            icon={<FiSun />}
           />
         </Tooltip>
       </div>

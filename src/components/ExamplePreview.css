@@ -27,11 +27,10 @@ p code {
     "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono",
     "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L",
     "Courier New", Courier, monospace;
-  color: #4491d2;
-  background: #f0f3f5;
-  font-size: 14px;
+  background: rgba(61, 138, 216, 0.13);
   padding: 3px;
-  border-radius: 2px;
+  border-radius: 4px;
+  font-size: 14px;
 }
 
 .react-live-preview {
@@ -53,6 +52,7 @@ pre[class*="language-"] {
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
+  line-height: 1.5;
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;

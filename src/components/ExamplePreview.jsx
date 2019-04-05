@@ -45,9 +45,7 @@ export function ComponentPreview({ className, ...props }) {
           marginBottom: theme.spaces.lg,
           [theme.breakpoints.md]: {
             borderRadius: theme.radii.md,
-            marginBottom: theme.spaces.lg,
-            marginLeft: "-0.5rem",
-            marginRight: "-0.5rem"
+            marginBottom: theme.spaces.lg
           }
         }}
       >
