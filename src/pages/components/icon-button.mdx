@@ -31,13 +31,18 @@ Sancho exports:
 The IconButton composes the `Button` component, so it accepts the same props as Button. A `label` prop is required for accessibility purposes.
 
 ```jsx
-<IconButton variant="outline" intent="primary" icon={<FiMenu />} label="Menu" />
+<IconButton
+  variant="outline"
+  intent="primary"
+  icon={<IconMenu />}
+  label="Menu"
+/>
 ```
 
 #### Ghost variant
 
 ```jsx
-<IconButton icon={<FiMenu />} label="Menu" variant="ghost" />
+<IconButton icon={<IconMenu />} label="Menu" variant="ghost" />
 ```
 
 #### CloseButton

@@ -11,8 +11,7 @@ import {
   useTheme,
   IconButton,
   Tooltip,
-  FiSun,
-  FiMoon
+  IconSun
 } from "sancho";
 import { ToggleModeContext } from "./Layout";
 
@@ -254,7 +253,7 @@ export function ComponentList(_props: ComponentListProps) {
             onClick={toggleMode}
             label="Toggle dark mode"
             variant="ghost"
-            icon={<FiSun />}
+            icon={<IconSun />}
           />
         </Tooltip>
       </div>

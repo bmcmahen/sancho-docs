@@ -9,7 +9,7 @@ import {
   Divider,
   Link,
   useTheme,
-  FiArrowRight
+  IconArrowRight
 } from "sancho";
 import { ComponentMDXProvider } from "./ExamplePreview";
 import { Nav } from "./Nav";
@@ -74,7 +74,7 @@ export const Hero = ({ children }) => {
               intent="primary"
               component="a"
               size="lg"
-              iconAfter={<FiArrowRight />}
+              iconAfter={<IconArrowRight />}
               href="http://github.com/bmcmahen/sancho"
             >
               View on Github

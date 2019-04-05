@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import * as React from "react";
-import { IconButton, Sheet, useTheme, FiMenu } from "sancho";
+import { IconButton, Sheet, useTheme, IconMenu } from "sancho";
 import { ComponentList } from "./ComponentList";
 
 interface SideMenuProps {}
@@ -13,7 +13,7 @@ export function SideMenu({  }: SideMenuProps) {
     <React.Fragment>
       <IconButton
         label="Show menu"
-        icon={<FiMenu />}
+        icon={<IconMenu />}
         variant="ghost"
         color={theme.colors.text.muted}
         size="lg"

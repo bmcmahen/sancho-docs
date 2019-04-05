@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Global } from "@emotion/core";
 import * as React from "react";
-import { InputBase, Icon, defaultTheme, FiSearch, useTheme } from "sancho";
+import { InputBase, defaultTheme, useTheme, IconSearch } from "sancho";
 import "./DocSearch.css";
 
 export interface DocSearchProps {}
@@ -126,7 +126,8 @@ export const DocSearch: React.FunctionComponent<DocSearchProps> = props => {
             paddingLeft: "2.5rem"
           }}
         />
-        <Icon
+
+        <IconSearch
           color={
             responsiveTheme.colors.mode === "dark"
               ? "white"
@@ -138,9 +139,7 @@ export const DocSearch: React.FunctionComponent<DocSearchProps> = props => {
             top: "50%",
             transform: "translateY(-50%)"
           }}
-        >
-          <FiSearch />
-        </Icon>
+        />
       </div>
     </form>
   );
