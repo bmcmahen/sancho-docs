@@ -166,19 +166,19 @@ You can use the `TabIcon` component to create mobile style tab bars.
         onChange={i => setState({ value: i })}
       >
         <Tab>
-          <TabIcon icon="annotation" label="Annotation" />
+          <TabIcon icon={<FiUmbrella />} label="Annotation" />
         </Tab>
         <Tab>
-          <TabIcon icon="chat" label="Chat" />
+          <TabIcon icon={<FiTrash />} label="Chat" />
         </Tab>
         <Tab>
-          <TabIcon icon="box" label="Box" />
+          <TabIcon icon={<FiArchive />} label="Box" />
         </Tab>
         <Tab>
-          <TabIcon icon="camera" label="Camera" />
+          <TabIcon icon={<FiAperture />} label="Camera" />
         </Tab>
         <Tab>
-          <TabIcon icon="chart" label="Chart" />
+          <TabIcon icon={<FiActivity />} label="Chart" />
         </Tab>
       </Tabs>
     )}

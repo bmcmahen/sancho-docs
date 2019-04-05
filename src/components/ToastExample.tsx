@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import * as React from "react";
-import useToast from "sancho/build/Toast";
+import { useToast } from "sancho";
 import { Button } from "sancho";
 
 export interface ToastExampleProps {}

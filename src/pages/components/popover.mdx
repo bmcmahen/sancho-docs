@@ -1,9 +1,9 @@
-import { Button, Divider, Container } from "sancho"
-import "./button.css"
-import { Article } from "../../components/Layout"
-import { Props } from "../../components/Props"
-import SEO from "../../components/SEO"
-import { Nav } from "../../components/Nav"
+import { Button, Divider, Container } from "sancho";
+import "./button.css";
+import { Article } from "../../components/Layout";
+import { Props } from "../../components/Props";
+import SEO from "../../components/SEO";
+import { Nav } from "../../components/Nav";
 
 <Nav title="Popover" />
 <SEO title="Popover" />
@@ -77,7 +77,7 @@ Because dropdown menus often aren't great on mobile devices, this component will
     </MenuList>
   }
 >
-  <IconButton variant="ghost" icon="more" label="show more" />
+  <IconButton variant="ghost" icon={<FiMoreVertical />} label="show more" />
 </ResponsivePopover>
 ```
 

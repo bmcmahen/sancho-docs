@@ -1,13 +1,14 @@
 /** @jsx jsx */
 import { jsx, Global } from "@emotion/core";
 import * as React from "react";
-import { InputBase, Icon, theme, useTheme } from "sancho";
+import { InputBase, Icon, defaultTheme, FiSearch, useTheme } from "sancho";
 import "./DocSearch.css";
 
 export interface DocSearchProps {}
 
 export const DocSearch: React.FunctionComponent<DocSearchProps> = props => {
-  // const theme = useTheme();
+  const theme = defaultTheme;
+  const responsiveTheme = useTheme();
   const [enabled, setEnabled] = React.useState();
 
   React.useEffect(() => {
@@ -39,7 +40,7 @@ export const DocSearch: React.FunctionComponent<DocSearchProps> = props => {
           ".algolia-docsearch-suggestion--category-header": {
             textDecoration: "none",
             color: theme.colors.text.default,
-            fontSize: `${theme.sizes[0]} !important`,
+            fontSize: `${theme.fontSizes[0]} !important`,
             fontWeight: 600
           },
           ".algolia-docsearch-suggestion": {
@@ -88,7 +89,7 @@ export const DocSearch: React.FunctionComponent<DocSearchProps> = props => {
           },
           ".algolia-autocomplete .algolia-docsearch-suggestion--text": {
             color: theme.colors.scales.gray[6],
-            fontSize: theme.sizes[0]
+            fontSize: theme.fontSizes[0]
           },
           ".algolia-docsearch-suggestion--category-header-lvl0 .algolia-docsearch-suggestion--highlight": {
             background: "none !important",
@@ -126,19 +127,20 @@ export const DocSearch: React.FunctionComponent<DocSearchProps> = props => {
           }}
         />
         <Icon
-          icon="search"
+          color={
+            responsiveTheme.colors.mode === "dark"
+              ? "white"
+              : responsiveTheme.colors.palette.gray[3]
+          }
           css={{
-            fill:
-              theme.colors.mode === "dark"
-                ? "white"
-                : theme.colors.palette.gray[3],
-
             position: "absolute",
             left: "0.75rem",
             top: "50%",
             transform: "translateY(-50%)"
           }}
-        />
+        >
+          <FiSearch />
+        </Icon>
       </div>
     </form>
   );

@@ -76,7 +76,7 @@ export function Props({ names }: PropsProps) {
                                 ? theme.colors.palette.blue.dark
                                 : theme.colors.palette.blue.lightest,
                               fontWeight: 500,
-                              fontSize: theme.sizes[0],
+                              fontSize: theme.fontSizes[0],
                               marginRight: theme.spaces.sm
                             }}
                           >
@@ -85,7 +85,7 @@ export function Props({ names }: PropsProps) {
                           </Text>
                           <Text
                             css={{
-                              fontSize: theme.sizes[0],
+                              fontSize: theme.fontSizes[0],
                               background: theme.colors.background.tint1,
                               padding: "3px",
                               borderRadius: theme.radii.sm
@@ -98,7 +98,7 @@ export function Props({ names }: PropsProps) {
                           {row.defaultValue && (
                             <Text
                               css={{
-                                fontSize: theme.sizes[0],
+                                fontSize: theme.fontSizes[0],
 
                                 padding: "3px",
                                 borderRadius: theme.radii.sm
@@ -111,7 +111,7 @@ export function Props({ names }: PropsProps) {
                           {row.defaultValue && (
                             <Text
                               css={{
-                                fontSize: theme.sizes[0],
+                                fontSize: theme.fontSizes[0],
                                 background: theme.colors.background.tint1,
                                 padding: "3px",
                                 borderRadius: theme.radii.sm
@@ -124,7 +124,7 @@ export function Props({ names }: PropsProps) {
                         <div>
                           <Text
                             css={{
-                              fontSize: theme.sizes[0]
+                              fontSize: theme.fontSizes[0]
                             }}
                             muted
                           >

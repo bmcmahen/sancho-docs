@@ -792,14 +792,6 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@blueprintjs/icons@^3.6.0":
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/@blueprintjs/icons/-/icons-3.6.0.tgz#af1d2de091d67927ed61671e6967c43620cb416d"
-  integrity sha512-sgB6rJtMjc2mS4aCS+65gK5DCr8fiWgOYi0buc0ODvGD2fwOtOFZuE4Duuj6/GZnCYj4s7E8NZgYK9Krd7G73Q==
-  dependencies:
-    classnames "^2.2"
-    tslib "^1.9.0"
-
 "@emotion/babel-plugin-jsx-pragmatic@^0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@emotion/babel-plugin-jsx-pragmatic/-/babel-plugin-jsx-pragmatic-0.1.0.tgz#fc980ee7f50f7b949ca76b4897e992739076b93d"
@@ -2726,11 +2718,6 @@ class-utils@^0.3.5:
     define-property "^0.2.5"
     isobject "^3.0.0"
     static-extend "^0.1.1"
-
-classnames@^2.2:
-  version "2.2.6"
-  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
-  integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
 
 cli-boxes@^1.0.0:
   version "1.0.0"
@@ -9600,6 +9587,11 @@ react-hot-loader@^4.6.2:
     shallowequal "^1.0.2"
     source-map "^0.7.3"
 
+react-icons@3.6.0-beta2:
+  version "3.6.0-beta2"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.6.0-beta2.tgz#62e117c12559997d28a6700a1bb9416778d132c5"
+  integrity sha512-RuxTvSyTSxA/UtesczuI+YhdWyg2q7Y+WowUttdqODNOg7HfayFkOaX2sMTM6Sxr5d5a0c0cgMAwOdNx/elNvQ==
+
 react-is@^16.8.1:
   version "16.8.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.1.tgz#a80141e246eb894824fb4f2901c0c50ef31d4cdb"
@@ -10316,7 +10308,6 @@ safe-regex@^1.1.0:
 "sancho@file:../sancho":
   version "1.0.0-beta.8"
   dependencies:
-    "@blueprintjs/icons" "^3.6.0"
     "@emotion/core" "^10.0.7"
     "@emotion/css" "^10.0.7"
     "@reach/alert" "^0.1.2"
@@ -10333,12 +10324,15 @@ safe-regex@^1.1.0:
     is-mobile "^2.0.0"
     open-color "^1.6.3"
     popper.js "^1.14.7"
+    prop-types "^15.7.2"
+    react-icons "3.6.0-beta2"
     react-popper "^1.3.3"
     react-remove-scroll "^1.0.4"
     react-spring "^8.0.18"
     react-swipeable-views "^0.13.1"
     resize-observer-polyfill "^1.5.1"
     toasted-notes "^2.1.5"
+    tslib "^1.9.3"
     use-media "^1.2.0"
 
 sax@>=0.6.0, sax@^1.2.4, sax@~1.2.1, sax@~1.2.4:

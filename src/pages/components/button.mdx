@@ -1,9 +1,9 @@
-import { Button, Divider, Container } from "sancho"
-import "./button.css"
-import { Article } from "../../components/Layout"
-import { Props } from "../../components/Props"
-import SEO from "../../components/SEO"
-import { Nav } from "../../components/Nav"
+import { Button, Divider, Container } from "sancho";
+import "./button.css";
+import { Article } from "../../components/Layout";
+import { Props } from "../../components/Props";
+import SEO from "../../components/SEO";
+import { Nav } from "../../components/Nav";
 
 <Nav title="Button" />
 
@@ -65,25 +65,30 @@ Similar to Bootstrap, you can style your buttons by setting the `intent` prop.
 
 ```jsx
 <div className="Button-example">
-  <Button size="xs" iconBefore="confirm" variant="default">
+  <Button size="xs" iconBefore={<FiArrowRight />} variant="default">
     Default variant
   </Button>
-  <Button size="sm" iconBefore="confirm" variant="default">
+  <Button size="sm" iconBefore={<FiChevronDown />} variant="default">
     Default variant
   </Button>
-  <Button intent="primary" size="md" iconBefore="confirm" variant="default">
+  <Button
+    intent="primary"
+    size="md"
+    iconBefore={<FiAperture />}
+    variant="default"
+  >
     Default variant
   </Button>
-  <Button size="lg" iconBefore="confirm" variant="default">
+  <Button size="lg" iconBefore={<FiAward />} variant="default">
     Default variant
   </Button>
-  <Button size="xl" iconBefore="confirm" variant="default">
+  <Button size="xl" iconBefore={<FiCalendar />} variant="default">
     Default variant
   </Button>
-  <Button variant="ghost" iconAfter="chevron-down">
+  <Button variant="ghost" iconAfter={<FiChevronDown />}>
     Ghost variant
   </Button>
-  <Button variant="outline" intent="primary" iconAfter="arrow-right">
+  <Button variant="outline" intent="primary" iconAfter={<FiArrowRight />}>
     Outline variant
   </Button>
 </div>

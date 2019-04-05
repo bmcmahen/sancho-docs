@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import * as React from "react";
-import { IconNames, Icon, Text, useTheme } from "sancho";
+import { Icon, Text, useTheme } from "sancho";
 
-const keys = Object.keys(IconNames).map(key => IconNames[key]);
+// const keys = Object.keys(IconNames).map(key => IconNames[key]);
 
 interface IconListProps {}
 
@@ -19,7 +19,7 @@ export function IconList({  }: IconListProps) {
         marginRight: "-0.5rem"
       }}
     >
-      {keys.map(key => {
+      {/* {keys.map(key => {
         return (
           <div
             css={{
@@ -52,7 +52,7 @@ export function IconList({  }: IconListProps) {
               <Text
                 wrap={false}
                 css={{
-                  fontSize: theme.sizes[0],
+                  fontSize: theme.fontSizes[0],
                   marginLeft: theme.spaces.md
                 }}
               >
@@ -61,7 +61,7 @@ export function IconList({  }: IconListProps) {
             </div>
           </div>
         );
-      })}
+      })} */}
     </div>
   );
 }

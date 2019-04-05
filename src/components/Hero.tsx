@@ -2,7 +2,15 @@
 import { jsx } from "@emotion/core";
 import * as React from "react";
 import { Article } from "../components/Layout";
-import { Text, Container, Button, Divider, Link, useTheme } from "sancho";
+import {
+  Text,
+  Container,
+  Button,
+  Divider,
+  Link,
+  useTheme,
+  FiArrowRight
+} from "sancho";
 import { ComponentMDXProvider } from "./ExamplePreview";
 import { Nav } from "./Nav";
 import background from "./background.svg";
@@ -66,7 +74,7 @@ export const Hero = ({ children }) => {
               intent="primary"
               component="a"
               size="lg"
-              iconAfter={"arrow-right"}
+              iconAfter={<FiArrowRight />}
               href="http://github.com/bmcmahen/sancho"
             >
               View on Github
@@ -94,7 +102,7 @@ export const Hero = ({ children }) => {
             css={{
               display: "block",
               paddingBottom: theme.spaces.md,
-              fontSize: theme.sizes[0]
+              fontSize: theme.fontSizes[0]
             }}
           >
             <div>

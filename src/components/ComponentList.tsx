@@ -9,10 +9,10 @@ import {
   Divider,
   RequestCloseContext,
   useTheme,
-  MenuItem,
-  Icon,
   IconButton,
-  Tooltip
+  Tooltip,
+  FiSun,
+  FiMoon
 } from "sancho";
 import { ToggleModeContext } from "./Layout";
 
@@ -97,9 +97,9 @@ function MenuLink({ to, children }) {
           css={{
             fontWeight: "inherit",
             color: "inherit",
-            fontSize: theme.sizes[1],
+            fontSize: theme.fontSizes[1],
             [theme.breakpoints.lg]: {
-              fontSize: theme.sizes[0]
+              fontSize: theme.fontSizes[0]
             }
           }}
         >
@@ -254,7 +254,7 @@ export function ComponentList(_props: ComponentListProps) {
             onClick={toggleMode}
             label="Toggle dark mode"
             variant="ghost"
-            icon="lightbulb"
+            icon={dark ? <FiSun /> : <FiMoon />}
           />
         </Tooltip>
       </div>
@@ -304,7 +304,7 @@ export function ComponentList(_props: ComponentListProps) {
           muted
           css={{
             display: "block",
-            fontSize: theme.sizes[0],
+            fontSize: theme.fontSizes[0],
             padding: `${theme.spaces.lg}`,
             paddingTop: 0
           }}

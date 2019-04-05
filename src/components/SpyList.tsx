@@ -62,7 +62,7 @@ export function SpyList({ items }: SpyListProps) {
                   color: active
                     ? theme.colors.text.default
                     : theme.colors.text.muted,
-                  fontSize: theme.sizes[0]
+                  fontSize: theme.fontSizes[0]
                 }}
               >
                 {item.name}

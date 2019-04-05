@@ -39,7 +39,9 @@ Sancho exports the following components to create lists:
       primary="Ben McMahen"
       secondary="Minim do minim cupidatat veniam aliquip sunt exercitation enim nisi nulla."
       contentAfter={
-        <Icon color={theme.colors.text.muted} icon="chevron-right" />
+        <Icon color={defaultTheme.colors.text.muted}>
+          <FiChevronRight />
+        </Icon>
       }
     />
     <ListItem
@@ -47,7 +49,9 @@ Sancho exports the following components to create lists:
       primary="Joe Chen"
       secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
       contentAfter={
-        <Icon color={theme.colors.text.muted} icon="chevron-right" />
+        <Icon color={defaultTheme.colors.text.muted}>
+          <FiChevronRight />
+        </Icon>
       }
     />
     <ListItem
@@ -55,7 +59,9 @@ Sancho exports the following components to create lists:
       primary="Lynn Apple"
       secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
       contentAfter={
-        <Icon color={theme.colors.text.muted} icon="chevron-right" />
+        <Icon color={defaultTheme.colors.text.muted}>
+          <FiChevronRight />
+        </Icon>
       }
     />
     <ListItem
@@ -63,7 +69,9 @@ Sancho exports the following components to create lists:
       primary="Mary Joe"
       secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
       contentAfter={
-        <Icon color={theme.colors.text.muted} icon="chevron-right" />
+        <Icon color={defaultTheme.colors.text.muted}>
+          <FiChevronRight />
+        </Icon>
       }
     />
   </List>
@@ -137,7 +145,9 @@ Sections provide sticky headers via the `title` prop.
         primary="Ben McMahen"
         secondary="Minim do minim cupidatat veniam aliquip sunt exercitation enim nisi nulla."
         contentAfter={
-          <Icon color={theme.colors.text.muted} icon="chevron-right" />
+          <Icon color={defaultTheme.colors.text.muted}>
+            <FiChevronRight />
+          </Icon>
         }
       />
       <ListItem
@@ -147,7 +157,9 @@ Sections provide sticky headers via the `title` prop.
         primary="Joe Chen"
         secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
         contentAfter={
-          <Icon color={theme.colors.text.muted} icon="chevron-right" />
+          <Icon color={defaultTheme.colors.text.muted}>
+            <FiChevronRight />
+          </Icon>
         }
       />
     </ListSection>
@@ -159,7 +171,9 @@ Sections provide sticky headers via the `title` prop.
         primary="Lynn Apple"
         secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
         contentAfter={
-          <Icon color={theme.colors.text.muted} icon="chevron-right" />
+          <Icon color={defaultTheme.colors.text.muted}>
+            <FiChevronRight />
+          </Icon>
         }
       />
       <ListItem
@@ -167,7 +181,9 @@ Sections provide sticky headers via the `title` prop.
         primary="Mary Joe"
         secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
         contentAfter={
-          <Icon color={theme.colors.text.muted} icon="chevron-right" />
+          <Icon color={defaultTheme.colors.text.muted}>
+            <FiChevronRight />
+          </Icon>
         }
       />
       <ListItem
@@ -175,7 +191,9 @@ Sections provide sticky headers via the `title` prop.
         primary="Mary Joe"
         secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
         contentAfter={
-          <Icon color={theme.colors.text.muted} icon="chevron-right" />
+          <Icon color={defaultTheme.colors.text.muted}>
+            <FiChevronRight />
+          </Icon>
         }
       />
     </ListSection>
@@ -196,7 +214,9 @@ You can disable text wrapping via the `wrap` prop.
       primary="Ben McMahen"
       secondary="Minim do minim cupidatat veniam aliquip sunt exercitation enim nisi nulla."
       contentAfter={
-        <Icon color={theme.colors.text.muted} icon="chevron-right" />
+        <Icon color={defaultTheme.colors.text.muted}>
+          <FiChevronRight />
+        </Icon>
       }
     />
   </List>
@@ -216,7 +236,11 @@ You can use an anchor by setting the `component` and `href` props. Alternatively
     primary="Ben McMahen"
     wrap={false}
     secondary="Minim do minim cupidatat veniam aliquip sunt exercitation enim nisi nulla."
-    contentAfter={<Icon color={theme.colors.text.muted} icon="chevron-right" />}
+    contentAfter={
+      <Icon color={defaultTheme.colors.text.muted}>
+        <FiChevronRight />
+      </Icon>
+    }
   />
 </List>
 ```
