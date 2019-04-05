@@ -12,9 +12,10 @@ function getKey(name: string) {
 
 interface PropsProps {
   names: string[];
+  exclude: string[];
 }
 
-export function Props({ names }: PropsProps) {
+export function Props({ names, exclude = [] }: PropsProps) {
   const theme = useTheme();
   const dark = theme.colors.mode === "dark";
   return (
@@ -41,6 +42,10 @@ export function Props({ names }: PropsProps) {
               const { props } = entry;
 
               if (!props) {
+                return null;
+              }
+
+              if (exclude.indexOf(entry.displayName) > -1) {
                 return null;
               }
 
