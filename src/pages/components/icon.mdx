@@ -5,39 +5,36 @@ import { Props } from "../../components/Props";
 import SEO from "../../components/SEO";
 import { Nav } from "../../components/Nav";
 
-<Nav title="Icon" />
-<SEO title="Icon" />
+<Nav title="Icons" />
+<SEO title="Icons" />
 
 <Container>
 <Article sidebar={[
-  { id: 'Icon', name: 'Icon' },
+  { id: 'Icons', name: 'Icons' },
   { id: 'Basic usage', name: 'Basic usage' }
 ]}>
 
-# Icon
+# Icons
 
-Sancho tries to find the balance between ease, flexibility, and bundle size when it comes to Icons. For that reason, Sancho
-exports an `Icon` wrapper component and (for convenience) a recommended set set of [Feather icons](https://feathericons.com/)
-from [React-icons](https://github.com/react-icons/react-icons). If you use a bundler like Webpack
+Sancho tries to find the balance between ease, flexibility, and bundle size when it comes to icons. For that reason, Sancho
+exports a recommended set set of [Feather icons](https://feathericons.com/) to use in your project. If you use a bundler like Webpack
 or Rollup which supports tree-shaking, only the icons that you use will be included in
 the final build.
 
 ```.jsx
-import { Icon, FiArrowRight } from 'sancho'
+import { IconArrowRight } from 'sancho'
 
-const Example = () => <Icon><IconArrowRight /></Icon>
+const Example = () => <IconArrowRight />
 ```
 
 ### Basic usage
 
-Combine `Icon` with icons as children to achieve consistent sizing and colors.
+You can make your own custom icons by wrapping them in the `IconWrapper` component.
 
 ```jsx
 <div className="Icon-example">
-  <Icon>
-    <IconAlertCircle />
-  </Icon>
-  <Icon>
+  <IconAlertCircle />
+  <IconWrapper>
     <svg
       width="20"
       height="20"
@@ -53,12 +50,9 @@ Combine `Icon` with icons as children to achieve consistent sizing and colors.
         fill="#1B1F23"
       />
     </svg>
-  </Icon>
+  </IconWrapper>
 </div>
 ```
-
-Check the [react-icon page](https://react-icons.netlify.com/#/icons/fi) for a complete list of available
-icons.
 
 </Article>
 </Container>
