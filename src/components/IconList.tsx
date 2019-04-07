@@ -1,9 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import * as React from "react";
-import { Icon, Text, useTheme } from "sancho";
-
-// const keys = Object.keys(IconNames).map(key => IconNames[key]);
+import { Text, useTheme } from "sancho";
+import * as Icons from "sancho/esm/Icons";
 
 interface IconListProps {}
 
@@ -19,7 +18,9 @@ export function IconList({  }: IconListProps) {
         marginRight: "-0.5rem"
       }}
     >
-      {/* {keys.map(key => {
+      {Object.keys(Icons).map(name => {
+        const Icon = Icons[name];
+
         return (
           <div
             css={{
@@ -33,7 +34,7 @@ export function IconList({  }: IconListProps) {
               boxSizing: "border-box",
               alignItems: "center"
             }}
-            key={key}
+            key={name}
           >
             <div
               css={{
@@ -47,7 +48,7 @@ export function IconList({  }: IconListProps) {
                 minWidth: 0
               }}
             >
-              <Icon css={{ margin: theme.spaces.sm }} icon={key} />
+              <Icon css={{ margin: theme.spaces.sm }} />
 
               <Text
                 wrap={false}
@@ -56,12 +57,12 @@ export function IconList({  }: IconListProps) {
                   marginLeft: theme.spaces.md
                 }}
               >
-                {key}
+                {name}
               </Text>
             </div>
           </div>
         );
-      })} */}
+      })}
     </div>
   );
 }

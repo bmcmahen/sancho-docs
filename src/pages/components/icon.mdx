@@ -1,5 +1,6 @@
 import { IconButton, Divider, Container } from "sancho";
 import "./icon.css";
+import { IconList } from "../../components/IconList";
 import { Article } from "../../components/Layout";
 import { Props } from "../../components/Props";
 import SEO from "../../components/SEO";
@@ -11,7 +12,8 @@ import { Nav } from "../../components/Nav";
 <Container>
 <Article sidebar={[
   { id: 'Icons', name: 'Icons' },
-  { id: 'Basic usage', name: 'Basic usage' }
+  { id: 'Basic usage', name: 'Basic usage' },
+  { id: 'Included icons', name: 'Included icons'}
 ]}>
 
 # Icons
@@ -53,6 +55,12 @@ You can make your own custom icons by wrapping them in the `IconWrapper` compone
   </IconWrapper>
 </div>
 ```
+
+### Included Icons
+
+Here is a list of Sancho's exported icons.
+
+<IconList />
 
 </Article>
 </Container>
