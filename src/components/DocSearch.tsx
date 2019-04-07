@@ -99,7 +99,7 @@ export const DocSearch: React.FunctionComponent<DocSearchProps> = props => {
             padding: "8px !important",
             display: "block"
           },
-          [theme.breakpoints.sm]: {
+          [theme.mediaQueries.sm]: {
             ".algolia-autocomplete .ds-dropdown-menu": {
               transform: "none",
               maxWidth: "400px",
@@ -112,6 +112,7 @@ export const DocSearch: React.FunctionComponent<DocSearchProps> = props => {
       <div css={{ flex: 1, position: "relative" }}>
         <InputBase
           type="search"
+          inputSize="md"
           aria-label="Search documentation"
           id="doc-search"
           // disabled={!enabled}
@@ -128,9 +129,10 @@ export const DocSearch: React.FunctionComponent<DocSearchProps> = props => {
         />
 
         <IconSearch
+          size="md"
           color={
             responsiveTheme.colors.mode === "dark"
-              ? "white"
+              ? "rgba(255,255,255,0.4)"
               : responsiveTheme.colors.palette.gray[3]
           }
           css={{

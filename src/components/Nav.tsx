@@ -37,7 +37,7 @@ export const Nav: React.FunctionComponent<NavProps> = ({ title }) => {
         ["@supports (backdrop-filter: blur(8px))"]: {
           background: dark ? "rgba(0,0,0,0,0.6)" : "rgba(255,255,255,0.6)"
         },
-        [theme.breakpoints.lg]: {
+        [theme.mediaQueries.lg]: {
           width: "calc(100% - 14rem)"
         }
       }}
@@ -47,7 +47,7 @@ export const Nav: React.FunctionComponent<NavProps> = ({ title }) => {
         <Breadcrumbs
           css={{
             display: "none",
-            [theme.breakpoints.sm]: {
+            [theme.mediaQueries.sm]: {
               display: "block"
             },
             background: "none"
@@ -65,7 +65,7 @@ export const Nav: React.FunctionComponent<NavProps> = ({ title }) => {
           css={{
             flex: 1,
             marginLeft: theme.spaces.md,
-            [theme.breakpoints.sm]: {
+            [theme.mediaQueries.sm]: {
               marginLeft: "auto",
               flex: "0 0 auto",
               width: "250px"
@@ -83,8 +83,8 @@ export const Nav: React.FunctionComponent<NavProps> = ({ title }) => {
             href="https://github.com/bmcmahen/sancho"
             icon={
               <svg
-                width="24"
-                height="24"
+                width="1.5rem"
+                height="1.5rem"
                 viewBox="0 0 1024 1024"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

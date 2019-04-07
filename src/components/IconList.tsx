@@ -27,7 +27,7 @@ export function IconList({  }: IconListProps) {
               display: "inline-flex",
               flex: "1 1 50%",
               maxWidth: "50%",
-              [theme.breakpoints.md]: {
+              [theme.mediaQueries.md]: {
                 flex: "1 1 33.33333%",
                 maxWidth: "33.33333%"
               },

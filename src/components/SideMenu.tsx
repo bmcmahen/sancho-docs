@@ -21,10 +21,10 @@ export function SideMenu({  }: SideMenuProps) {
         css={{
           // marginLeft: "-" + theme.spaces.sm,
           // marginRight: theme.spaces.sm,
-          [theme.breakpoints.md]: {
+          [theme.mediaQueries.md]: {
             marginLeft: 0
           },
-          [theme.breakpoints.lg]: {
+          [theme.mediaQueries.lg]: {
             display: "none"
           }
         }}
@@ -33,7 +33,7 @@ export function SideMenu({  }: SideMenuProps) {
         position="left"
         isOpen={isOpen}
         css={{
-          [theme.breakpoints.lg]: {
+          [theme.mediaQueries.lg]: {
             display: "none"
           }
         }}

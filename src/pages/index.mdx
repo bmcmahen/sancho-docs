@@ -4,8 +4,14 @@ import { Button, Divider, Container } from "sancho";
 import { Examples } from "../components/Examples";
 
 <SEO
-  title="Sancho - A React-based Design System"
-  keywords={[`pants`, `design system`, `components`, `react`]}
+  title="Beautiful UI-Components for React"
+  keywords={[
+    `sancho`,
+    `design system`,
+    `user interface`,
+    `components`,
+    `react`
+  ]}
 />
 
 export default Hero;
@@ -91,7 +97,7 @@ function Component() {
       css={{
         padding: theme.spaces.sm,
         color: theme.colors.text.muted,
-        [theme.breakpoints.md]: {
+        [theme.mediaQueries.md]: {
           padding: theme.spaces.md
         }
       }}

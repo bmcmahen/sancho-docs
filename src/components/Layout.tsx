@@ -73,7 +73,7 @@ const Layout = ({ children }) => {
                         position: "sticky",
                         top: "0",
                         height: "100vh",
-                        [theme.breakpoints.lg]: {
+                        [theme.mediaQueries.lg]: {
                           display: "block"
                         }
                       }}
@@ -136,10 +136,10 @@ export const Article = ({ children, sidebar }: ArticleProps) => {
           minWidth: 0,
           padding: `${theme.spaces.md} 0`,
 
-          [theme.breakpoints.md]: {
+          [theme.mediaQueries.md]: {
             padding: `${theme.spaces.md} 0.75rem`
           },
-          [theme.breakpoints.lg]: {
+          [theme.mediaQueries.lg]: {
             padding: `${theme.spaces.lg} 0.75rem`
           }
         }}
@@ -150,7 +150,7 @@ export const Article = ({ children, sidebar }: ArticleProps) => {
         <div
           css={{
             display: "none",
-            [theme.breakpoints.xl]: {
+            [theme.mediaQueries.xl]: {
               display: "block"
             }
           }}

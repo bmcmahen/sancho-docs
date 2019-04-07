@@ -38,7 +38,7 @@ export const Example: React.FunctionComponent<ExampleProps> = ({
           box-sizing: border-box;
           margin-top: ${theme.spaces.md};
           margin-bottom: ${theme.spaces.md};
-          ${theme.breakpoints.md} {
+          ${theme.mediaQueries.md} {
             flex: 0 0 50%;
           }
         `,

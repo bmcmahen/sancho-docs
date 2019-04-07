@@ -97,7 +97,7 @@ function MenuLink({ to, children }) {
             fontWeight: "inherit",
             color: "inherit",
             fontSize: theme.fontSizes[1],
-            [theme.breakpoints.lg]: {
+            [theme.mediaQueries.lg]: {
               fontSize: theme.fontSizes[0]
             }
           }}
@@ -143,7 +143,7 @@ const components = [
   { title: "Divider", path: "/components/divider/" },
   { title: "Form", path: "/components/form/" },
   { title: "IconButton", path: "/components/icon-button/" },
-  { title: "Icon", path: "/components/icon/" },
+  { title: "Icons", path: "/components/icon/" },
   { title: "Layer", path: "/components/layer/" },
   { title: "Link", path: "/components/link/" },
   { title: "List", path: "/components/list/" },

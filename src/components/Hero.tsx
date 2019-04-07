@@ -35,7 +35,7 @@ export const Hero = ({ children }) => {
               textAlign: "center",
               padding: `${theme.spaces.lg} 0`,
 
-              [theme.breakpoints.md]: {
+              [theme.mediaQueries.md]: {
                 textAlign: "left",
                 padding: `${theme.spaces.lg} 0.75rem`
               }
@@ -59,7 +59,7 @@ export const Hero = ({ children }) => {
                 margin: "0 auto",
 
                 marginBottom: theme.spaces.lg,
-                [theme.breakpoints.md]: {
+                [theme.mediaQueries.md]: {
                   marginLeft: 0
                 }
               }}

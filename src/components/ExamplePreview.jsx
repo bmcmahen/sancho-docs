@@ -43,7 +43,7 @@ export function ComponentPreview({ className, ...props }) {
           marginLeft: "-1rem",
           marginRight: "-1rem",
           marginBottom: theme.spaces.lg,
-          [theme.breakpoints.md]: {
+          [theme.mediaQueries.md]: {
             borderRadius: theme.radii.md,
             marginBottom: theme.spaces.lg
           }
@@ -150,7 +150,7 @@ const MDXComponents = {
           {
             marginBottom: theme.spaces.sm,
             marginTop: theme.spaces.lg,
-            [theme.breakpoints.md]: {
+            [theme.mediaQueries.md]: {
               marginTop: theme.spaces.lg
             }
           },
