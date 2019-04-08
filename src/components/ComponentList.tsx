@@ -217,9 +217,7 @@ export function ComponentList(_props: ComponentListProps) {
         css={{
           height: "64px",
           borderBottom: "1px solid",
-          borderColor: dark
-            ? theme.colors.border.muted
-            : theme.colors.border.default,
+          borderColor: theme.colors.border.muted,
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",

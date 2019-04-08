@@ -35,7 +35,7 @@ export const Nav: React.FunctionComponent<NavProps> = ({ title }) => {
           : theme.colors.background.default,
         backdropFilter: "blur(8px)",
         ["@supports (backdrop-filter: blur(8px))"]: {
-          background: dark ? "rgba(0,0,0,0,0.6)" : "rgba(255,255,255,0.6)"
+          background: dark ? "#212529b3" : "rgba(255,255,255,0.6)"
         },
         [theme.mediaQueries.lg]: {
           width: "calc(100% - 14rem)"
