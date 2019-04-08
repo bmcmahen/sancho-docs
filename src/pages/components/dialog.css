@@ -1,0 +1,9 @@
+.Dialog-example {
+  padding: 1.5rem;
+}
+
+.Dialog-example > div {
+  display: flex;
+  margin-top: 1.5rem;
+  justify-content: flex-end;
+}

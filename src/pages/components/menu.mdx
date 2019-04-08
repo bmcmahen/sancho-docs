@@ -31,15 +31,18 @@ A menu is used to create popover content with a list of options. To create a men
 ```jsx
 <div className="MenuList-example">
   <MenuList>
-    <MenuLabel>Document</MenuLabel>
-    <MenuItem onSelect={() => alert("Hello")}>Share</MenuItem>
-    <MenuItem component="a" href="/bacon">
-      Edit
+    <MenuItem contentBefore={<IconUser />} onSelect={() => alert("Hello 1")}>
+      Profile
     </MenuItem>
+    <MenuItem contentBefore={<IconList />} component="a" href="#">
+      Lists
+    </MenuItem>
+    <MenuItem contentBefore={<IconHome />}>Moments</MenuItem>
     <MenuDivider />
-    <MenuLabel>Account</MenuLabel>
-    <MenuItem contentAfter="⌘S">Settings</MenuItem>
-    <MenuItem>Sign out</MenuItem>
+    <MenuItem contentBefore={<IconInstagram />}>Promote Mode</MenuItem>
+    <MenuItem contentBefore={<IconPackage />} contentAfter="⌘A">
+      Analytics
+    </MenuItem>
   </MenuList>
 </div>
 ```
@@ -52,19 +55,22 @@ Combine a MenuList with a Popover to create a dropdown menu.
 <Popover
   content={
     <MenuList>
-      <MenuLabel>Document</MenuLabel>
-      <MenuItem onSelect={() => alert("Hello")}>Share</MenuItem>
-      <MenuItem component="a" href="/bacon">
-        Edit
+      <MenuItem contentBefore={<IconUser />} onSelect={() => alert("Hello 1")}>
+        Profile
       </MenuItem>
+      <MenuItem contentBefore={<IconList />} component="a" href="#">
+        Lists
+      </MenuItem>
+      <MenuItem contentBefore={<IconHome />}>Moments</MenuItem>
       <MenuDivider />
-      <MenuLabel>Account</MenuLabel>
-      <MenuItem contentAfter="⌘S">Settings</MenuItem>
-      <MenuItem>Sign out</MenuItem>
+      <MenuItem contentBefore={<IconInstagram />}>Promote Mode</MenuItem>
+      <MenuItem contentBefore={<IconPackage />} contentAfter="⌘A">
+        Analytics
+      </MenuItem>
     </MenuList>
   }
 >
-  <Button iconAfter={<IconChevronDown />}>See my menu</Button>
+  <Button iconAfter={<IconChevronDown />}>User options</Button>
 </Popover>
 ```
 

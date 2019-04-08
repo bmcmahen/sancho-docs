@@ -19,16 +19,20 @@ import { Nav } from "../../components/Nav";
 
 # IconButton
 
-A small utility component that composes [Button](/components/Button), [Icon](/components/Icon), and [VisuallyHidden](/components/visually-hidden) to provide simple, accessible buttons with icons.
+A small utility component that composes [Button](/components/Button) and [VisuallyHidden](/components/visually-hidden) to provide simple, accessible buttons with icons.
 
 Sancho exports:
 
 - **IconButton**: For creating buttons with any icons.
-- **CloseButton**: A standard IconButton with a close icon, used in the [Modal](/components/Modal) component.
+- **CloseButton**: A standard IconButton with a close icon, used in the [Dialog](/components/dialog) component.
 
 #### Basic usage
 
-The IconButton composes the `Button` component, so it accepts the same props as Button. A `label` prop is required for accessibility purposes.
+IconButton accepts [Sancho icons](/icon) or any other react components via the `icon` prop. If provided with a Sancho icon, sizing and colour is handled for you. Otherwise, you need
+to manage the colour and sizing yourself.
+
+The IconButton composes the `Button` component, so it accepts the same props as Button.
+A `label` prop is required for accessibility purposes.
 
 ```jsx
 <IconButton
@@ -47,7 +51,7 @@ The IconButton composes the `Button` component, so it accepts the same props as 
 
 #### CloseButton
 
-We expose a `CloseButton` component which composes the `IconButton` component. This is used throughout Sancho, including the `Modal` component.
+We expose a `CloseButton` component which composes the `IconButton` component. This is used throughout Sancho, including the `Dialog` component.
 
 ```jsx
 <CloseButton onClick={() => alert("Hello")} />

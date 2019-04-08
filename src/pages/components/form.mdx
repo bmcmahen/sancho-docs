@@ -1,5 +1,5 @@
 import { Button, Divider, Container } from "sancho";
-import "./button.css";
+import "./form.css";
 import { Article } from "../../components/Layout";
 import { Props } from "../../components/Props";
 import SEO from "../../components/SEO";
@@ -13,6 +13,7 @@ import { Nav } from "../../components/Nav";
   { id: 'Forms', name: 'Forms' },
   { id: 'InputGroup usage', name: 'InputGroup usage' },
   { id: 'Different sizes', name: 'Different sizes' },
+  { id: 'Hide labels', name: 'Hide labels'},
   { id: 'Custom', name: 'Custom example' },
   { id: 'Props', name: 'Props'}
 ]}>
@@ -37,15 +38,15 @@ For accessibility purposes we always recommend pairing an input element with a l
 InputGroup is typically used as a wrapper for input elements. It provides margins, labels, and other accessibility features, which makes it the preferred way to use form elements.
 
 ```jsx
-<form>
-  <InputGroup error="Required field" label="Email address *">
+<form className="Form-basics">
+  <InputGroup label="Email address *">
     <Input type="email" required placeholder="name@example.com" />
   </InputGroup>
   <InputGroup
-    label="Example textarea"
-    helpText="Please provide a brief description of yourself. This will go on your profile."
+    label="About yourself"
+    helpText="Please provide a brief description of yourself. This information will be available to the public."
   >
-    <TextArea />
+    <TextArea placeholder="I love dogs and peanut butter" />
   </InputGroup>
   <InputGroup label="Gender">
     <Select>
@@ -65,26 +66,51 @@ InputGroup is typically used as a wrapper for input elements. It provides margin
 Input elements support three different sizes: `lg`, `md` and `sm`.
 
 ```jsx
-<form>
-  <form>
-    <InputGroup label="Email address">
-      <Input inputSize="lg" type="email" placeholder="name@example.com" />
-    </InputGroup>
-    <InputGroup
-      label="Example textarea"
-      helpText="Please provide a brief description of yourself. This will go on your profile."
-    >
-      <TextArea inputSize="lg" />
-    </InputGroup>
-    <InputGroup label="Gender">
-      <Select inputSize="lg">
-        <option>Female</option>
-        <option>Male</option>
-        <option>Other</option>
-      </Select>
-    </InputGroup>
-  </form>
+<form className="Form-basics">
+  <InputGroup label="Email address">
+    <Input inputSize="lg" type="email" placeholder="name@example.com" />
+  </InputGroup>
+  <InputGroup
+    label="About yourself"
+    helpText="Please provide a brief description of yourself. This information will be available to the public."
+  >
+    <TextArea inputSize="lg" />
+  </InputGroup>
+  <InputGroup label="Gender">
+    <Select inputSize="lg">
+      <option>Female</option>
+      <option>Male</option>
+      <option>Other</option>
+    </Select>
+  </InputGroup>
 </form>
+```
+
+#### Hide labels
+
+You can hide labels while maintaining accessible form elements using the `hideLabel` prop.
+
+```jsx
+<div className="Form-label">
+  <Layer>
+    <Toolbar className="Toolbar">
+      <Text gutter={false} variant="h4">
+        Sign in to Watershed
+      </Text>
+    </Toolbar>
+    <form>
+      <InputGroup hideLabel label="Email address">
+        <Input inputSize="lg" type="email" placeholder="Email" />
+      </InputGroup>
+      <InputGroup hideLabel label="Password">
+        <Input inputSize="lg" type="password" placeholder="Password" />
+      </InputGroup>
+      <Button size="lg" block intent="primary">
+        Sign in
+      </Button>
+    </form>
+  </Layer>
+</div>
 ```
 
 #### Custom

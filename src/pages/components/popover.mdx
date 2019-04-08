@@ -29,11 +29,11 @@ The content of the popover is supplied to the `content` prop. The child is the e
 <Popover
   content={
     <div style={{ padding: "2rem" }}>
-      <Button>I should focus</Button>
+      <Button>Content will be focused</Button>
     </div>
   }
 >
-  <Button>Hello world!</Button>
+  <Button>Popover trigger</Button>
 </Popover>
 ```
 
@@ -45,18 +45,20 @@ Combine a Popover with a [MenuList](/components/menu) to create a dropdown menu.
 <Popover
   content={
     <MenuList>
-      <MenuItem onSelect={() => alert("Hello 1")}>
-        I will trigger an alert
+      <MenuItem contentBefore={<IconUser />} onSelect={() => alert("Hello 1")}>
+        Profile
       </MenuItem>
-      <MenuItem component="a" href="/bacon">
-        I'm a link
+      <MenuItem contentBefore={<IconList />} component="a" href="#">
+        Lists
       </MenuItem>
+      <MenuItem contentBefore={<IconHome />}>Moments</MenuItem>
       <MenuDivider />
-      <MenuItem>Item three</MenuItem>
+      <MenuItem contentBefore={<IconInstagram />}>Promote Mode</MenuItem>
+      <MenuItem contentBefore={<IconPackage />}>Analytics</MenuItem>
     </MenuList>
   }
 >
-  <Button>I should trigger popover</Button>
+  <Button iconAfter={<IconChevronDown />}>User options</Button>
 </Popover>
 ```
 
@@ -68,12 +70,16 @@ Because dropdown menus often aren't great on mobile devices, this component will
 <ResponsivePopover
   content={
     <MenuList>
-      <MenuItem onSelect={() => alert("Hello 1")}>Drink coffee</MenuItem>
-      <MenuItem>Eat pancakes</MenuItem>
+      <MenuItem contentBefore={<IconUser />} onSelect={() => alert("Hello 1")}>
+        Profile
+      </MenuItem>
+      <MenuItem contentBefore={<IconList />} component="a" href="#">
+        Lists
+      </MenuItem>
+      <MenuItem contentBefore={<IconHome />}>Moments</MenuItem>
       <MenuDivider />
-      <MenuItem>Make pizza</MenuItem>
-      <MenuItem>Dance my heart out</MenuItem>
-      <MenuItem>Anything you ask</MenuItem>
+      <MenuItem contentBefore={<IconInstagram />}>Promote Mode</MenuItem>
+      <MenuItem contentBefore={<IconPackage />}>Analytics</MenuItem>
     </MenuList>
   }
 >

@@ -1,30 +1,30 @@
-import { Button, Divider, Container } from "sancho"
-import "./modal.css"
-import { Article } from "../../components/Layout"
-import { Props } from "../../components/Props"
-import SEO from "../../components/SEO"
-import { Nav } from "../../components/Nav"
+import { Button, Divider, Container } from "sancho";
+import "./Dialog.css";
+import { Article } from "../../components/Layout";
+import { Props } from "../../components/Props";
+import SEO from "../../components/SEO";
+import { Nav } from "../../components/Nav";
 
-<Nav title="Modal" />
-<SEO title="Modal" />
+<Nav title="Dialog" />
+<SEO title="Dialog" />
 
 <Container>
 <Article sidebar={[
-  { id: 'Modal', name: 'Modal' },
+  { id: 'Dialog', name: 'Dialog' },
   { id: 'Basic usage', name: 'Basic usage' },
   { id: 'Fullscreen mobile example', name: 'Fullscreen mobile'},
   { id: 'Without a title', name: 'Without a title' },
   { id: 'Props', name: 'Props'}
 ]}>
 
-# Modal
+# Dialog
 
-A modal (or dialog) is useful for displaying infomation that commands the user's attention.
+A dialog is useful for displaying infomation that commands the user's attention.
 
-Sancho exports these components to create Modals:
+Sancho exports these components to create dialogs:
 
-- **Modal**: Your basic modal dialog which includes a ModalHeader if provided a title.
-- **ModalHeader**: A standard header of a modal, which includes a title and a close button.
+- **Dialog**: Your basic dialog which includes a DialogHeader if provided a title.
+- **DialogHeader**: A standard header of a dialog, which includes a title and a close button.
 
 #### Basic usage
 
@@ -32,16 +32,19 @@ Sancho exports these components to create Modals:
 <Component initialState={{ isOpen: false }}>
   {({ state, setState }) => (
     <React.Fragment>
-      <Button onClick={() => setState({ isOpen: true })}>Show modal</Button>
-      <Modal
+      <Button onClick={() => setState({ isOpen: true })}>View dialog</Button>
+      <Dialog
         isOpen={state.isOpen}
         onRequestClose={() => setState({ isOpen: false })}
-        title="Hello world!"
+        title="Dialog title"
       >
-        <div className="Modal-example">
-          <Text>Hello world</Text>
+        <div className="Dialog-example">
+          <Text>Dialog content</Text>
+          <div>
+            <Button intent="primary">Save</Button>
+          </div>
         </div>
-      </Modal>
+      </Dialog>
     </React.Fragment>
   )}
 </Component>
@@ -55,17 +58,17 @@ This option enables fullscreen on mobile devices, which is typically a better us
 <Component initialState={{ isOpen: false }}>
   {({ state, setState }) => (
     <React.Fragment>
-      <Button onClick={() => setState({ isOpen: true })}>Show modal</Button>
-      <Modal
+      <Button onClick={() => setState({ isOpen: true })}>Show Dialog</Button>
+      <Dialog
         isOpen={state.isOpen}
         mobileFullscreen
         onRequestClose={() => setState({ isOpen: false })}
         title="Hello world!"
       >
-        <div className="Modal-example">
+        <div className="Dialog-example">
           <Text>Hello world</Text>
         </div>
-      </Modal>
+      </Dialog>
     </React.Fragment>
   )}
 </Component>
@@ -79,22 +82,22 @@ When a title isn't provided, a header isn't added.
 <Component initialState={{ isOpen: false }}>
   {({ state, setState }) => (
     <React.Fragment>
-      <Button onClick={() => setState({ isOpen: true })}>Show modal</Button>
-      <Modal
+      <Button onClick={() => setState({ isOpen: true })}>Show Dialog</Button>
+      <Dialog
         isOpen={state.isOpen}
         onRequestClose={() => setState({ isOpen: false })}
       >
-        <div className="Modal-example">
+        <div className="Dialog-example">
           <Text>Hello world</Text>
           <Button onClick={() => setState({ isOpen: false })}>Cancel</Button>
         </div>
-      </Modal>
+      </Dialog>
     </React.Fragment>
   )}
 </Component>
 ```
 
-<Props names={["Modal"]} />
+<Props names={["Dialog"]} />
 
 </Article>
 </Container>
