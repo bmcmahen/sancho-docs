@@ -83,8 +83,8 @@ export const Nav: React.FunctionComponent<NavProps> = ({ title }) => {
             href="https://github.com/bmcmahen/sancho"
             icon={
               <svg
-                width="1.5rem"
-                height="1.5rem"
+                width="22px"
+                height="22px"
                 viewBox="0 0 1024 1024"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
