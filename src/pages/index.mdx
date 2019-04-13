@@ -59,9 +59,10 @@ Most Sancho components provide BEM-style class names. This allows you to style n
 ```.jsx
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
-import { Alert, theme } from "sancho";
+import { Alert, useTheme } from "sancho";
 
 function MyCustomAlert() {
+  const theme = useTheme()
   return (
     <Alert
       title="Hello world!"
