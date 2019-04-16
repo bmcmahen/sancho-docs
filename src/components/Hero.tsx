@@ -41,6 +41,7 @@ export const Hero = ({ children }) => {
             }}
           >
             <img
+              aria-hidden
               css={{
                 width: "150px",
                 height: "175.39px",
