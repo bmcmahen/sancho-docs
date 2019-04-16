@@ -36,11 +36,18 @@ export const Hero = ({ children }) => {
               padding: `${theme.spaces.lg} 0`,
 
               [theme.mediaQueries.md]: {
-                textAlign: "left",
                 padding: `${theme.spaces.lg} 0.75rem`
               }
             }}
           >
+            <img
+              css={{
+                width: "150px",
+                height: "175.39px",
+                marginBottom: theme.spaces.sm
+              }}
+              src={require("./sancho-logo.png")}
+            />
             <Text
               css={{
                 color:
@@ -57,11 +64,8 @@ export const Hero = ({ children }) => {
               css={{
                 maxWidth: "38rem",
                 margin: "0 auto",
-
-                marginBottom: theme.spaces.lg,
-                [theme.mediaQueries.md]: {
-                  marginLeft: 0
-                }
+                marginTop: theme.spaces.sm,
+                marginBottom: theme.spaces.lg
               }}
               variant="lead"
             >
@@ -106,26 +110,14 @@ export const Hero = ({ children }) => {
             }}
           >
             <div>
-              Icons made by{" "}
-              <Link
-                href="https://www.flaticon.com/authors/smashicons"
-                title="Smashicons"
-              >
-                Smashicons
+              The Sancho donkey icon is originally based upon work by{" "}
+              <Link href="https://www.how-to-draw-funny-cartoons.com/">
+                Martin Berube
               </Link>{" "}
-              from{" "}
-              <Link href="https://www.flaticon.com/" title="Flaticon">
-                www.flaticon.com
-              </Link>{" "}
-              is licensed by{" "}
-              <Link
-                href="http://creativecommons.org/licenses/by/3.0/"
-                title="Creative Commons BY 3.0"
-                target="_blank"
-              >
-                CC 3.0 BY
+              and the{" "}
+              <Link href="https://www.freepik.com/free-photos-vectors/summer">
+                summer vector created by alicia_mb - www.freepik.com
               </Link>
-              .
             </div>
           </Text>
         </Article>
