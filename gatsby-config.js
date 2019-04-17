@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Sancho-UI`,
+    title: `Sancho UI`,
     description: `Sancho is a responsive and accessible design system built with React, Typescript and Emotion.`,
     author: `@benmcmahen`
   },
