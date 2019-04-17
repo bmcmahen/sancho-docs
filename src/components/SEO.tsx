@@ -1,7 +1,7 @@
 import * as React from "react";
 import Helmet from "react-helmet";
 import { StaticQuery, graphql } from "gatsby";
-import logo from "./sancho-logo.png";
+import logo from "./sancho-new.png";
 
 const logohref = "https://sancho-ui.com" + logo;
 

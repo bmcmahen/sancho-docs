@@ -47,7 +47,7 @@ export const Hero = ({ children }) => {
                 height: "175.39px",
                 marginBottom: theme.spaces.sm
               }}
-              src={require("./sancho-logo.png")}
+              src={require("./sancho-new.svg")}
             />
             <Text
               css={{
