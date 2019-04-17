@@ -1,13 +1,14 @@
-import * as React from "react"
-import Helmet from "react-helmet"
-import { StaticQuery, graphql } from "gatsby"
+import * as React from "react";
+import Helmet from "react-helmet";
+import { StaticQuery, graphql } from "gatsby";
+import logo from "./sancho-logo.png";
 
 interface Props {
-  description?: string
-  lang?: string
-  meta?: any
-  keywords?: any
-  title?: string
+  description?: string;
+  lang?: string;
+  meta?: any;
+  keywords?: any;
+  title?: string;
 }
 
 export function SEO({
@@ -15,72 +16,80 @@ export function SEO({
   lang = "en",
   meta = [],
   keywords = [],
-  title,
+  title
 }: Props) {
   return (
     <StaticQuery
       query={detailsQuery}
       render={data => {
         const metaDescription =
-          description || data.site.siteMetadata.description
+          description || data.site.siteMetadata.description;
         return (
           <Helmet
             htmlAttributes={{
-              lang,
+              lang
             }}
             title={title}
             titleTemplate={`%s | ${data.site.siteMetadata.title}`}
             meta={[
               {
                 name: `description`,
-                content: metaDescription,
+                content: metaDescription
               },
               {
                 property: `og:title`,
-                content: title,
+                content: title
+              },
+              {
+                property: `og:image`,
+                content: logo
               },
               {
                 property: `og:description`,
-                content: metaDescription,
+                content: metaDescription
               },
               {
                 property: `og:type`,
-                content: `website`,
+                content: `website`
               },
               {
                 name: `twitter:card`,
-                content: `summary`,
+                content: `summary`
               },
               {
                 name: `twitter:creator`,
-                content: data.site.siteMetadata.author,
+                content: data.site.siteMetadata.author
               },
               {
                 name: `twitter:title`,
-                content: title,
+                content: title
               },
               {
                 name: `twitter:description`,
-                content: metaDescription,
+                content: metaDescription
               },
+              {
+                name: `twitter:image`,
+                content: logo
+              }
             ]
               .concat(
                 keywords.length > 0
                   ? {
                       name: `keywords`,
-                      content: keywords.join(`, `),
+                      content: keywords.join(`, `)
                     }
                   : []
               )
               .concat(meta)}
           />
-        )
+        );
       }}
     />
-  )
+  );
 }
 
-export default SEO
+export default SEO;
 
 const detailsQuery = graphql`
   query DefaultSEOQuery {
@@ -92,4 +101,4 @@ const detailsQuery = graphql`
       }
     }
   }
-`
+`;

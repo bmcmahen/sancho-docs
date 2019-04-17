@@ -41,7 +41,7 @@ module.exports = {
         include_favicon: true,
         theme_color: `#228be6`,
         display: `minimal-ui`,
-        icon: `src/images/donkey.svg` // This path is relative to the root of the site.
+        icon: `src/images/sancho-logo.png` // This path is relative to the root of the site.
       }
     },
 
