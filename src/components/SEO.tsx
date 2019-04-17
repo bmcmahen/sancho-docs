@@ -3,6 +3,8 @@ import Helmet from "react-helmet";
 import { StaticQuery, graphql } from "gatsby";
 import logo from "./sancho-logo.png";
 
+const logohref = "https://sancho-ui.com" + logo;
+
 interface Props {
   description?: string;
   lang?: string;
@@ -42,7 +44,7 @@ export function SEO({
               },
               {
                 property: `og:image`,
-                content: logo
+                content: logohref
               },
               {
                 property: `og:description`,
@@ -70,7 +72,7 @@ export function SEO({
               },
               {
                 name: `twitter:image`,
-                content: logo
+                content: logohref
               }
             ]
               .concat(
