@@ -51,6 +51,10 @@ export function SEO({
                 content: metaDescription
               },
               {
+                property: `og:url`,
+                content: `https://sancho-ui.com`
+              },
+              {
                 property: `og:type`,
                 content: `website`
               },
