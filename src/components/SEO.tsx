@@ -40,7 +40,7 @@ export function SEO({
               },
               {
                 property: `og:title`,
-                content: title
+                content: `${data.site.siteMetadata.title} - ${title}`
               },
               {
                 property: `og:image`,
@@ -68,7 +68,7 @@ export function SEO({
               },
               {
                 name: `twitter:title`,
-                content: title
+                content: `${data.site.siteMetadata.title} - ${title}`
               },
               {
                 name: `twitter:description`,
