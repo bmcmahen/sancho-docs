@@ -78,6 +78,7 @@ export const Nav: React.FunctionComponent<NavProps> = ({ title }) => {
           <IconButton
             variant="ghost"
             component="a"
+            size="lg"
             css={{ marginLeft: theme.spaces.md }}
             color={theme.colors.text.muted}
             href="https://github.com/bmcmahen/sancho"

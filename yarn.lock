@@ -9703,6 +9703,11 @@ react-swipeable-views@^0.13.1:
     react-swipeable-views-utils "^0.13.1"
     warning "^4.0.1"
 
+react-with-gesture@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/react-with-gesture/-/react-with-gesture-4.0.8.tgz#ce6db9e667ef13120797e641f1a00f934aed6c36"
+  integrity sha512-VIJ1K2/UT67m+OnqYIgJUdYEqVmJDPfbZBoqUMYKts6WA0EbEC7YRMBEzxgy/jvVdafg9L2GSuFtUokpskKHag==
+
 react@^16.8.4:
   version "16.8.4"
   resolved "https://registry.yarnpkg.com/react/-/react-16.8.4.tgz#fdf7bd9ae53f03a9c4cd1a371432c206be1c4768"
@@ -10310,10 +10315,8 @@ safe-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sancho@^1.1.1:
+"sancho@file:../sancho":
   version "1.1.1"
-  resolved "https://registry.yarnpkg.com/sancho/-/sancho-1.1.1.tgz#7acde302131d0c485788ee6017f57e4068e1772d"
-  integrity sha512-9/INiJUlqToHTk/TYlzCrVwO24bBX5eHrPxatMVxYJTJ7n80DjIHiiLp1ylGH753F/wVDlWOm4HSA9v7kP4Bnw==
   dependencies:
     "@reach/alert" "^0.1.2"
     "@reach/skip-nav" "^0.1.2"
@@ -10335,6 +10338,7 @@ sancho@^1.1.1:
     react-remove-scroll "^1.0.4"
     react-spring "^8.0.18"
     react-swipeable-views "^0.13.1"
+    react-with-gesture "^4.0.8"
     resize-observer-polyfill "^1.5.1"
     scroll-into-view-if-needed "^2.2.20"
     toasted-notes "^2.1.5"

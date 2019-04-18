@@ -1,5 +1,5 @@
 import { Collapse, Button, Divider, Container } from "sancho";
-import "./button.css";
+import "./collapse.css";
 import { Article } from "../../components/Layout";
 import { Props } from "../../components/Props";
 import SEO from "../../components/SEO";
@@ -27,31 +27,61 @@ You can build collapsing content using two exports:
 
 #### Basic usage
 
-If you control collapse using your own state, you are responsible for providing the `aria` attributes
-yourself like in the example below.
+If you control collapse using your own state, you are responsible for providing the necessary `aria` attributes.
+
+```.jsx
+const [show, setShow] = useState(false)
+
+<Button
+  onClick={() => setShow(true)}
+  aria-expanded={show}
+  aria-controls='collapse'>
+    Expand
+</Button>
+<Collapse id='collapse' show={show}>
+  Collapsed content
+</Collapse>
+```
+
+Here's a more advanced example:
 
 ```jsx
 <Component initialState={{ show: false }}>
   {({ state, setState }) => {
     return (
-      <React.Fragment>
-        <Button
-          aria-controls="collapse"
-          aria-expanded={state.show ? true : false}
-          onClick={() => setState({ show: !state.show })}
-        >
-          Toggle
-        </Button>
-        <Collapse id="collapse" show={state.show}>
-          <Text variant="paragraph">
-            Sint reprehenderit non laboris est in laboris anim mollit anim est
-            mollit. Nostrud enim culpa pariatur deserunt sit irure exercitation
-            aute Lorem id id. Aute eiusmod cillum aute qui laboris consectetur
-            minim adipisicing magna fugiat non duis ut in. Nisi velit in culpa
-            deserunt.
-          </Text>
-        </Collapse>
-      </React.Fragment>
+      <Layer className="Collapse__example">
+        <Embed width={1664} height={2048}>
+          <img
+            src={
+              "https://m.media-amazon.com/images/M/MV5BMTA2OTE1Njg4NjVeQTJeQWpwZ15BbWU3MDAyNjU4MDM@._V1_.jpg"
+            }
+            alt="JCVD staring into your soul"
+          />
+        </Embed>
+        <div className="Collapse__content">
+          <Text variant="h4">JCVD</Text>
+          <Collapse id="collapse" show={state.show}>
+            <Text className="Collapse__text" variant="paragraph">
+              Just look into my eyes
+              <br />
+              and you will see
+              <br />
+              all there is to know
+              <br />
+              about me.
+            </Text>
+          </Collapse>
+          <Button
+            aria-controls="collapse"
+            variant="ghost"
+            intent="primary"
+            iconAfter={state.show ? <IconChevronUp /> : <IconChevronDown />}
+            onClick={() => setState({ show: !state.show })}
+          >
+            {state.show ? "Learn less" : "Learn more"}
+          </Button>
+        </div>
+      </Layer>
     );
   }}
 </Component>
@@ -73,13 +103,7 @@ const Example = () => {
         Click to {state.show ? 'hide' : 'reveal'}!
       </Button>
       <Collapse {...state.collapseProps}>
-         <Text variant="paragraph">
-            Sint reprehenderit non laboris est in laboris anim mollit anim est
-            mollit. Nostrud enim culpa pariatur deserunt sit irure exercitation
-            aute Lorem id id. Aute eiusmod cillum aute qui laboris consectetur
-            minim adipisicing magna fugiat non duis ut in. Nisi velit in culpa
-            deserunt.
-          </Text>
+        Collapse content
       </Collapse>
     </div>
   )

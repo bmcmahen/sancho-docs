@@ -1,0 +1,13 @@
+.Collapse__example {
+  max-width: 250px;
+  overflow: hidden;
+}
+
+.Collapse__content {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.Collapse__text {
+  padding-bottom: 1rem;
+}

@@ -16,7 +16,6 @@ export function SideMenu({  }: SideMenuProps) {
         icon={<IconMenu />}
         variant="ghost"
         color={theme.colors.text.muted}
-        size="lg"
         onClick={() => setIsOpen(true)}
         css={{
           // marginLeft: "-" + theme.spaces.sm,
