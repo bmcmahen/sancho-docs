@@ -10,85 +10,98 @@ import {
   useTheme,
   DarkMode,
   Theme,
-  LightMode
+  LightMode,
+  Sheet
 } from "sancho";
 import { ComponentList } from "./ComponentList";
 import { SpyList } from "./SpyList";
 
 export const ToggleModeContext = React.createContext(null);
 
+export const SetNavOpenContext = React.createContext(null);
+
 const Layout = ({ children }) => {
   const [dark, setDark] = React.useState(false);
+  const [isNavOpen, setIsNavOpen] = React.useState(false);
+
   const Mode = dark ? DarkMode : LightMode;
 
   function toggleMode() {
     setDark(!dark);
   }
 
-  return (
-    <StaticQuery
-      query={graphql`
-        query SiteTitleQuery {
-          site {
-            siteMetadata {
-              title
-            }
-          }
-        }
-      `}
-      render={data => (
-        <ThemeProvider>
-          <ToggleModeContext.Provider value={toggleMode}>
-            <Mode>
-              {(theme: Theme) => (
-                <React.Fragment>
-                  <Global
-                    styles={{
-                      html: {
-                        fontFamily: "sans-serif",
-                        textSizeAdjust: "100%",
-                        backgroundColor: theme.colors.background.default
-                      },
-                      body: {
-                        margin: 0,
-                        WebkitFontSmoothing: "antialiased"
-                      }
-                    }}
-                  />
-                  <SkipNavLink />
+  function closeNav() {
+    setIsNavOpen(false);
+  }
 
-                  <div
-                    className={theme.colors.mode === "dark" ? "dark" : "light"}
-                    css={[
-                      {
-                        justifyContent: "space-between",
-                        padding: 0,
-                        display: "flex"
-                      }
-                    ]}
-                  >
-                    <div
-                      css={{
-                        display: "none",
-                        position: "sticky",
-                        top: "0",
-                        height: "100vh",
-                        [theme.mediaQueries.lg]: {
-                          display: "block"
-                        }
-                      }}
-                    >
-                      <ComponentList />
-                    </div>
-                    <Main>{children}</Main>
-                  </div>
-                </React.Fragment>
-              )}
-            </Mode>
-          </ToggleModeContext.Provider>
-        </ThemeProvider>
-      )}
-    />
+  function openNav() {
+    setIsNavOpen(true);
+  }
+
+  return (
+    <ThemeProvider>
+      <ToggleModeContext.Provider value={toggleMode}>
+        <Mode>
+          {(theme: Theme) => (
+            <React.Fragment>
+              <Global
+                styles={{
+                  html: {
+                    fontFamily: "sans-serif",
+                    textSizeAdjust: "100%",
+                    backgroundColor: theme.colors.background.default
+                  },
+                  body: {
+                    margin: 0,
+                    WebkitFontSmoothing: "antialiased"
+                  }
+                }}
+              />
+              <SkipNavLink />
+              <Sheet
+                position="left"
+                isOpen={isNavOpen}
+                onRequestClose={closeNav}
+              >
+                <ComponentList />
+              </Sheet>
+              <div
+                className={theme.colors.mode === "dark" ? "dark" : "light"}
+                css={[
+                  {
+                    justifyContent: "space-between",
+                    padding: 0,
+                    display: "flex"
+                  }
+                ]}
+              >
+                <div
+                  css={{
+                    display: "none",
+                    position: "sticky",
+                    top: "0",
+                    height: "100vh",
+                    [theme.mediaQueries.lg]: {
+                      display: "block"
+                    }
+                  }}
+                >
+                  <ComponentList />
+                </div>
+                <SetNavOpenContext.Provider
+                  value={{
+                    closeNav,
+                    openNav
+                  }}
+                >
+                  <Main>{children}</Main>
+                </SetNavOpenContext.Provider>
+              </div>
+            </React.Fragment>
+          )}
+        </Mode>
+      </ToggleModeContext.Provider>
+    </ThemeProvider>
   );
 };
 

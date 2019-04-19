@@ -15,7 +15,6 @@ import {
   Collapse,
   useCollapse,
   Button,
-  IconCode,
   IconChevronDown,
   IconChevronUp
 } from "sancho";
