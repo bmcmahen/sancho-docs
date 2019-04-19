@@ -15,6 +15,8 @@ import {
 } from "sancho";
 import { ToggleModeContext } from "./Layout";
 
+function noOp() {}
+
 interface ComponentListProps {}
 
 function MenuLink({ to, children }) {
@@ -32,7 +34,9 @@ function MenuLink({ to, children }) {
       }}
     >
       <Link
+        onTouchStart={noOp}
         data-trigger-close
+        tabIndex={0}
         onClick={() => {
           closeParent();
         }}
@@ -68,16 +72,17 @@ function MenuLink({ to, children }) {
         css={{
           display: "block",
           padding,
+          transition: "background-color 0.1s ease",
           textDecoration: "none",
           color: theme.colors.text.muted,
           WebkitTapHighlightColor: "transparent",
           ":active": {
-            background: dark
+            backgroundColor: dark
               ? theme.colors.background.tint1
               : theme.colors.background.tint2
           },
           ":focus": {
-            background: dark
+            backgroundColor: dark
               ? theme.colors.background.tint1
               : theme.colors.background.tint2
           },
