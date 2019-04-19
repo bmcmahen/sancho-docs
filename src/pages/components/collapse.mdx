@@ -13,7 +13,7 @@ import { Nav } from "../../components/Nav";
   { id: 'Collapse', name: 'Collapse' },
   { id: 'Basic usage', name: 'Basic usage' },
   { id: 'Using hooks', name: 'Using hooks'},
-  { id: 'Props', name: 'Props'}
+  { id: 'Props', name: 'API'}
 ]}>
 
 # Collapse
@@ -50,25 +50,21 @@ Here's a more advanced example:
   {({ state, setState }) => {
     return (
       <Layer className="Collapse__example">
-        <Embed width={1664} height={2048}>
+        <Embed width={707} height={448}>
           <img
             src={
-              "https://m.media-amazon.com/images/M/MV5BMTA2OTE1Njg4NjVeQTJeQWpwZ15BbWU3MDAyNjU4MDM@._V1_.jpg"
+              "https://images.unsplash.com/photo-1508280756091-9bdd7ef1f463?ixlib=rb-1.2.1&auto=format&fit=crop&w=1990&q=80"
             }
-            alt="JCVD staring into your soul"
+            alt="A funny dog"
           />
         </Embed>
         <div className="Collapse__content">
-          <Text variant="h4">JCVD</Text>
+          <Text variant="h4">Roger</Text>
           <Collapse id="collapse" show={state.show}>
             <Text className="Collapse__text" variant="paragraph">
-              Just look into my eyes
-              <br />
-              and you will see
-              <br />
-              all there is to know
-              <br />
-              about me.
+              I'm your best friend. <br />
+              I love food. <br />
+              And I love walks.
             </Text>
           </Collapse>
           <Button

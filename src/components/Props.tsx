@@ -33,7 +33,7 @@ export function Props({ names, exclude = [] }: PropsProps) {
           css={{ marginBottom: theme.spaces.md, marginTop: theme.spaces.lg }}
           variant="h2"
         >
-          Props
+          API
         </Text>
         {names.map(name => {
           const entries = table[getKey(name)];

@@ -1,9 +1,9 @@
-import { Button, Divider, Container } from "sancho"
-import "./button.css"
-import { Article } from "../../components/Layout"
-import { Props } from "../../components/Props"
-import SEO from "../../components/SEO"
-import { Nav } from "../../components/Nav"
+import { Button, Divider, Container } from "sancho";
+import "./button.css";
+import { Article } from "../../components/Layout";
+import { Props } from "../../components/Props";
+import SEO from "../../components/SEO";
+import { Nav } from "../../components/Nav";
 
 <Nav title="Text" />
 <SEO title="Text" />
@@ -12,7 +12,7 @@ import { Nav } from "../../components/Nav"
 <Article sidebar={[
   { id: 'Text', name: 'Text' },
   { id: 'Basic usage', name: 'Basic usage' },
-  { id: 'Props', name: 'Props'}
+  { id: 'Props', name: 'API'}
 ]}>
 
 # Text
@@ -23,7 +23,7 @@ The basic text primitive for rendering things like paragraphs and headings.
 
 Sancho comes with a number of basic text variants. You should try to stick with these as often as possible.
 
-```jsx
+```jsx expanded
 <div>
   <Text>Basic text</Text>
   <Text variant="uppercase">Uppercase variant</Text>

@@ -32,7 +32,7 @@ export function SpyList({ items }: SpyListProps) {
       {items.map((item, i) => {
         // const active = inView[inView.length - 1] === item.id
         const active = false; // disable scroll spy for now
-        const props = item.name === "Props" || item.name === "Props table";
+        const props = item.name === "API" || item.name === "Props";
         return (
           <li
             css={{

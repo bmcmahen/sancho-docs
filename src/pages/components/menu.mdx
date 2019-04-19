@@ -14,7 +14,7 @@ import { Nav } from "../../components/Nav";
   { id: 'Basic usage', name: 'Basic usage' },
   { id: 'Dropdown menu', name: 'Dropdown menu'},
   { id: 'MenuItem custom component', name: 'Custom component'},
-  { id: 'Props', name: 'Props'}
+  { id: 'Props', name: 'API'}
 ]}>
 
 # Menu
@@ -28,7 +28,7 @@ A menu is used to create popover content with a list of options. To create a men
 
 #### Basic usage
 
-```jsx
+```jsx expanded
 <div className="MenuList-example">
   <MenuList>
     <MenuItem contentBefore={<IconUser />} onSelect={() => alert("Hello 1")}>

@@ -1,8 +1,8 @@
-import { Container } from "sancho"
-import { Article } from "../../components/Layout"
-import { Props } from "../../components/Props"
-import SEO from "../../components/SEO"
-import { Nav } from "../../components/Nav"
+import { Container } from "sancho";
+import { Article } from "../../components/Layout";
+import { Props } from "../../components/Props";
+import SEO from "../../components/SEO";
+import { Nav } from "../../components/Nav";
 
 <Nav title="Table" />
 <SEO title="Table" />
@@ -13,7 +13,7 @@ import { Nav } from "../../components/Nav"
   { id: 'Basic usage', name: 'Basic usage' },
   { id: 'Fixed width', name: 'Fixed width'},
   { id: 'Expanding Rows', name: 'Expanding Rows'},
-  { id: 'Props', name: 'Props'}
+  { id: 'Props', name: 'API'}
 ]}>
 
 # Table
@@ -31,7 +31,7 @@ You can create tables using a combination of:
 
 Setting a `minWidth` will result in a responsive table that scrolls once smaller than that width.
 
-```jsx
+```jsx expanded
 <Table minWidth="600px">
   <TableHead>
     <TableRow>

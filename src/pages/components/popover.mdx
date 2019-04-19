@@ -14,7 +14,7 @@ import { Nav } from "../../components/Nav";
   { id: 'Basic usage', name: 'Basic usage' },
   { id: 'Dropdown menu', name: 'Dropdown menu' },
   { id: 'ResponsivePopover', name: 'Responsive popover'},
-  { id: 'Props', name: 'Props'}
+  { id: 'Props', name: 'API'}
 ]}>
 
 # Popover
@@ -25,7 +25,7 @@ A popover typically contains supplemental content to the item with which it's at
 
 The content of the popover is supplied to the `content` prop. The child is the element that will trigger it.
 
-```jsx
+```jsx expanded
 <Popover
   content={
     <div style={{ padding: "2rem" }}>
@@ -33,7 +33,7 @@ The content of the popover is supplied to the `content` prop. The child is the e
     </div>
   }
 >
-  <Button>Popover trigger</Button>
+  <Button iconAfter={<IconChevronDown />}>Popover trigger</Button>
 </Popover>
 ```
 

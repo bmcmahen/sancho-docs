@@ -5,9 +5,20 @@ import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import { MDXProvider } from "@mdx-js/tag";
 import * as components from "sancho";
 import "./ExamplePreview.css";
+import useMedia from "use-media";
 import "./ExamplePreviewDark.css";
 import Component from "react-component-component";
-import { Text, Link, useTheme } from "sancho";
+import {
+  Text,
+  Link,
+  useTheme,
+  Collapse,
+  useCollapse,
+  Button,
+  IconCode,
+  IconChevronDown,
+  IconChevronUp
+} from "sancho";
 import faker from "faker";
 
 export const anchorPadding = css`
@@ -28,6 +39,10 @@ export function ComponentPreview({ className, ...props }) {
   const theme = useTheme();
   const dark = theme.colors.mode === "dark";
   const isJSX = props.children.props.props.className === "language-jsx";
+  const state = useCollapse(!isJSX);
+  const large = useMedia({ minWidth: theme.breakpoints.lg });
+
+  const defaultExpanded = props.children.props.props.expanded;
 
   if (props.children.props.props) {
     return (
@@ -73,11 +88,45 @@ export function ComponentPreview({ className, ...props }) {
               }}
             />
           )}
-          <LiveEditor
-            contentEditable={isJSX ? "true" : "false"}
-            className="language-"
-          />
+
+          {isJSX && !defaultExpanded ? (
+            <Collapse {...state.collapseProps}>
+              <LiveEditor
+                contentEditable={isJSX && large ? "true" : "false"}
+                className="language-"
+              />
+            </Collapse>
+          ) : (
+            <LiveEditor
+              contentEditable={isJSX && large ? "true" : "false"}
+              className="language-"
+            />
+          )}
           {isJSX && <LiveError />}
+          {isJSX && !defaultExpanded && (
+            <div
+              css={{
+                borderRadius: theme.radii.sm,
+                background:
+                  theme.colors.mode === "dark"
+                    ? theme.colors.background.layer
+                    : "transparent",
+                textAlign: "center"
+              }}
+            >
+              <Button
+                css={{
+                  width: "100%",
+                  textAlign: "left"
+                }}
+                iconAfter={state.show ? <IconChevronUp /> : <IconChevronDown />}
+                variant="ghost"
+                {...state.buttonProps}
+              >
+                {state.show ? "Hide Code" : "Show Code"}
+              </Button>
+            </div>
+          )}
         </LiveProvider>
       </div>
     );

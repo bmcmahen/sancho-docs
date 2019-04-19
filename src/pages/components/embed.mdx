@@ -1,0 +1,39 @@
+import { Container } from "sancho";
+import { Article } from "../../components/Layout";
+import { Props } from "../../components/Props";
+import SEO from "../../components/SEO";
+import { Nav } from "../../components/Nav";
+
+<Nav title="Embed" />
+<SEO title="Embed" />
+
+<Container>
+<Article sidebar={[
+  { id: 'Embed', name: 'Embed'},
+  { id: 'Basic usage', name: 'Basic usage' },
+  { id: 'Props', name: 'API' }
+]}>
+
+# Embed
+
+Use an embed to create elements with an intrinsic aspect ratio.
+This is particularly useful for avoiding content shifting on your page
+when images load.
+
+#### Basic usage
+
+```jsx expanded
+<Embed width={16} height={9}>
+  <div
+    style={{
+      backgroundImage: `url(https://images.unsplash.com/photo-1477973770766-6228305816df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1949&q=80)`,
+      backgroundSize: "cover"
+    }}
+  />
+</Embed>
+```
+
+<Props names={["Embed"]} />
+
+</Article>
+</Container>

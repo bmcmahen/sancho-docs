@@ -16,7 +16,7 @@ import { Nav } from "../../components/Nav";
   { id: 'With anchors', name: 'Using anchors' },
   { id: 'Evenly spaced', name: 'Evenly spaced' },
   { id: 'With icons', name: 'Using icons' },
-  { id: 'Props', name: 'Props'}
+  { id: 'Props', name: 'API'}
 ]}>
 
 # Tabs
@@ -35,7 +35,7 @@ Sancho exports the following components to create tabbed interfaces:
 
 For accessibility purposes you should provide a unique `id` to each tab. That id should correspond to the id of the appropriate tab container. If the tabs extend beyond the viewport they will scroll horizontally.
 
-```jsx
+```jsx expanded
 <div className="Tabs-example">
   <Component initialState={{ value: 0 }}>
     {({ state, setState }) => (

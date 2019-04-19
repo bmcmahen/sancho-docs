@@ -11,18 +11,18 @@ import { Nav } from "../../components/Nav";
 <Article sidebar={[
   { id: 'Overlay', name: 'Overlay' },
   { id: 'Basic usage', name: 'Basic usage' },
-  { id: 'Props', name: 'Props' }
+  { id: 'Props', name: 'API' }
 ]}>
 
 # Overlay
 
-An overlay used by the [Dialog](/components/dialog) and [Sheet](/components/sheet) components. It requests to close when clicked.
+An overlay used by the [Dialog](/components/dialog) component.
 
 #### Basic usage
 
 Add whatever you'd like to display over the Overlay as its children.
 
-```jsx
+```jsx expanded
 <Component initialState={{ isOpen: false }}>
   {({ state, setState }) => (
     <React.Fragment>

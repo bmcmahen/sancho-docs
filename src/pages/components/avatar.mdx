@@ -14,7 +14,7 @@ import { Nav } from "../../components/Nav";
   { id: 'Basic usage', name: 'Basic usage' },
   { id: 'Letters', name: 'Using letters'},
   { id: 'Sizes', name: 'Sizes options' },
-  { id: 'Props', name: 'Props'}
+  { id: 'Props', name: 'API'}
 ]}>
 
 # Avatar
@@ -25,7 +25,7 @@ Display a profile image to represent a user with initials shown as a fallback. I
 
 Set the `name` and `src` attributes. By default, the `src` will display instead of the initials if provided. Set to `aria-hidden="true"` when displayed alongside the user's name.
 
-```jsx
+```jsx expanded
 <Avatar
   src="https://pbs.twimg.com/profile_images/775452326450475009/MTsFSYGs_400x400.jpg"
   name="Ben McMahen"
