@@ -9,7 +9,7 @@
   transform: translateX(0) !important;
 }
 
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 600px) {
   .algolia-autocomplete.algolia-autocomplete-left .ds-dropdown-menu {
     position: absolute !important;
     top: 100% !important;
