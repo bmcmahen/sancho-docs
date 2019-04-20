@@ -15,6 +15,7 @@ import {
 } from "sancho";
 import { ComponentList } from "./ComponentList";
 import { SpyList } from "./SpyList";
+import useMedia from "use-media";
 
 export const ToggleModeContext = React.createContext(null);
 
@@ -22,8 +23,11 @@ export const SetNavOpenContext = React.createContext(null);
 
 const Layout = ({ children }) => {
   const [dark, setDark] = React.useState(false);
+  const theme = useTheme();
   const [isNavOpen, setIsNavOpen] = React.useState(false);
-
+  const isLarge = useMedia({
+    minWidth: theme.breakpoints.lg
+  });
   const Mode = dark ? DarkMode : LightMode;
 
   function toggleMode() {
@@ -58,13 +62,15 @@ const Layout = ({ children }) => {
                 }}
               />
               <SkipNavLink />
-              <Sheet
-                position="left"
-                isOpen={isNavOpen}
-                onRequestClose={closeNav}
-              >
-                <ComponentList background={"white"} />
-              </Sheet>
+              {!isLarge && (
+                <Sheet
+                  position="left"
+                  isOpen={isNavOpen}
+                  onRequestClose={closeNav}
+                >
+                  <ComponentList background={"white"} />
+                </Sheet>
+              )}
               <div
                 className={theme.colors.mode === "dark" ? "dark" : "light"}
                 css={[
