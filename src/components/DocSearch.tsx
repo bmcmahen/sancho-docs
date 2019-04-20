@@ -56,7 +56,7 @@ export const DocSearch: React.FunctionComponent<DocSearchProps> = props => {
             boxShadow: theme.shadows.md,
             maxWidth: "400px",
             minWidth: "300px",
-            width: "315px !important",
+            width: "100vw !important",
             borderRadius: theme.radii.lg,
             transform: "translateX(13%)", // lameee hack for mobile
             lineHeight: 1.5
@@ -103,7 +103,8 @@ export const DocSearch: React.FunctionComponent<DocSearchProps> = props => {
             ".algolia-autocomplete .ds-dropdown-menu": {
               transform: "none",
               maxWidth: "400px",
-              minWidth: "400px"
+              minWidth: "400px",
+              width: "315px !important"
             }
           }
         }}
