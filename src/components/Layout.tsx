@@ -63,7 +63,7 @@ const Layout = ({ children }) => {
                 isOpen={isNavOpen}
                 onRequestClose={closeNav}
               >
-                <ComponentList />
+                <ComponentList background={"white"} />
               </Sheet>
               <div
                 className={theme.colors.mode === "dark" ? "dark" : "light"}

@@ -17,7 +17,9 @@ import { ToggleModeContext } from "./Layout";
 
 function noOp() {}
 
-interface ComponentListProps {}
+interface ComponentListProps {
+  background?: string;
+}
 
 function MenuLink({ to, children }) {
   const closeParent = React.useContext(RequestCloseContext);
@@ -175,7 +177,7 @@ const helpers = [
   { title: "VisuallyHidden", path: "/components/visually-hidden/" }
 ];
 
-export function ComponentList(_props: ComponentListProps) {
+export function ComponentList(props: ComponentListProps) {
   const theme = useTheme();
   const [search, setSearch] = React.useState("");
   const [componentList, setComponentList] = React.useState(components);
@@ -183,6 +185,7 @@ export function ComponentList(_props: ComponentListProps) {
   const closeParent = React.useContext(RequestCloseContext);
   const dark = theme.colors.mode === "dark";
   const toggle = React.useContext(ToggleModeContext);
+  const bg = props.background;
 
   React.useEffect(() => {
     if (!search) {
@@ -216,7 +219,7 @@ export function ComponentList(_props: ComponentListProps) {
         width: "14rem",
         background: dark
           ? theme.colors.background.layer
-          : theme.colors.background.tint1
+          : bg || theme.colors.background.tint1
       }}
     >
       <div
