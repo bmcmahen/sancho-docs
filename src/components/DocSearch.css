@@ -1,0 +1,11 @@
+.algolia-autocomplete.algolia-autocomplete-left .ds-dropdown-menu {
+  position: fixed !important;
+  top: 65px !important;
+}
+
+@media only screen and (max-width: 400px) {
+  .algolia-autocomplete.algolia-autocomplete-left .ds-dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+  }
+}
