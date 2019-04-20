@@ -10315,10 +10315,10 @@ safe-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sancho@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/sancho/-/sancho-1.2.2.tgz#1335d4149a3061e84d9d23e2008b0fc220768991"
-  integrity sha512-UGt1nVqjPNEvGK7rqY1X3+FZ4b+McV1WJ5umLD+/YvRjeqbvGfueP7aWW+W61PizMd+r2wra7Y62pFKTACWjAQ==
+sancho@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/sancho/-/sancho-1.2.3.tgz#f1246d2e40912505ba13b252a782dad36dac746c"
+  integrity sha512-uGGd7Xutzo8n/8A1sGk/6fxo6fsKTCAOGRvkPH/OieTdosDw+W3RgSBN09y53fdOeU8/BzQDorDa0KCJWB/8tw==
   dependencies:
     "@reach/alert" "^0.1.2"
     "@reach/skip-nav" "^0.1.2"
