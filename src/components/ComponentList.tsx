@@ -84,6 +84,7 @@ function MenuLink({ to, children }) {
           {
             display: "block",
             padding,
+            userSelect: "none",
             transition: "background-color 0.1s ease",
             textDecoration: "none",
             color: theme.colors.text.muted,

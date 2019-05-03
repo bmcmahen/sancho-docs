@@ -10932,10 +10932,10 @@ safe-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sancho@^2.0.0-rc1:
-  version "2.0.0-rc1"
-  resolved "https://registry.yarnpkg.com/sancho/-/sancho-2.0.0-rc1.tgz#6e29817c4f34ae3b1329d9a12c1a951c57c2e66a"
-  integrity sha512-URwwfe2aIXUFdN+W+EG43Wudn+9yYsD6bp6ng/nCSRj6tjQmPMR0nSXilNCOR9g1jVgjECq2UFOnUPsT0zwf5g==
+sancho@^2.0.0-rc2:
+  version "2.0.0-rc2"
+  resolved "https://registry.yarnpkg.com/sancho/-/sancho-2.0.0-rc2.tgz#cd6d00d07a81832e96fedb0520a9ce5ac75a9d08"
+  integrity sha512-b9p3yjChP5R3gzpbmtJyIw2GaRpNu7DmNPkIccnmFdv3CYMucu37B6A2GtZ1i4gknq/gGNTW9SQASSQIXAIn2Q==
   dependencies:
     "@reach/alert" "^0.1.2"
     "@reach/skip-nav" "^0.1.2"
@@ -10964,7 +10964,7 @@ sancho@^2.0.0-rc1:
     resize-observer-polyfill "^1.5.1"
     scroll-into-view-if-needed "^2.2.20"
     toasted-notes "^2.1.5"
-    touchable-hook "^1.0.6"
+    touchable-hook "^1.0.7"
     tslib "^1.9.3"
     use-media "^1.2.0"
 
@@ -12167,10 +12167,10 @@ topo@2.x.x:
   dependencies:
     hoek "4.x.x"
 
-touchable-hook@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/touchable-hook/-/touchable-hook-1.0.6.tgz#61525216b170dbe92067f53a7938f686084c9291"
-  integrity sha512-O0/y98+FNizrKB/X/3fDSE2XANUH+nSc9yhpReh7lshfJF1m/onkUbKHfcTHOdI1yI9V3KK46I22hkW1su226w==
+touchable-hook@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/touchable-hook/-/touchable-hook-1.0.7.tgz#9e5129aea23795afff05f9dc666ed02b8a3d3b4f"
+  integrity sha512-HhBY+pLNp9sgO2H0MsC8M97uhOKezx7NaOo3mtjUToQcQOb+MWD9OJmF+YGSFexDK29pHFgN7mGenYbFFOAGeA==
   dependencies:
     "@types/react" "^16.8.10"
     "@types/react-dom" "^16.8.3"
