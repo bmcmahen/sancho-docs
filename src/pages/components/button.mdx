@@ -12,6 +12,7 @@ import { Nav } from "../../components/Nav";
 <Container>
 <Article sidebar={[
   { id: 'Button', name: 'Button'},
+  { id: 'Basic usage', name: 'Basic usage' },
   { id: 'Intent', name: 'Button intent' },
   { id: 'Sizes', name: 'Button sizes'},
   { id: 'Variants', name: 'Button variants'},
@@ -24,6 +25,12 @@ import { Nav } from "../../components/Nav";
 # Button
 
 Sancho offers your standard button variants, modelled after those provided by Bootstrap. You can alter `size`, `intent`, and `variant` depending upon your needs. The [IconButton](/components/icon-button) composes Button.
+
+#### Basic usage
+
+```jsx expanded
+<Button onPress={() => alert("Pressed")}>Basic Button</Button>
+```
 
 #### Intent
 
