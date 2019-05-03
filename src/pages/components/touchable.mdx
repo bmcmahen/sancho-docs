@@ -1,0 +1,52 @@
+import { Container } from "sancho";
+import { Article } from "../../components/Layout";
+import { Props } from "../../components/Props";
+import SEO from "../../components/SEO";
+import { Nav } from "../../components/Nav";
+
+<Nav title="Touchable" />
+<SEO title="Touchable" />
+
+<Container>
+<Article sidebar={[
+  { id: 'Touchable', name: 'Touchable'},
+  { id: 'Basic usage', name: 'Basic usage' },
+  { id: 'Props', name: 'API'}
+]}>
+
+# Touchable
+
+Touchable is a component which makes use of the [touchable-hook](https://github.com/bmcmahen/touchable-hook)
+which better emulates a native touch experience. It provides a
+configurable active press delay to prevent
+unwanted active press states when scrolling, and it provides
+hover states for mouse devices.
+
+It's heavily inspired by the touchable component found in `react-native` and [react-native-web](https://github.com/necolas/react-native-web).
+
+#### Basic usage
+
+```.jsx
+import { Touchable } from "sancho";
+
+<Touchable
+  delay={0}
+  pressExpandPx={10}
+  onPress={() => console.log("hello!")}
+  css={{
+    "&.Touchable--hover": {
+      border: "1px solid"
+    },
+    "&.Touchable--active": {
+      background: "#08e"
+    }
+  }}
+>
+  Can touch this!
+</Touchable>
+```
+
+<Props names={["Touchable"]} />
+
+</Article>
+</Container>

@@ -184,6 +184,7 @@ const helpers = [
   { title: "Portal", path: "/components/portal/" },
   { title: "Positioner", path: "/components/positions/" },
   { title: "SkipNav", path: "/components/skipnav/" },
+  { title: "Touchable", path: "/components/touchable/" },
   { title: "VisuallyHidden", path: "/components/visually-hidden/" }
 ];
 
