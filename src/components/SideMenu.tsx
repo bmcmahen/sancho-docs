@@ -22,7 +22,7 @@ export function SideMenu({  }: SideMenuProps) {
       icon={<IconMenu />}
       variant="ghost"
       color={theme.colors.text.muted}
-      onClick={setIsOpen}
+      onPress={setIsOpen}
       css={{
         [theme.mediaQueries.md]: {
           marginLeft: 0

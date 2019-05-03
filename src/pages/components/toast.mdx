@@ -47,7 +47,7 @@ function Example() {
 
   return (
     <Button
-      onClick={() => {
+      onPress={() => {
         toast({
           title: "My primary message for the user.",
           duration: 3000,
@@ -65,7 +65,7 @@ function Example() {
 
 ```.jsx
 <Button
-  onClick={() => {
+  onPress={() => {
     [
       "top-left",
       "top",
@@ -89,7 +89,7 @@ function Example() {
 
 ```.jsx
 <Button
-  onClick={() => {
+  onPress={() => {
     ["info", "success", "question", "danger", "warning"].map((intent, i) => {
       toast({
         title: intent,
@@ -108,7 +108,7 @@ You can supply a custom element by providing a render option.
 
 ```.jsx
 <Button
-  onClick={() => {
+  onPress={() => {
     toast({
       render: () => <div>Hello world!</div>
     });
@@ -124,12 +124,12 @@ Using a render callback allows you to supply a custom element and control when t
 
 ```.jsx
 <Button
-  onClick={() => {
+  onPress={() => {
     toast({
       render: ({ onClose, id }) => (
         <div id={id}>
           <Text>Hello world</Text>
-          <Button onClick={onClose}>Close me</Button>
+          <Button onPress={onClose}>Close me</Button>
         </div>
       )
     });

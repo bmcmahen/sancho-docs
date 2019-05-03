@@ -32,7 +32,7 @@ Sancho exports these components to create dialogs:
 <Component initialState={{ isOpen: false }}>
   {({ state, setState }) => (
     <React.Fragment>
-      <Button onClick={() => setState({ isOpen: true })}>View dialog</Button>
+      <Button onPress={() => setState({ isOpen: true })}>View dialog</Button>
       <Dialog
         isOpen={state.isOpen}
         onRequestClose={() => setState({ isOpen: false })}
@@ -58,7 +58,7 @@ This option enables fullscreen on mobile devices, which is typically a better us
 <Component initialState={{ isOpen: false }}>
   {({ state, setState }) => (
     <React.Fragment>
-      <Button onClick={() => setState({ isOpen: true })}>Show Dialog</Button>
+      <Button onPress={() => setState({ isOpen: true })}>Show Dialog</Button>
       <Dialog
         isOpen={state.isOpen}
         mobileFullscreen
@@ -82,14 +82,14 @@ When a title isn't provided, a header isn't added.
 <Component initialState={{ isOpen: false }}>
   {({ state, setState }) => (
     <React.Fragment>
-      <Button onClick={() => setState({ isOpen: true })}>Show Dialog</Button>
+      <Button onPress={() => setState({ isOpen: true })}>Show Dialog</Button>
       <Dialog
         isOpen={state.isOpen}
         onRequestClose={() => setState({ isOpen: false })}
       >
         <div className="Dialog-example">
           <Text>Hello world</Text>
-          <Button onClick={() => setState({ isOpen: false })}>Cancel</Button>
+          <Button onPress={() => setState({ isOpen: false })}>Cancel</Button>
         </div>
       </Dialog>
     </React.Fragment>

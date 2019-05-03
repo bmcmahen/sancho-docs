@@ -33,7 +33,7 @@ If you control collapse using your own state, you are responsible for providing 
 const [show, setShow] = useState(false)
 
 <Button
-  onClick={() => setShow(true)}
+  onPress={() => setShow(true)}
   aria-expanded={show}
   aria-controls='collapse'>
     Expand
@@ -72,7 +72,7 @@ Here's a more advanced example:
             variant="ghost"
             intent="primary"
             iconAfter={state.show ? <IconChevronUp /> : <IconChevronDown />}
-            onClick={() => setState({ show: !state.show })}
+            onPress={() => setState({ show: !state.show })}
           >
             {state.show ? "Learn less" : "Learn more"}
           </Button>

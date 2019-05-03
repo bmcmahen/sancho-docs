@@ -29,7 +29,7 @@ By default, a sheet will open to the right with its width adjusting to the width
 <Component initialState={{ isOpen: false }}>
   {({ state, setState }) => (
     <React.Fragment>
-      <Button onClick={() => setState({ isOpen: true })}>Open sheet</Button>
+      <Button onPress={() => setState({ isOpen: true })}>Open sheet</Button>
       <Sheet
         onRequestClose={() => setState({ isOpen: false })}
         isOpen={state.isOpen}
@@ -51,7 +51,7 @@ You can display sheets from the `left`, `top`, `bottom`, or `right`.
 <Component initialState={{ isOpen: false, position: "left" }}>
   {({ state, setState }) => (
     <React.Fragment>
-      <Button onClick={() => setState({ isOpen: true, position: "left" })}>
+      <Button onPress={() => setState({ isOpen: true, position: "left" })}>
         Left
       </Button>
 

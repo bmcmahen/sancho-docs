@@ -212,7 +212,7 @@ By default, list items are treated as interactive buttons. You can disable this.
     contentBefore={<Avatar name={"Ben McMahen"} src={faker.image.avatar()} />}
     primary="Ben McMahen"
     wrap={false}
-    contentAfter={<Button onClick={() => alert("Hey!")}>Learn more</Button>}
+    contentAfter={<Button onPress={() => alert("Hey!")}>Learn more</Button>}
   />
 </List>
 ```

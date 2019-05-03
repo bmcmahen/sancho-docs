@@ -26,7 +26,7 @@ Add whatever you'd like to display over the Overlay as its children.
 <Component initialState={{ isOpen: false }}>
   {({ state, setState }) => (
     <React.Fragment>
-      <Button onClick={() => setState({ isOpen: true })}>Open</Button>
+      <Button onPress={() => setState({ isOpen: true })}>Open</Button>
       <Overlay
         isOpen={state.isOpen}
         onRequestClose={() => setState({ isOpen: false })}

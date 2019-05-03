@@ -31,5 +31,5 @@ export const ToastExample: React.FunctionComponent<
     });
   }
 
-  return <Button onClick={play}>Trigger toast example</Button>;
+  return <Button onPress={play}>Trigger toast example</Button>;
 };

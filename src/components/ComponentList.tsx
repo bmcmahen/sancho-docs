@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "@emotion/core";
 import * as React from "react";
-import { Link } from "gatsby";
+import { Link, navigate } from "gatsby";
 import {
   Text,
   MenuLabel,
@@ -14,6 +14,7 @@ import {
   IconSun
 } from "sancho";
 import { ToggleModeContext } from "./Layout";
+import { useTouchable } from "touchable-hook";
 
 function noOp() {}
 
@@ -27,6 +28,14 @@ function MenuLink({ to, children }) {
   const padding = `${theme.spaces.xs} ${theme.spaces.lg}`;
   const dark = theme.colors.mode === "dark";
 
+  const { bind, active, hover } = useTouchable({
+    onPress: () => {
+      navigate(to);
+      closeParent();
+    },
+    behavior: "link"
+  });
+
   return (
     <li
       css={{
@@ -36,11 +45,11 @@ function MenuLink({ to, children }) {
       }}
     >
       <Link
-        onTouchStart={noOp}
+        {...bind}
         data-trigger-close
         tabIndex={0}
-        onClick={() => {
-          closeParent();
+        onClick={e => {
+          e.preventDefault();
         }}
         getProps={options => {
           const activeStyle = {
@@ -71,32 +80,32 @@ function MenuLink({ to, children }) {
             : theme.colors.background.tint2,
           color: theme.colors.text.default
         }}
-        css={{
-          display: "block",
-          padding,
-          transition: "background-color 0.1s ease",
-          textDecoration: "none",
-          color: theme.colors.text.muted,
-          WebkitTapHighlightColor: "transparent",
-          ":active": {
-            backgroundColor: dark
-              ? theme.colors.background.tint1
-              : theme.colors.background.tint2
-          },
-          ":focus": {
-            backgroundColor: dark
-              ? theme.colors.background.tint1
-              : theme.colors.background.tint2
-          },
-          outline: "none",
-          ["@media (hover: hover)"]: {
-            ":hover": {
-              background: dark
-                ? theme.colors.background.tint1
-                : theme.colors.background.tint2
+        css={[
+          {
+            display: "block",
+            padding,
+            transition: "background-color 0.1s ease",
+            textDecoration: "none",
+            color: theme.colors.text.muted,
+            WebkitTapHighlightColor: "transparent",
+            ":focus": {
+              outline: theme.outline
+            },
+            ":focus:not([data-focus-visible-added])": {
+              outline: "none"
             }
+          },
+          hover && {
+            background: dark
+              ? theme.colors.background.tint1
+              : theme.colors.background.tint2
+          },
+          active && {
+            background: dark
+              ? theme.colors.background.tint1
+              : theme.colors.background.tint2
           }
-        }}
+        ]}
         to={to}
       >
         <Text
@@ -245,6 +254,12 @@ export function ComponentList(props: ComponentListProps) {
         >
           <Text
             css={{
+              ":focus": {
+                outline: theme.outline
+              },
+              ":focus:not([data-focus-visible-added])": {
+                outline: "none"
+              },
               color: dark
                 ? theme.colors.palette.blue.light
                 : theme.colors.text.selected
@@ -257,7 +272,7 @@ export function ComponentList(props: ComponentListProps) {
         </Link>
         <Tooltip content="Toggle dark mode">
           <IconButton
-            onClick={toggleMode}
+            onPress={toggleMode}
             label="Toggle dark mode"
             variant="ghost"
             icon={<IconSun />}
