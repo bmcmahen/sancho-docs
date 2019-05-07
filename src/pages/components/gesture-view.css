@@ -1,0 +1,13 @@
+.GestureViewExample .Gesture-view__pane > * {
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  flex: 1;
+  align-items: center;
+}
+
+.GestureViewExample {
+  border-radius: 1.5rem;
+}

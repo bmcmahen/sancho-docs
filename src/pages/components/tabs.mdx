@@ -72,7 +72,10 @@ Sliding content is a nice option when working with smaller panels or mobile appl
             <Tab id="about">About</Tab>
           </Tabs>
         </div>
-        <TabContent value={state.value} onChange={i => setState({ value: i })}>
+        <GestureView
+          value={state.value}
+          onRequestChange={i => setState({ value: i })}
+        >
           <TabPanel id="you" className="Tab-panel">
             <Text>What's up, you!</Text>
           </TabPanel>
@@ -88,7 +91,7 @@ Sliding content is a nice option when working with smaller panels or mobile appl
           <TabPanel id="fun" className="Tab-panel">
             <Text>About what?</Text>
           </TabPanel>
-        </TabContent>
+        </GestureView>
       </React.Fragment>
     )}
   </Component>

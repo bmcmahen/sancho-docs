@@ -1,0 +1,78 @@
+import { Container } from "sancho";
+import { Article } from "../../components/Layout";
+import { Props } from "../../components/Props";
+import SEO from "../../components/SEO";
+import { Nav } from "../../components/Nav";
+import "./gesture-view.css";
+
+<Nav title="GestureView" />
+<SEO title="GestureView" />
+
+<Container>
+<Article sidebar={[
+  { id: 'GestureView', name: 'GestureView' },
+  { id: 'Basic usage', name: 'Basic usage' },
+  { id: 'Props', name: 'API'}
+]}>
+
+# GestureView
+
+GestureView provides views that can be swiped horizontally -- a pattern you commonly
+find on mobile devices. It works well when combined with tabs. Note that, by default,
+the GestureView does not respond to mouse events so responsive websites should
+employ buttons (tabs, arrow buttons, etc.) to aid navigation.
+
+Because `GestureView` uses [pan-responder-hook](https://github.com/bmcmahen/pan-responder-hook) you can
+delegate between it and other gesture based components. This means you can do
+things like embed gesture views within eachother.
+
+Full instructions can be found on [react-gesture-view](https://github.com/bmcmahen/react-gesture-view).
+
+#### Basic usage
+
+Try swiping the views below on a touch-based device.
+
+```jsx
+<Component initialState={{ value: 0 }}>
+  {({ state, setState }) => (
+    <DarkMode>
+      <GestureView
+        className="GestureViewExample"
+        value={state.value}
+        onRequestChange={i => setState({ value: i })}
+      >
+        <div style={{ background: "#4a9eda" }}>
+          <Button variant="outline" onPress={() => setState({ value: 1 })}>
+            Next
+          </Button>
+        </div>
+        <div style={{ background: "#7f8a93" }}>
+          <Button variant="outline" onPress={() => setState({ value: 2 })}>
+            Next
+          </Button>
+        </div>
+        <div style={{ background: "#9966e0" }}>
+          <Button variant="outline" onPress={() => setState({ value: 3 })}>
+            Next
+          </Button>
+        </div>
+        <div style={{ background: "#e066ad" }}>
+          <Button variant="outline" onPress={() => setState({ value: 4 })}>
+            Next
+          </Button>
+        </div>
+        <div style={{ background: "#d7c938" }}>
+          <Button variant="outline" onPress={() => setState({ value: 0 })}>
+            Back to start
+          </Button>
+        </div>
+      </GestureView>
+    </DarkMode>
+  )}
+</Component>
+```
+
+<Props names={["GestureView"]} />
+
+</Article>
+</Container>

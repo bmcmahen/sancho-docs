@@ -161,6 +161,7 @@ const components = [
   { title: "Divider", path: "/components/divider/" },
   { title: "Embed", path: "/components/embed/" },
   { title: "Form", path: "/components/form/" },
+  { title: "GestureView", path: "/components/gesture-view/" },
   { title: "IconButton", path: "/components/icon-button/" },
   { title: "Icons", path: "/components/icon/" },
   { title: "Layer", path: "/components/layer/" },
