@@ -8982,15 +8982,6 @@ pako@~1.0.5:
   resolved "https://registry.yarnpkg.com/pako/-/pako-1.0.8.tgz#6844890aab9c635af868ad5fecc62e8acbba3ea4"
   integrity sha512-6i0HVbUfcKaTv+EG8ZTr75az7GFXcLYk9UyLEg7Notv/Ma+z/UG3TCoz6GiNeOrn1E/e63I0X/Hpw18jHOTUnA==
 
-pan-responder-hook@^1.1.4:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/pan-responder-hook/-/pan-responder-hook-1.1.4.tgz#fa6cd1a362dd9df8255115c47c760e566f5c7950"
-  integrity sha512-UaBdl1oSkTkcRf7Fuw8ffNJk+Z6qJUwuCGKsBgZcsjkCXwhcgLS7GGTTNFSrbDRiRrpXXWw2Ubzv99zYaV2h5w==
-  dependencies:
-    "@types/react" "^16.8.10"
-    "@types/react-dom" "^16.8.3"
-    tslib "^1.9.3"
-
 parallel-transform@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/parallel-transform/-/parallel-transform-1.1.0.tgz#d410f065b05da23081fcd10f28854c29bda33b06"
@@ -10137,10 +10128,19 @@ react-error-overlay@^3.0.0:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
   integrity sha512-XzgvowFrwDo6TWcpJ/WTiarb9UI6lhA4PMzS7n1joK3sHfBBBOQHUc0U4u57D6DWO9vHv6lVSWx2Q/Ymfyv4hw==
 
-react-gesture-view@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/react-gesture-view/-/react-gesture-view-1.0.1.tgz#2fbb978a9e72592c25c8fa6dcf4da3f700df50a9"
-  integrity sha512-EH7u25bKO5NMSacdW9wtqpRAnzScA1ukYGPeNVvpgvTP3o+wee5RvHqjKwr8macAWjp43fWy+hNYuC5U9ZCrAA==
+react-gesture-responder@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-gesture-responder/-/react-gesture-responder-2.0.0.tgz#abbfee7d77d65f93567415fccad1b80860d2967a"
+  integrity sha512-oWQSq9YQYKRp8KMu10jj3qySvOTOqgEaqcDVwf3rX7gCx4FG2a/BLQBKb3SEZbZP4DbkG5ULk1/dy2jaoR2Vlw==
+  dependencies:
+    "@types/react" "^16.8.10"
+    "@types/react-dom" "^16.8.3"
+    tslib "^1.9.3"
+
+react-gesture-view@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-gesture-view/-/react-gesture-view-1.0.2.tgz#0a051132b778e0597bfe245000b03c455fc7e48b"
+  integrity sha512-7eIJHdBmwnhbQKAsozSFE6Bp6OiYHELDoSI3hJMMev9IGCKK3kWxiEM2Y2hRiRTJmJ23O+ZyB0C+ZMJ7AZ8RxQ==
   dependencies:
     "@types/react" "^16.8.10"
     "@types/react-dom" "^16.8.3"
@@ -10889,10 +10889,10 @@ safe-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sancho@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/sancho/-/sancho-3.0.0.tgz#b472f9f77140d69b417f4011bccaf5efebf0b377"
-  integrity sha512-hsXoCRcPXuKlnobwzgU0FTOMJ94nQz8BJoEEvcY8DZxc+pTI7rLxrudYHYtsxsoQkLn8CsLvITnb4918iQjt9Q==
+sancho@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/sancho/-/sancho-3.0.1.tgz#591f414ae7613a49f6b2a27d3320408bb401de97"
+  integrity sha512-EfhMg+7LBsAEu7C0kTPOzb2xytxWykO1i1owtX+ELweI/BUy5TNRRae2KbUDFAWq3L3dn94JdFKQ/c/KfhSK9g==
   dependencies:
     "@reach/alert" "^0.1.2"
     "@reach/skip-nav" "^0.1.2"
@@ -10910,16 +10910,16 @@ sancho@^3.0.0:
     focus-trap "5"
     is-mobile "^2.0.0"
     open-color "^1.6.3"
-    pan-responder-hook "^1.1.4"
     popper.js "^1.14.7"
     prop-types "^15.7.2"
-    react-gesture-view "^1.0.1"
+    react-gesture-responder "^2.0.0"
+    react-gesture-view "^1.0.2"
     react-popper "^1.3.3"
     react-remove-scroll "^1.0.4"
     react-spring "^9.0.0-beta.6"
     resize-observer-polyfill "^1.5.1"
     toasted-notes "^2.1.5"
-    touchable-hook "^1.2.0"
+    touchable-hook "^1.2.1"
     tslib "^1.9.3"
     use-media "^1.2.0"
 
@@ -12115,10 +12115,10 @@ topo@2.x.x:
   dependencies:
     hoek "4.x.x"
 
-touchable-hook@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/touchable-hook/-/touchable-hook-1.2.0.tgz#655b83e22ecd515aac75198f03f1c5060793afd8"
-  integrity sha512-Y6azoS0dvg+CFI2kb1XSA8HgHPdvzsRjcVnMCtqAH6AtWkwdK12KsUJEo207E0Tej1vmxNnKdocEteCw4HYwRQ==
+touchable-hook@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/touchable-hook/-/touchable-hook-1.2.1.tgz#0791f3e05ff441827470bcd544cd44465344dd21"
+  integrity sha512-bXey/2YFuLtHDkoGoGigfXjUlnM0H5jUHNJUVrNZ5fCD6lNAb3Bkwz2prNUkowa99Ul48MlDOq0do+lQtgThmw==
   dependencies:
     "@types/react" "^16.8.10"
     "@types/react-dom" "^16.8.3"
