@@ -31,7 +31,7 @@ A menu is used to create popover content with a list of options. To create a men
 ```jsx expanded
 <div className="MenuList-example">
   <MenuList>
-    <MenuItem contentBefore={<IconUser />} onSelect={() => alert("Hello 1")}>
+    <MenuItem contentBefore={<IconUser />} onPress={() => alert("Hello 1")}>
       Profile
     </MenuItem>
     <MenuItem contentBefore={<IconList />} component="a" href="#">
@@ -55,7 +55,7 @@ Combine a MenuList with a Popover to create a dropdown menu.
 <Popover
   content={
     <MenuList>
-      <MenuItem contentBefore={<IconUser />} onSelect={() => alert("Hello 1")}>
+      <MenuItem contentBefore={<IconUser />} onPress={() => alert("Hello 1")}>
         Profile
       </MenuItem>
       <MenuItem contentBefore={<IconList />} component="a" href="#">
