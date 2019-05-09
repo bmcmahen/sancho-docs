@@ -11,16 +11,17 @@ import { Nav } from "../../components/Nav";
 <Container>
 <Article sidebar={[
   { id: 'Forms', name: 'Forms' },
-  { id: 'InputGroup usage', name: 'InputGroup usage' },
+  { id: 'Input', name: 'Input' },
+  { id: 'TextArea', name: 'TextArea' },
+  { id: 'Select', name: 'Select'},
+  { id: 'Check', name: 'Check' },
+  { id: 'Combined example', name: 'Combined example'},
   { id: 'Different sizes', name: 'Different sizes' },
-  { id: 'Hide labels', name: 'Hide labels'},
-  { id: 'Custom', name: 'Custom example' },
+  { id: 'Hide labels', name: 'Hide labels' },
   { id: 'Props', name: 'API'}
 ]}>
 
 # Forms
-
-Forms are used for obtaining user input.
 
 To create forms, Sancho exports multiple components:
 
@@ -31,11 +32,101 @@ To create forms, Sancho exports multiple components:
 - **Select**: Select menu.
 - **Check**: Used for checkbox or radio style inputs.
 
-For accessibility purposes we always recommend pairing an input element with a label. You can use the `hideLabel` prop with the Label component to visually hide it.
+You'll typically want to wrap you input elements with `InputGroup` to ensure proper accessibility, like in the examples below.
 
-#### InputGroup usage
+#### Input
 
-InputGroup is typically used as a wrapper for input elements. It provides margins, labels, and other accessibility features, which makes it the preferred way to use form elements.
+```jsx
+<div style={{ maxWidth: "350px" }}>
+  <InputGroup label="Email address">
+    <Input placeholder="ben.mcmahen@gmail.com" />
+  </InputGroup>
+  <InputGroup label="Email address">
+    <Input disabled placeholder="ben.mcmahen@gmail.com" />
+  </InputGroup>
+  <InputGroup error="This field is required" label="Email address">
+    <Input placeholder="ben.mcmahen@gmail.com" />
+  </InputGroup>
+</div>
+```
+
+#### TextArea
+
+```jsx
+<div style={{ maxWidth: "350px" }}>
+  <InputGroup
+    label="Example textarea"
+    helpText="Please provide a brief description of yourself. This will go on your profile."
+  >
+    <TextArea placeholder="Something about me" />
+  </InputGroup>
+  <InputGroup
+    label="Example textarea"
+    helpText="Please provide a brief description of yourself. This will go on your profile."
+  >
+    <TextArea disabled placeholder="Something about me" />
+  </InputGroup>
+  <InputGroup
+    error="This field is required"
+    label="Example textarea"
+    helpText="Please provide a brief description of yourself. This will go on your profile."
+  >
+    <TextArea placeholder="Something about me" />
+  </InputGroup>
+</div>
+```
+
+#### Select
+
+```jsx
+<div style={{ maxWidth: "350px" }}>
+  <InputGroup label="Gender">
+    <Select>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
+    </Select>
+  </InputGroup>
+  <InputGroup label="Gender">
+    <Select disabled>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
+    </Select>
+  </InputGroup>
+  <InputGroup error="This field is required" label="Gender">
+    <Select>
+      <option>Male</option>
+      <option>Female</option>
+      <option>Other</option>
+    </Select>
+  </InputGroup>
+</div>
+```
+
+#### Check
+
+```jsx
+<div style={{ maxWidth: "350px" }}>
+  <InputGroup label="Gender">
+    <div>
+      <Check disabled label="Male" checked />
+      <Check label="Female" />
+      <Check label="Other" />
+    </div>
+  </InputGroup>
+
+  <InputGroup error="You must select a gender" label="Gender">
+    <div>
+      <Check disabled label="Male" checked />
+      <Check label="Female" />
+      <Check label="Other" />
+    </div>
+  </InputGroup>
+</div>
+```
+
+#### Combined example
 
 ```jsx
 <form className="Form-basics">
@@ -105,23 +196,12 @@ You can hide labels while maintaining accessible form elements using the `hideLa
       <InputGroup hideLabel label="Password">
         <Input inputSize="lg" type="password" placeholder="Password" />
       </InputGroup>
-      <Button size="lg" block intent="primary">
+      <Button style={{ marginTop: "1rem" }} size="lg" block intent="primary">
         Sign in
       </Button>
     </form>
   </Layer>
 </div>
-```
-
-#### Custom
-
-```.jsx
-<form>
-  <Label css={{ background: theme.colors.background.tint1 }} htmlFor="example">
-    This is a lame custom example, but you get the point
-  </Label>
-  <TextArea id="example" defaultValue="Just a textarea with a label" />
-</form>
 ```
 
 <Props names={["Form"]} />

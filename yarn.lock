@@ -10128,19 +10128,19 @@ react-error-overlay@^3.0.0:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-3.0.0.tgz#c2bc8f4d91f1375b3dad6d75265d51cd5eeaf655"
   integrity sha512-XzgvowFrwDo6TWcpJ/WTiarb9UI6lhA4PMzS7n1joK3sHfBBBOQHUc0U4u57D6DWO9vHv6lVSWx2Q/Ymfyv4hw==
 
-react-gesture-responder@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/react-gesture-responder/-/react-gesture-responder-2.0.0.tgz#abbfee7d77d65f93567415fccad1b80860d2967a"
-  integrity sha512-oWQSq9YQYKRp8KMu10jj3qySvOTOqgEaqcDVwf3rX7gCx4FG2a/BLQBKb3SEZbZP4DbkG5ULk1/dy2jaoR2Vlw==
+react-gesture-responder@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-gesture-responder/-/react-gesture-responder-2.0.1.tgz#39ab40424bba5dc2216b6cc86cac1ba969cff4fb"
+  integrity sha512-m7rA9IKPtsmPtC94+Q+dpbVtun5yDbm9ayMP63VMRlOTqaqIdbKfyhG+uYqaooxKeFa60Bpjw4IyQm4gi/SIvw==
   dependencies:
     "@types/react" "^16.8.10"
     "@types/react-dom" "^16.8.3"
     tslib "^1.9.3"
 
-react-gesture-view@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/react-gesture-view/-/react-gesture-view-1.0.2.tgz#0a051132b778e0597bfe245000b03c455fc7e48b"
-  integrity sha512-7eIJHdBmwnhbQKAsozSFE6Bp6OiYHELDoSI3hJMMev9IGCKK3kWxiEM2Y2hRiRTJmJ23O+ZyB0C+ZMJ7AZ8RxQ==
+react-gesture-view@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-gesture-view/-/react-gesture-view-1.1.0.tgz#f7b0220861185efd4e6260d751f95de3baf4ec7f"
+  integrity sha512-EVUw4jdEy+a556Y2HmwWQCkw7a7o2r5ZoGpRGj/qD9cF4kONT4ICTUHjA0/HaYyL9MrjG6QIGIoo4CD1FTOVRQ==
   dependencies:
     "@types/react" "^16.8.10"
     "@types/react-dom" "^16.8.3"
@@ -10889,10 +10889,10 @@ safe-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sancho@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/sancho/-/sancho-3.0.1.tgz#591f414ae7613a49f6b2a27d3320408bb401de97"
-  integrity sha512-EfhMg+7LBsAEu7C0kTPOzb2xytxWykO1i1owtX+ELweI/BUy5TNRRae2KbUDFAWq3L3dn94JdFKQ/c/KfhSK9g==
+sancho@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/sancho/-/sancho-3.1.0.tgz#7f16fb49a2b344f842ae627817174fd0e9c793e0"
+  integrity sha512-nHU4CfhCodMzudfSMoyNsrF1sFBv9gpygC0woE8Mn2CXbu3W3yVxcJJBtQJrnAwxvhFch0i6his3+e8CBH6jzg==
   dependencies:
     "@reach/alert" "^0.1.2"
     "@reach/skip-nav" "^0.1.2"
@@ -10912,8 +10912,8 @@ sancho@^3.0.1:
     open-color "^1.6.3"
     popper.js "^1.14.7"
     prop-types "^15.7.2"
-    react-gesture-responder "^2.0.0"
-    react-gesture-view "^1.0.2"
+    react-gesture-responder "^2.0.1"
+    react-gesture-view "^1.1.0"
     react-popper "^1.3.3"
     react-remove-scroll "^1.0.4"
     react-spring "^9.0.0-beta.6"

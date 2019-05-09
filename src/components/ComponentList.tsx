@@ -160,7 +160,7 @@ const components = [
   { title: "Dialog", path: "/components/dialog/" },
   { title: "Divider", path: "/components/divider/" },
   { title: "Embed", path: "/components/embed/" },
-  { title: "Form", path: "/components/form/" },
+  { title: "Forms", path: "/components/form/" },
   { title: "GestureView", path: "/components/gesture-view/" },
   { title: "IconButton", path: "/components/icon-button/" },
   { title: "Icons", path: "/components/icon/" },
