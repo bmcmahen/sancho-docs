@@ -1,0 +1,53 @@
+import { Button, Divider, Container } from "sancho";
+import "./dialog.css";
+import { Article } from "../../components/Layout";
+import { Props } from "../../components/Props";
+import SEO from "../../components/SEO";
+import { Nav } from "../../components/Nav";
+
+<Nav title="AlertDialog" />
+<SEO title="AlertDialog" />
+
+<Container>
+<Article sidebar={[
+  { id: 'AlertDialog', name: 'AlertDialog' },
+  { id: 'Basic usage', name: 'Basic usage' },
+  { id: 'Props', name: 'API'}
+]}>
+
+# AlertDialog
+
+Use an `AlertDialog` to confirm a potentially destructive action taken by the user. `AlertDialog` composes
+the `Dialog` component.
+
+#### Basic usage
+
+```jsx expanded
+<Component initialState={{ isOpen: false }}>
+  {({ state, setState }) => (
+    <React.Fragment>
+      <Button intent="danger" onPress={() => setState({ isOpen: true })}>
+        Delete
+      </Button>
+
+      <AlertDialog
+        isOpen={state.isOpen}
+        confirmLabel="Delete"
+        subtitle="This action cannot be undone. Proceed with caution."
+        title={"Do you really want to delete your account?"}
+        onConfirm={() => {
+          window.alert("Yup. I did it.");
+        }}
+        onClose={() => {
+          setState({ isOpen: false });
+        }}
+      />
+    </React.Fragment>
+  )}
+</Component>
+```
+
+<Props names={["AlertDialog"]} />
+
+</Article>
+</Container>

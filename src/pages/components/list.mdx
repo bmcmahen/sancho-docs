@@ -16,7 +16,10 @@ import { Nav } from "../../components/Nav";
   { id: 'Disabling wrap', name: 'Disabling wrap' },
   { id: 'Using links', name: 'Using links'},
   { id: 'Non interactive', name: 'Non interactive'},
+  { id: 'Loading example', name: 'Loading example'},
+  { id: 'Infinite scroll', name: 'Infinite scroll'},
   { id: 'Props', name: 'API'}
+  
 ]}>
 
 # List
@@ -215,6 +218,87 @@ By default, list items are treated as interactive buttons. You can disable this.
     contentAfter={<Button onPress={() => alert("Hey!")}>Learn more</Button>}
   />
 </List>
+```
+
+#### Loading example
+
+You can combine `ListItem` with `Skeleton` to create loading states.
+
+```jsx
+<List>
+  <ListItem
+    interactive={false}
+    aria-live="polite"
+    aria-busy="true"
+    primary={<Skeleton style={{ width: "100px" }} />}
+    secondary={<Skeleton />}
+    contentBefore={
+      <Skeleton
+        style={{ width: "3.27rem", height: "3.27rem", borderRadius: "50%" }}
+      />
+    }
+  />
+</List>
+```
+
+#### Infinite scroll
+
+You can combine `useInfiniteScroll`, `ScrollView`, and `List` to create infinitely scrollable lists.
+For very long lists you may want to consider using a windowing infinite scroller instead.
+
+```.jsx
+import faker from "faker";
+import React from "react";
+import { useInfiniteScroll, Skeleton, List, ListItem } from "sancho";
+
+function fetchdata() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve();
+    }, 500);
+  });
+}
+
+function Example() {
+  const ref = React.useRef();
+  const [items, setItems] = React.useState(
+    Array.from(new Array(10)).map(() => faker.name.firstName())
+  );
+
+  const [page, setPage] = React.useState(0);
+
+  const [fetching] = useInfiniteScroll({
+    container: ref,
+    hasMore: page < 4,
+    onFetch: () => {
+      return fetchdata().then(() => {
+        setItems([
+          ...items,
+          ...Array.from(new Array(10)).map(() => faker.name.firstName())
+        ]);
+        setPage(page + 1);
+      });
+    }
+  });
+
+  return (
+    <ScrollView innerRef={ref}>
+      <List>
+        {items.map(item => (
+          <ListItem key={item} primary={item} />
+        ))}
+        {fetching && (
+          <ListItem
+            interactive={false}
+            aria-live="polite"
+            aria-busy="true"
+            primary={<Skeleton />}
+          />
+        )}
+      </List>
+    </ScrollView>
+  );
+}
 ```
 
 <Props names={["List"]} />

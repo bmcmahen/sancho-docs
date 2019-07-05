@@ -1,0 +1,53 @@
+import { Avatar, Divider, Container } from "sancho";
+import "./avatar.css";
+import { Article } from "../../components/Layout";
+import { Props } from "../../components/Props";
+import SEO from "../../components/SEO";
+import { Nav } from "../../components/Nav";
+
+<Nav title="ScrollView" />
+<SEO title="ScrollView" />
+
+<Container>
+<Article sidebar={[
+  { id: 'ScrollView', name: 'ScrollView'},
+  { id: 'Basic usage', name: 'Basic usage' },
+  { id: 'Props', name: 'API'}
+]}>
+
+# ScrollView
+
+A `ScrollView` provides a vertically or horizontally scrollable view which works nicely with touchable
+elements such as `ListItem`. It was originally built for use by the `Tabs` component, but you
+may find it useful yourself for doing things like animated scrolling.
+
+#### Basic usage
+
+```.jsx
+function AnimatedScroll() {
+  const ref = useRef();
+
+  function scrollDown() {
+    // scroll to x, y coordinattes
+    ref.current.scrollTo(undefined, 400);
+  }
+
+  function scrollUp() {
+    ref.current.scrollTo(undefined, 0);
+  }
+
+  return (
+    <ScrollView overflowY style={{ height: "300px" }} ref={ref}>
+      <div style={{ height: "600px" }}>
+        <button onClick={scrollDown}>scroll down</button>
+      </div>
+      <button onClick={scrollUp}>scroll to top</button>
+    </ScrollView>
+  );
+}
+```
+
+<Props names={["ScrollView"]} />
+
+</Article>
+</Container>

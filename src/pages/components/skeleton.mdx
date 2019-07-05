@@ -1,0 +1,59 @@
+import { Avatar, Divider, Container } from "sancho";
+import "./avatar.css";
+import { Article } from "../../components/Layout";
+import { Props } from "../../components/Props";
+import SEO from "../../components/SEO";
+import { Nav } from "../../components/Nav";
+
+<Nav title="Skeleton" />
+<SEO title="Skeleton" />
+
+<Container>
+<Article sidebar={[
+  { id: 'Skeleton', name: 'Skeleton'},
+  { id: 'Basic usage', name: 'Basic usage' },
+  { id: 'Animated', name: 'Animated'},
+  { id: 'Props', name: 'API'}
+]}>
+
+# Skeleton
+
+Display a skeleton style loading state as popularized by Facebook, Google, etc.
+
+#### Basic usage
+
+A Skeleton component is typically used in place of an existing component, and does its best to
+replicate that component in height and width. The example below demonstrates how we can
+create a mock `ListItem` using multiple skeletons in place of text and an avatar.
+
+```jsx expanded
+<List>
+  <ListItem
+    interactive={false}
+    aria-live="polite"
+    aria-busy="true"
+    primary={<Skeleton style={{ width: "100px" }} />}
+    secondary={<Skeleton />}
+    contentBefore={
+      <Skeleton
+        style={{ width: "3.27rem", height: "3.27rem", borderRadius: "50%" }}
+      />
+    }
+  />
+</List>
+```
+
+#### Animated
+
+You can turn on animations using the `animated` prop.
+
+```jsx
+<Text>
+  <Skeleton animated />
+</Text>
+```
+
+<Props names={["Skeleton"]} />
+
+</Article>
+</Container>

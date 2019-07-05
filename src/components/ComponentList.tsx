@@ -151,6 +151,7 @@ const about = [
 
 const components = [
   { title: "Alert", path: "/components/alert/" },
+  { title: "AlertDialog", path: "/components/alertdialog" },
   { title: "Avatar", path: "/components/avatar/" },
   { title: "Badge", path: "/components/badge/" },
   { title: "Breadcrumbs", path: "/components/breadcrumb/" },
@@ -170,7 +171,9 @@ const components = [
   { title: "Menu", path: "/components/menu/" },
   { title: "Navbar", path: "/components/navbar/" },
   { title: "Popover", path: "/components/popover/" },
+  { title: "ScrollView", path: "/components/scrollview" },
   { title: "Sheet", path: "/components/sheet/" },
+  { title: "Skeleton", path: "/components/skeleton" },
   { title: "Spinner", path: "/components/spinner/" },
   { title: "Table", path: "/components/table/" },
   { title: "Tabs", path: "/components/tabs/" },
