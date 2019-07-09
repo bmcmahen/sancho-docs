@@ -175,6 +175,7 @@ const components = [
   { title: "Sheet", path: "/components/sheet/" },
   { title: "Skeleton", path: "/components/skeleton" },
   { title: "Spinner", path: "/components/spinner/" },
+  { title: "Stack", path: "/components/stack/" },
   { title: "Table", path: "/components/table/" },
   { title: "Tabs", path: "/components/tabs/" },
   { title: "Text", path: "/components/text/" },

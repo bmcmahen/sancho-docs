@@ -1,0 +1,229 @@
+import { Button, Divider, Container } from "sancho";
+import { Article } from "../../components/Layout";
+import { Props } from "../../components/Props";
+import SEO from "../../components/SEO";
+import { Nav } from "../../components/Nav";
+
+<Nav title="Stack" />
+<SEO title="Stack" />
+
+<Container>
+<Article sidebar={[
+  { id: 'Stack', name: 'Stack'},
+  { id: 'Basic usage', name: 'Basic usage' },
+  { id: 'Combining with List', name : 'Combining with List'},
+  { id: 'Props', name: 'API'}
+]}>
+
+# Stack
+
+A Stack provides an iOS style stack navigation with support for "back" gestures. To create a stack, Sancho exports multiple components:
+
+- **Stack**: The primary wrapper for your Stack. Note that it effectively only contains elements with absolute positioning, so it will require either a fixed height and width or flex / grid attributes to determine sizing.
+- **StackItem**: An individual stack pane.
+- **StackTitle**: A navigation title for a stack pane.
+
+This component is also offered independently as [react-gesture-stack](https://github.com/bmcmahen/react-gesture-stack).
+
+#### Basic usage
+
+This example shows usage with the navigation disabled. Touch the image to skip to the next and then try dragging back to reveal the first image.
+
+```jsx
+<Component initialState={{ index: 0 }}>
+  {({ state, setState }) => (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center"
+      }}
+    >
+      <Stack
+        index={state.index}
+        disableNav
+        css={{ height: "400px", width: "400px" }}
+        items={[
+          {
+            title: null,
+            content: (
+              <StackItem
+                onClick={() => setState({ index: state.index + 1 })}
+                css={{
+                  backgroundImage: `url(https://images.unsplash.com/photo-1556909114-44e3e70034e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)`,
+                  backgroundSize: "cover"
+                }}
+              />
+            )
+          },
+          {
+            title: null,
+            content: (
+              <StackItem
+                css={{
+                  backgroundImage: `url(https://images.unsplash.com/photo-1558980664-10e7170b5df9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80)`,
+                  backgroundSize: "cover"
+                }}
+              />
+            )
+          },
+          {
+            title: null,
+            content: (
+              <StackItem
+                css={{
+                  backgroundImage: `url(https://images.unsplash.com/photo-1562619398-e7a474328df3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)`,
+                  backgroundSize: "cover"
+                }}
+              />
+            )
+          }
+        ]}
+        onIndexChange={i => setState({ index: i })}
+      />
+    </div>
+  )}
+</Component>
+```
+
+#### Combining with List
+
+This more complex example shows how `Stack` might be more typically used to offer a "drill-down" type navigation.
+
+```jsx
+<Component initialState={{ index: 0 }}>
+  {({ state, setState }) => {
+    function getUser() {
+      faker.seed(0);
+
+      return {
+        name: faker.name.firstName() + " " + faker.name.lastName(),
+        uid: faker.random.uuid(),
+        description: faker.lorem.sentence()
+      };
+    }
+
+    const items = Array.from(new Array(10)).map(() => getUser());
+
+    function onChange(i) {
+      setState({ index: i });
+    }
+
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center"
+        }}
+      >
+        <div
+          style={{
+            height: "500px",
+            width: "400px",
+            overflow: "hidden"
+          }}
+        >
+          <Stack
+            navHeight={60}
+            style={{
+              height: "100%",
+              width: "100%"
+            }}
+            items={[
+              {
+                title: <StackTitle title="Contacts" />,
+                content: (
+                  <StackItem>
+                    <ScrollView css={{ flex: 1 }} overflowY>
+                      <List>
+                        <ListItem
+                          onPress={() => onChange(state.index + 1)}
+                          primary="All"
+                          contentAfter={<IconChevronRight />}
+                        />
+                        <ListItem
+                          onPress={() => onChange(state.index + 1)}
+                          primary="Family"
+                          contentAfter={<IconChevronRight />}
+                        />
+                        <ListItem
+                          onPress={() => onChange(state.index + 1)}
+                          primary="Friends"
+                          contentAfter={<IconChevronRight />}
+                        />
+                      </List>
+                    </ScrollView>
+                  </StackItem>
+                )
+              },
+              {
+                title: (
+                  <StackTitle
+                    title="Family"
+                    contentAfter={
+                      <IconButton
+                        variant="ghost"
+                        label="Add"
+                        icon={<IconPlus />}
+                      />
+                    }
+                  />
+                ),
+                content: (
+                  <StackItem>
+                    <div
+                      style={{
+                        flexDirection: "column",
+                        display: "flex",
+                        height: "100%"
+                      }}
+                    >
+                      <ScrollView css={{ flex: 1, height: "100%" }} overflowY>
+                        <List>
+                          {items.map(item => (
+                            <ListItem
+                              key={item.uid}
+                              onPress={() => onChange(state.index + 1)}
+                              contentBefore={<Avatar name={item.name} />}
+                              primary={item.name}
+                              secondary={item.description}
+                              contentAfter={<IconChevronRight />}
+                            />
+                          ))}
+                        </List>
+                      </ScrollView>
+                    </div>
+                  </StackItem>
+                )
+              },
+              {
+                title: <StackTitle title="I'm in a tree!" />,
+                content: (
+                  <StackItem>
+                    <div
+                      style={{
+                        flexDirection: "column",
+                        display: "flex",
+                        height: "100%",
+                        backgroundImage:
+                          "url(https://images.unsplash.com/photo-1562519776-b232435b73c1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80)",
+                        backgroundSize: "cover"
+                      }}
+                    />
+                  </StackItem>
+                )
+              }
+            ]}
+            onIndexChange={onChange}
+            index={state.index}
+          />
+        </div>
+      </div>
+    );
+  }}
+</Component>
+```
+
+<Props names={["Stack"]} />
+
+</Article>
+</Container>
