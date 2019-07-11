@@ -90,20 +90,17 @@ This example shows usage with the navigation disabled. Touch the image to skip t
 This more complex example shows how `Stack` might be more typically used to offer a "drill-down" type navigation.
 
 ```jsx
-<Component initialState={{ index: 0 }}>
+<Component
+  initialState={{
+    index: 0,
+    items: Array.from(new Array(10)).map(() => ({
+      name: faker.name.firstName() + " " + faker.name.lastName(),
+      uid: faker.random.uuid(),
+      description: faker.lorem.sentence()
+    }))
+  }}
+>
   {({ state, setState }) => {
-    function getUser() {
-      faker.seed(0);
-
-      return {
-        name: faker.name.firstName() + " " + faker.name.lastName(),
-        uid: faker.random.uuid(),
-        description: faker.lorem.sentence()
-      };
-    }
-
-    const items = Array.from(new Array(10)).map(() => getUser());
-
     function onChange(i) {
       setState({ index: i });
     }
@@ -177,9 +174,9 @@ This more complex example shows how `Stack` might be more typically used to offe
                         height: "100%"
                       }}
                     >
-                      <ScrollView css={{ flex: 1, height: "100%" }} overflowY>
+                      <ScrollView style={{ flex: 1, height: "100%" }} overflowY>
                         <List>
-                          {items.map(item => (
+                          {state.items.map(item => (
                             <ListItem
                               key={item.uid}
                               onPress={() => onChange(state.index + 1)}
