@@ -162,7 +162,7 @@ const components = [
   { title: "Divider", path: "/components/divider/" },
   { title: "Embed", path: "/components/embed/" },
   { title: "Forms", path: "/components/form/" },
-  { title: "GestureView", path: "/components/gesture-view/" },
+  { title: "Pager", path: "/components/gesture-view/" },
   { title: "IconButton", path: "/components/icon-button/" },
   { title: "Icons", path: "/components/icon/" },
   { title: "Layer", path: "/components/layer/" },
@@ -287,6 +287,7 @@ export function ComponentList(props: ComponentListProps) {
         </Tooltip>
       </div>
       <div
+        data-scroll-lock-scrollable
         css={{
           flex: 1,
           overflowY: "scroll",

@@ -5,28 +5,28 @@ import SEO from "../../components/SEO";
 import { Nav } from "../../components/Nav";
 import "./gesture-view.css";
 
-<Nav title="GestureView" />
-<SEO title="GestureView" />
+<Nav title="Pager" />
+<SEO title="Pager" />
 
 <Container>
 <Article sidebar={[
-  { id: 'GestureView', name: 'GestureView' },
+  { id: 'Pager', name: 'Pager' },
   { id: 'Basic usage', name: 'Basic usage' },
   { id: 'Props', name: 'API'}
 ]}>
 
-# GestureView
+# Pager
 
-GestureView provides views that can be swiped horizontally -- a pattern you commonly
+Pager provides views that can be swiped horizontally -- a pattern you commonly
 find on mobile devices. It works well when combined with tabs. Note that, by default,
-the GestureView does not respond to mouse events so responsive websites should
+the Pager does not respond to mouse events so responsive websites should
 employ buttons (tabs, arrow buttons, etc.) to aid navigation.
 
-Because `GestureView` uses [react-gesture-responder](https://github.com/bmcmahen/pan-responder-hook) you can
+Because `Pager` uses [react-gesture-responder](https://github.com/bmcmahen/pan-responder-hook) you can
 delegate between it and other gesture based components. This means you can do
 things like embed gesture views within eachother.
 
-Full instructions can be found on [react-gesture-view](https://github.com/bmcmahen/react-gesture-view).
+Full instructions can be found on [react-page-controller](https://github.com/bmcmahen/react-pager-controller).
 
 #### Basic usage
 
@@ -36,8 +36,8 @@ Try swiping the views below on a touch-based device.
 <Component initialState={{ value: 0 }}>
   {({ state, setState }) => (
     <DarkMode>
-      <GestureView
-        className="GestureViewExample"
+      <Pager
+        className="PagerExample"
         value={state.value}
         onRequestChange={i => setState({ value: i })}
       >
@@ -66,13 +66,13 @@ Try swiping the views below on a touch-based device.
             Back to start
           </Button>
         </div>
-      </GestureView>
+      </Pager>
     </DarkMode>
   )}
 </Component>
 ```
 
-<Props names={["GestureView"]} />
+<Props names={["Pager"]} />
 
 </Article>
 </Container>

@@ -10335,19 +10335,6 @@ react-gesture-stack@^1.3.1:
     resize-observer-polyfill "^1.5.1"
     tslib "^1.9.3"
 
-react-gesture-view@^2.1.3:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/react-gesture-view/-/react-gesture-view-2.1.3.tgz#c0bfa29d7425bfe21dbe046d9ef07d076fdcc94c"
-  integrity sha512-yoBsFZ6JYpD/FjosPT5YaN6qzmkQSVH4V36GB1FkbY304eQ/iDXzrPCRA1jdvIppLdhfoJfxK4Z8bp1NWMUjiQ==
-  dependencies:
-    "@types/classnames" "^2.2.7"
-    "@types/react" "^16.8.10"
-    "@types/react-dom" "^16.8.3"
-    react-remove-scroll "^2.0.4"
-    react-spring "^9.0.0-beta.31"
-    resize-observer-polyfill "^1.5.1"
-    tslib "^1.9.3"
-
 react-helmet@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/react-helmet/-/react-helmet-5.2.0.tgz#a81811df21313a6d55c5f058c4aeba5d6f3d97a7"
@@ -10395,6 +10382,19 @@ react-live@^1.12.0:
     prismjs "1.6"
     prop-types "^15.5.8"
     unescape "^0.2.0"
+
+react-page-controller@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/react-page-controller/-/react-page-controller-3.0.1.tgz#b4550e9d07dc0655bb14390d973b79990941a20a"
+  integrity sha512-VOynHRx9TPWiIF8ZFQfwRmm3rtaLgi4VPblzn/OKyf0PkMtWUlp/+8iy4KtJzlXJvthJ2roq4cyQiC4e1dFhyA==
+  dependencies:
+    "@types/classnames" "^2.2.7"
+    "@types/react" "^16.8.10"
+    "@types/react-dom" "^16.8.3"
+    react-spring "^9.0.0-beta.31"
+    resize-observer-polyfill "^1.5.1"
+    tslib "^1.9.3"
+    use-scroll-lock "^1.0.0"
 
 react-popper@^1.3.3:
   version "1.3.3"
@@ -11121,10 +11121,10 @@ safe-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sancho@^3.3.3:
-  version "3.3.3"
-  resolved "https://registry.yarnpkg.com/sancho/-/sancho-3.3.3.tgz#330cff9249ea202cca6df2d0d98f18c83fa821d6"
-  integrity sha512-KgYzb/Gke88SOplo7NmJbQAzyp1A9WyDD9CaqdsAJRtOv0xlE/nIdtNCHrvV5IX/d1odMnTE6DuY4+RQyyIT+A==
+sancho@^3.4.1:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/sancho/-/sancho-3.4.1.tgz#32bfb30a29360b1e231db0c3d7cd499a9bb5b859"
+  integrity sha512-R/MDZ8JL0IvOAYvrh3ef0x2wymPbVIus3AkFOeL4eeOTL8jHjPFe/yPdkOQLh8y6kRNHqGIjUDQBQEJnWpNF9Q==
   dependencies:
     "@reach/alert" "^0.1.2"
     "@reach/skip-nav" "^0.1.2"
@@ -11147,15 +11147,15 @@ sancho@^3.3.3:
     raf-schd "^4.0.1"
     react-gesture-responder "^2.1.0"
     react-gesture-stack "^1.3.1"
-    react-gesture-view "^2.1.3"
+    react-page-controller "^3.0.1"
     react-popper "^1.3.3"
-    react-remove-scroll "^2.0.4"
     react-spring "^9.0.0-beta.31"
     resize-observer-polyfill "^1.5.1"
     toasted-notes "^2.1.6"
     touchable-hook "^1.2.1"
     tslib "^1.9.3"
     use-media "^1.2.0"
+    use-scroll-lock "^1.0.0"
 
 sax@>=0.6.0, sax@^1.2.4, sax@~1.2.1, sax@~1.2.4:
   version "1.2.4"
@@ -11194,6 +11194,11 @@ scroll-behavior@^0.9.9:
   dependencies:
     dom-helpers "^3.2.1"
     invariant "^2.2.2"
+
+scroll-lock@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/scroll-lock/-/scroll-lock-2.1.2.tgz#f550a2985bf38365b1cba314e3132d23956e6c21"
+  integrity sha512-m/gjn3+bOtyc4jS9fE4FYOLypzRDoV3vICnA0kz6TVUL4gQWUVqPT9cqaU2FbMo9doNDBKiBV2pP8L2+98We5g==
 
 section-matter@^1.0.0:
   version "1.0.0"
@@ -12823,6 +12828,16 @@ use-memo-one@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/use-memo-one/-/use-memo-one-1.1.0.tgz#9392ec84881af047f22aef4bcb9cd1c333899613"
   integrity sha512-mGmKaX2vauOWpFas4mGXj65JXkueLcca3OsT2iBKwB/Nl7NQeABIzBYq/HzVkFvnHXsf/S59DNN5UEOU+Bp1uw==
+
+use-scroll-lock@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/use-scroll-lock/-/use-scroll-lock-1.0.0.tgz#0e3fdab6bc8fe0b9868381cac55811d6b1763b88"
+  integrity sha512-XqxZI0DFsEBJ7IBwhQg5pn9UXJezYmkQN7Hqo4mxAJ0XNKaRVZjY+NVnxsjjKZD0Ze6gVu8naTrkTOPyC7Y3bA==
+  dependencies:
+    "@types/react" "^16.8.10"
+    "@types/react-dom" "^16.8.3"
+    scroll-lock "^2.1.2"
+    tslib "^1.9.3"
 
 use-sidecar@^1.0.1:
   version "1.0.1"

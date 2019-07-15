@@ -1,4 +1,4 @@
-.GestureViewExample .Gesture-view__pane > * {
+.PagerExample .Gesture-view__pane > * {
   padding: 100px;
   display: flex;
   justify-content: center;
@@ -8,6 +8,6 @@
   align-items: center;
 }
 
-.GestureViewExample {
+.PagerExample {
   border-radius: 1.5rem;
 }
