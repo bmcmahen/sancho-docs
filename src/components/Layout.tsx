@@ -91,7 +91,8 @@ const Layout = ({ children }) => {
                     height: "100vh",
                     [theme.mediaQueries.lg]: {
                       display: "block",
-                      zIndex: 10
+                      zIndex: 10,
+                      position: "fixed"
                     }
                   }}
                 >
