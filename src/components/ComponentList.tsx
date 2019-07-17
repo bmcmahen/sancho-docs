@@ -235,7 +235,10 @@ export function ComponentList(props: ComponentListProps) {
         width: "14rem",
         background: dark
           ? theme.colors.background.layer
-          : bg || theme.colors.background.tint1
+          : bg || theme.colors.background.tint1,
+        [theme.mediaQueries.lg]: {
+          position: "fixed"
+        }
       }}
     >
       <div

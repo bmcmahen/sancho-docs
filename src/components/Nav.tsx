@@ -38,8 +38,8 @@ export const Nav: React.FunctionComponent<NavProps> = ({ title }) => {
           background: dark ? "#212529b3" : "rgba(255,255,255,0.6)"
         },
         [theme.mediaQueries.lg]: {
-          width: "calc(100% - 224px)",
-          left: "224px"
+          width: "calc(100% - 14rem)",
+          left: "14rem"
         }
       }}
     >
