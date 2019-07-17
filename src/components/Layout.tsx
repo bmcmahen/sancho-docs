@@ -77,23 +77,28 @@ const Layout = ({ children }) => {
                   {
                     justifyContent: "space-between",
                     padding: 0,
-                    display: "flex"
+                    display: "flex",
+                    [theme.mediaQueries.lg]: {
+                      position: "fixed"
+                    }
                   }
                 ]}
               >
                 <div
                   css={{
                     display: "none",
-                    position: "sticky",
-                    top: "0",
+
                     height: "100vh",
                     [theme.mediaQueries.lg]: {
-                      display: "block"
+                      display: "block",
+                      zIndex: 10
                     }
                   }}
                 >
                   <ComponentList />
                 </div>
+              </div>
+              <div>
                 <SetNavOpenContext.Provider
                   value={{
                     closeNav,
@@ -112,6 +117,7 @@ const Layout = ({ children }) => {
 };
 
 const Main = ({ children }) => {
+  const theme = useTheme();
   const responsiveBodyPadding = useResponsiveBodyPadding();
 
   return (
@@ -119,7 +125,10 @@ const Main = ({ children }) => {
       css={[
         {
           flex: 1,
-          minWidth: 0
+          minWidth: 0,
+          [theme.mediaQueries.lg]: {
+            paddingLeft: "224px"
+          }
         },
         responsiveBodyPadding
       ]}

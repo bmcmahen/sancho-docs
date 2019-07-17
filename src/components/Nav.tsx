@@ -26,7 +26,7 @@ export const Nav: React.FunctionComponent<NavProps> = ({ title }) => {
     <Navbar
       css={{
         position: "fixed",
-        left: "auto",
+
         width: "100%",
         boxShadow: "none",
         borderBottom: `1px solid ${theme.colors.border.default}`,
@@ -38,7 +38,8 @@ export const Nav: React.FunctionComponent<NavProps> = ({ title }) => {
           background: dark ? "#212529b3" : "rgba(255,255,255,0.6)"
         },
         [theme.mediaQueries.lg]: {
-          width: "calc(100% - 14rem)"
+          width: "calc(100% - 224px)",
+          left: "224px"
         }
       }}
     >
