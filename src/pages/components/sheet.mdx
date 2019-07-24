@@ -26,21 +26,23 @@ means you can pull it to trigger its closure as is common in native applications
 By default, a sheet will open to the right with its width adjusting to the width of the content. Use the `data-trigger-close="true"` attribute on any element that should trigger the sheet to close.
 
 ```jsx expanded
-<Component initialState={{ isOpen: false }}>
-  {({ state, setState }) => (
+/** @jsx jsx */
+
+function SheetExample() {
+  const [open, setOpen] = React.useState(false);
+  const theme = useTheme();
+
+  return (
     <React.Fragment>
-      <Button onPress={() => setState({ isOpen: true })}>Open sheet</Button>
-      <Sheet
-        onRequestClose={() => setState({ isOpen: false })}
-        isOpen={state.isOpen}
-      >
-        <div tabIndex={0} style={{ padding: "3rem" }}>
+      <Button onPress={() => setOpen(true)}>Open sheet</Button>
+      <Sheet onRequestClose={() => setOpen(false)} isOpen={open}>
+        <div tabIndex={0} css={{ padding: theme.spaces.md }}>
           <Text>Hello world</Text>
         </div>
       </Sheet>
     </React.Fragment>
-  )}
-</Component>
+  );
+}
 ```
 
 #### Different positions
@@ -48,25 +50,42 @@ By default, a sheet will open to the right with its width adjusting to the width
 You can display sheets from the `left`, `top`, `bottom`, or `right`.
 
 ```jsx
-<Component initialState={{ isOpen: false, position: "left" }}>
-  {({ state, setState }) => (
-    <React.Fragment>
-      <Button onPress={() => setState({ isOpen: true, position: "left" })}>
-        Left
-      </Button>
+/** @jsx jsx */
 
-      <Sheet
-        position={state.position}
-        onRequestClose={() => setState({ isOpen: false })}
-        isOpen={state.isOpen}
-      >
-        <div style={{ padding: "3rem" }}>
-          <Text>Hello world</Text>
-        </div>
-      </Sheet>
+function CollapseExample() {
+  const [show, setShow] = React.useState(false);
+  const [position, setPosition] = React.useState("left");
+  const theme = useTheme();
+
+  return (
+    <React.Fragment>
+      {["left", "top", "bottom", "right"].map(pos => (
+        <Button
+          css={{ margin: theme.spaces.md }}
+          key={pos}
+          onPress={() => {
+            setPosition(pos);
+            setShow(true);
+          }}
+        >
+          {pos}
+        </Button>
+      ))}
+
+      {["left", "top", "bottom", "right"].map(pos => (
+        <Sheet
+          position={pos}
+          onRequestClose={() => setShow(false)}
+          isOpen={show && pos === position}
+        >
+          <div css={{ padding: theme.spaces.lg }}>
+            <Text>Hello world</Text>
+          </div>
+        </Sheet>
+      ))}
     </React.Fragment>
-  )}
-</Component>
+  );
+}
 ```
 
 <Props names={["Sheet"]} />

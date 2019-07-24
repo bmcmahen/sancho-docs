@@ -30,16 +30,20 @@ This component is also offered independently as [react-gesture-stack](https://gi
 This example shows usage with the navigation disabled. Touch the image to skip to the next and then try dragging back to reveal the first image.
 
 ```jsx
-<Component initialState={{ index: 0 }}>
-  {({ state, setState }) => (
+/** @jsx jsx */
+
+function Example() {
+  const [index, setIndex] = React.useState(0);
+
+  return (
     <div
-      style={{
+      css={{
         display: "flex",
         justifyContent: "center"
       }}
     >
       <Stack
-        index={state.index}
+        index={index}
         disableNav
         css={{ height: "400px", width: "400px" }}
         items={[
@@ -47,7 +51,7 @@ This example shows usage with the navigation disabled. Touch the image to skip t
             title: null,
             content: (
               <StackItem
-                onClick={() => setState({ index: state.index + 1 })}
+                onClick={() => setIndex(index + 1)}
                 css={{
                   backgroundImage: `url(https://images.unsplash.com/photo-1556909114-44e3e70034e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80)`,
                   backgroundSize: "cover"
@@ -59,6 +63,7 @@ This example shows usage with the navigation disabled. Touch the image to skip t
             title: null,
             content: (
               <StackItem
+                onClick={() => setIndex(index + 1)}
                 css={{
                   backgroundImage: `url(https://images.unsplash.com/photo-1558980664-10e7170b5df9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80)`,
                   backgroundSize: "cover"
@@ -78,11 +83,11 @@ This example shows usage with the navigation disabled. Touch the image to skip t
             )
           }
         ]}
-        onIndexChange={i => setState({ index: i })}
+        onIndexChange={i => setIndex(i)}
       />
     </div>
-  )}
-</Component>
+  );
+}
 ```
 
 #### Combining with List

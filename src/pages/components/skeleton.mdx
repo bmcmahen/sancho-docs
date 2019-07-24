@@ -27,20 +27,26 @@ replicate that component in height and width. The example below demonstrates how
 create a mock `ListItem` using multiple skeletons in place of text and an avatar.
 
 ```jsx expanded
-<List>
-  <ListItem
-    interactive={false}
-    aria-live="polite"
-    aria-busy="true"
-    primary={<Skeleton style={{ width: "100px" }} />}
-    secondary={<Skeleton />}
-    contentBefore={
-      <Skeleton
-        style={{ width: "3.27rem", height: "3.27rem", borderRadius: "50%" }}
+/** @jsx jsx */
+
+function Example() {
+  return (
+    <List>
+      <ListItem
+        interactive={false}
+        aria-live="polite"
+        aria-busy="true"
+        primary={<Skeleton css={{ width: "100px" }} />}
+        secondary={<Skeleton />}
+        contentBefore={
+          <Skeleton
+            css={{ width: "3.27rem", height: "3.27rem", borderRadius: "50%" }}
+          />
+        }
       />
-    }
-  />
-</List>
+    </List>
+  );
+}
 ```
 
 #### Animated
