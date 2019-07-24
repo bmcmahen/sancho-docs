@@ -37,119 +37,149 @@ You'll typically want to wrap you input elements with `InputGroup` to ensure pro
 #### Input
 
 ```jsx
-<div style={{ maxWidth: "350px" }}>
-  <InputGroup label="Email address">
-    <Input placeholder="ben.mcmahen@gmail.com" />
-  </InputGroup>
-  <InputGroup label="Email address">
-    <Input disabled placeholder="ben.mcmahen@gmail.com" />
-  </InputGroup>
-  <InputGroup error="This field is required" label="Email address">
-    <Input placeholder="ben.mcmahen@gmail.com" />
-  </InputGroup>
-</div>
+/** @jsx jsx */
+
+function Example() {
+  return (
+    <div css={{ maxWidth: "350px" }}>
+      <InputGroup label="Email address">
+        <Input placeholder="ben.mcmahen@gmail.com" />
+      </InputGroup>
+      <InputGroup label="Email address">
+        <Input disabled placeholder="ben.mcmahen@gmail.com" />
+      </InputGroup>
+      <InputGroup error="This field is required" label="Email address">
+        <Input placeholder="ben.mcmahen@gmail.com" />
+      </InputGroup>
+    </div>
+  );
+}
 ```
 
 #### TextArea
 
 ```jsx
-<div style={{ maxWidth: "350px" }}>
-  <InputGroup
-    label="Example textarea"
-    helpText="Please provide a brief description of yourself. This will go on your profile."
-  >
-    <TextArea placeholder="Something about me" />
-  </InputGroup>
-  <InputGroup
-    label="Example textarea"
-    helpText="Please provide a brief description of yourself. This will go on your profile."
-  >
-    <TextArea disabled placeholder="Something about me" />
-  </InputGroup>
-  <InputGroup
-    error="This field is required"
-    label="Example textarea"
-    helpText="Please provide a brief description of yourself. This will go on your profile."
-  >
-    <TextArea placeholder="Something about me" />
-  </InputGroup>
-</div>
+/** @jsx jsx */
+
+function Example() {
+  return (
+    <div css={{ maxWidth: "350px" }}>
+      <InputGroup
+        label="Example textarea"
+        helpText="Please provide a brief description of yourself. This will go on your profile."
+      >
+        <TextArea placeholder="Something about me" />
+      </InputGroup>
+      <InputGroup
+        label="Example textarea"
+        helpText="Please provide a brief description of yourself. This will go on your profile."
+      >
+        <TextArea disabled placeholder="Something about me" />
+      </InputGroup>
+      <InputGroup
+        error="This field is required"
+        label="Example textarea"
+        helpText="Please provide a brief description of yourself. This will go on your profile."
+      >
+        <TextArea placeholder="Something about me" />
+      </InputGroup>
+    </div>
+  );
+}
 ```
 
 #### Select
 
 ```jsx
-<div style={{ maxWidth: "350px" }}>
-  <InputGroup label="Gender">
-    <Select>
-      <option>Male</option>
-      <option>Female</option>
-      <option>Other</option>
-    </Select>
-  </InputGroup>
-  <InputGroup label="Gender">
-    <Select disabled>
-      <option>Male</option>
-      <option>Female</option>
-      <option>Other</option>
-    </Select>
-  </InputGroup>
-  <InputGroup error="This field is required" label="Gender">
-    <Select>
-      <option>Male</option>
-      <option>Female</option>
-      <option>Other</option>
-    </Select>
-  </InputGroup>
-</div>
+/** @jsx jsx */
+
+function Example() {
+  return (
+    <div css={{ maxWidth: "350px" }}>
+      <InputGroup label="Gender">
+        <Select>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </Select>
+      </InputGroup>
+      <InputGroup label="Gender">
+        <Select disabled>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </Select>
+      </InputGroup>
+      <InputGroup error="This field is required" label="Gender">
+        <Select>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </Select>
+      </InputGroup>
+    </div>
+  );
+}
 ```
 
 #### Check
 
 ```jsx
-<div style={{ maxWidth: "350px" }}>
-  <InputGroup label="Gender">
-    <div>
-      <Check disabled label="Male" checked />
-      <Check label="Female" />
-      <Check label="Other" />
-    </div>
-  </InputGroup>
+/** @jsx jsx */
 
-  <InputGroup error="You must select a gender" label="Gender">
-    <div>
-      <Check disabled label="Male" checked />
-      <Check label="Female" />
-      <Check label="Other" />
+function Example() {
+  return (
+    <div css={{ maxWidth: "350px" }}>
+      <InputGroup label="Gender">
+        <div>
+          <Check disabled label="Male" checked />
+          <Check label="Female" />
+          <Check label="Other" />
+        </div>
+      </InputGroup>
+
+      <InputGroup error="You must select a gender" label="Gender">
+        <div>
+          <Check disabled label="Male" checked />
+          <Check label="Female" />
+          <Check label="Other" />
+        </div>
+      </InputGroup>
     </div>
-  </InputGroup>
-</div>
+  );
+}
 ```
 
 #### Combined example
 
 ```jsx
-<form className="Form-basics">
-  <InputGroup label="Email address *">
-    <Input type="email" required placeholder="name@example.com" />
-  </InputGroup>
-  <InputGroup
-    label="About yourself"
-    helpText="Please provide a brief description of yourself. This information will be available to the public."
-  >
-    <TextArea placeholder="I love dogs and peanut butter" />
-  </InputGroup>
-  <InputGroup label="Gender">
-    <Select>
-      <option>Female</option>
-      <option>Male</option>
-      <option>Other</option>
-    </Select>
-  </InputGroup>
-  <InputGroup label="Do you accept our terms?">
-    <Check label="Sure, whatevs" />
-  </InputGroup>
-</form>
+/** @jsx jsx */
+
+function Example() {
+  return (
+    <form className="Form-basics">
+      <InputGroup label="Email address *">
+        <Input type="email" required placeholder="name@example.com" />
+      </InputGroup>
+      <InputGroup
+        label="About yourself"
+        helpText="Please provide a brief description of yourself. This information will be available to the public."
+      >
+        <TextArea placeholder="I love dogs and peanut butter" />
+      </InputGroup>
+      <InputGroup label="Gender">
+        <Select>
+          <option>Female</option>
+          <option>Male</option>
+          <option>Other</option>
+        </Select>
+      </InputGroup>
+      <InputGroup label="Do you accept our terms?">
+        <Check label="Sure, whatevs" />
+      </InputGroup>
+    </form>
+  );
+}
 ```
 
 #### Different sizes
@@ -157,24 +187,30 @@ You'll typically want to wrap you input elements with `InputGroup` to ensure pro
 Input elements support three different sizes: `lg`, `md` and `sm`.
 
 ```jsx
-<form className="Form-basics">
-  <InputGroup label="Email address">
-    <Input inputSize="lg" type="email" placeholder="name@example.com" />
-  </InputGroup>
-  <InputGroup
-    label="About yourself"
-    helpText="Please provide a brief description of yourself. This information will be available to the public."
-  >
-    <TextArea inputSize="lg" />
-  </InputGroup>
-  <InputGroup label="Gender">
-    <Select inputSize="lg">
-      <option>Female</option>
-      <option>Male</option>
-      <option>Other</option>
-    </Select>
-  </InputGroup>
-</form>
+/** @jsx jsx */
+
+function Example() {
+  return (
+    <form className="Form-basics">
+      <InputGroup label="Email address">
+        <Input inputSize="lg" type="email" placeholder="name@example.com" />
+      </InputGroup>
+      <InputGroup
+        label="About yourself"
+        helpText="Please provide a brief description of yourself. This information will be available to the public."
+      >
+        <TextArea inputSize="lg" />
+      </InputGroup>
+      <InputGroup label="Gender">
+        <Select inputSize="lg">
+          <option>Female</option>
+          <option>Male</option>
+          <option>Other</option>
+        </Select>
+      </InputGroup>
+    </form>
+  );
+}
 ```
 
 #### Hide labels
@@ -182,26 +218,44 @@ Input elements support three different sizes: `lg`, `md` and `sm`.
 You can hide labels while maintaining accessible form elements using the `hideLabel` prop.
 
 ```jsx
-<div className="Form-label">
-  <Layer>
-    <Toolbar className="Toolbar">
-      <Text gutter={false} variant="h4">
-        Sign in to Watershed
-      </Text>
-    </Toolbar>
-    <form>
-      <InputGroup hideLabel label="Email address">
-        <Input inputSize="lg" type="email" placeholder="Email" />
-      </InputGroup>
-      <InputGroup hideLabel label="Password">
-        <Input inputSize="lg" type="password" placeholder="Password" />
-      </InputGroup>
-      <Button style={{ marginTop: "1rem" }} size="lg" block intent="primary">
-        Sign in
-      </Button>
-    </form>
-  </Layer>
-</div>
+/** @jsx jsx */
+
+function Example() {
+  const theme = useTheme();
+
+  return (
+    <div css={{ maxWidth: "400px" }}>
+      <Layer>
+        <Toolbar
+          css={{
+            justifyContent: "center",
+            borderBottom: `1px solid ${theme.colors.border.default}`
+          }}
+        >
+          <Text gutter={false} variant="h4">
+            Sign in to Watershed
+          </Text>
+        </Toolbar>
+        <form css={{ padding: theme.spaces.lg }}>
+          <InputGroup hideLabel label="Email address">
+            <Input inputSize="lg" type="email" placeholder="Email" />
+          </InputGroup>
+          <InputGroup hideLabel label="Password">
+            <Input inputSize="lg" type="password" placeholder="Password" />
+          </InputGroup>
+          <Button
+            style={{ marginTop: "1rem" }}
+            size="lg"
+            block
+            intent="primary"
+          >
+            Sign in
+          </Button>
+        </form>
+      </Layer>
+    </div>
+  );
+}
 ```
 
 <Props names={["Form"]} />

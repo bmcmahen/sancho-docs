@@ -29,58 +29,76 @@ You can build collapsing content using two exports:
 
 If you control collapse using your own state, you are responsible for providing the necessary `aria` attributes.
 
-```.jsx
-const [show, setShow] = useState(false)
+```jsx
+/** @jsx jsx */
 
-<Button
-  onPress={() => setShow(true)}
-  aria-expanded={show}
-  aria-controls='collapse'>
-    Expand
-</Button>
-<Collapse id='collapse' show={show}>
-  Collapsed content
-</Collapse>
+function CollapseExample() {
+  const [show, setShow] = React.useState(false);
+  const theme = useTheme();
+
+  return (
+    <React.Fragment>
+      <Button
+        onPress={() => setShow(!show)}
+        aria-expanded={show}
+        aria-controls="collapse"
+      >
+        {show ? "Hide" : "Expand"}
+      </Button>
+      <Collapse id="collapse" show={show}>
+        <Text
+          css={{
+            display: "inline-block",
+            padding: theme.spaces.lg,
+            background: theme.colors.background.tint1
+          }}
+        >
+          Collapsed content
+        </Text>
+      </Collapse>
+    </React.Fragment>
+  );
+}
 ```
 
 Here's a more advanced example:
 
 ```jsx
-<Component initialState={{ show: false }}>
-  {({ state, setState }) => {
-    return (
-      <Layer className="Collapse__example">
-        <Embed width={707} height={448}>
-          <img
-            src={
-              "https://images.unsplash.com/photo-1508280756091-9bdd7ef1f463?ixlib=rb-1.2.1&auto=format&fit=crop&w=1990&q=80"
-            }
-            alt="A funny dog"
-          />
-        </Embed>
-        <div className="Collapse__content">
-          <Text variant="h4">Roger</Text>
-          <Collapse id="collapse" show={state.show}>
-            <Text className="Collapse__text" variant="paragraph">
-              I'm your best friend. <br />
-              I love food. <br />
-              And I love walks.
-            </Text>
-          </Collapse>
-          <Button
-            aria-controls="collapse"
-            variant="ghost"
-            intent="primary"
-            iconAfter={state.show ? <IconChevronUp /> : <IconChevronDown />}
-            onPress={() => setState({ show: !state.show })}
-          >
-            {state.show ? "Learn less" : "Learn more"}
-          </Button>
-        </div>
-      </Layer>
-    );
-  }}
-</Component>
+function AdvancedCollapse() {
+  const [show, setShow] = React.useState(false);
+
+  return (
+    <Layer className="Collapse__example">
+      <Embed width={707} height={448}>
+        <img
+          src={
+            "https://images.unsplash.com/photo-1508280756091-9bdd7ef1f463?ixlib=rb-1.2.1&auto=format&fit=crop&w=1990&q=80"
+          }
+          alt="A funny dog"
+        />
+      </Embed>
+      <div className="Collapse__content">
+        <Text variant="h4">Roger</Text>
+        <Collapse id="collapse" show={show}>
+          <Text className="Collapse__text" variant="paragraph">
+            I'm your best friend. <br />
+            I love food. <br />
+            And I love walks.
+          </Text>
+        </Collapse>
+        <Button
+          aria-controls="collapse"
+          variant="ghost"
+          intent="primary"
+          iconAfter={show ? <IconChevronUp /> : <IconChevronDown />}
+          onPress={() => setShow(!show)}
+        >
+          {show ? "Learn less" : "Learn more"}
+        </Button>
+      </div>
+    </Layer>
+  );
+}
 ```
 
 #### Using hooks
@@ -88,21 +106,17 @@ Here's a more advanced example:
 The recommended way to control Collapse is by using the `useCollapse` hook, and binding the return
 value to the appropriate elements. This provides the recommended `aria` attributes.
 
-```.jsx
-import { Collapse, useCollapse } from 'sancho'
-
-const Example = () => {
-  const state = useCollapse(false)
+```jsx
+function HookCollapseExample() {
+  const state = useCollapse(false);
   return (
     <div>
       <Button {...state.buttonProps}>
-        Click to {state.show ? 'hide' : 'reveal'}!
+        Click to {state.show ? "hide" : "reveal"}!
       </Button>
-      <Collapse {...state.collapseProps}>
-        Collapse content
-      </Collapse>
+      <Collapse {...state.collapseProps}>Collapse content</Collapse>
     </div>
-  )
+  );
 }
 ```
 

@@ -67,6 +67,8 @@ export function ComponentPreview({ className, ...props }) {
           scope={{
             ...components,
             Component,
+            jsx,
+            css,
             faker
           }}
           mountStylesheet={false}

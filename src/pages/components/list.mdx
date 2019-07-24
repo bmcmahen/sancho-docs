@@ -35,79 +35,112 @@ Sancho exports the following components to create lists:
 #### Basic usage
 
 ```jsx expanded
-<Layer style={{ overflow: "hidden", maxWidth: "100%", width: "450px" }}>
-  <List>
-    <ListItem
-      contentBefore={<Avatar name={"Ben McMahen"} src={faker.image.avatar()} />}
-      primary="Ben McMahen"
-      secondary="Minim do minim cupidatat veniam aliquip sunt exercitation enim nisi nulla."
-      contentAfter={<IconChevronRight />}
-    />
-    <ListItem
-      contentBefore={<Avatar name={"Ben McMahen"} src={faker.image.avatar()} />}
-      primary="Joe Chen"
-      secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
-      contentAfter={<IconChevronRight />}
-    />
-    <ListItem
-      contentBefore={<Avatar name={"Lynn Apple"} src={faker.image.avatar()} />}
-      primary="Lynn Apple"
-      secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
-      contentAfter={<IconChevronRight />}
-    />
-    <ListItem
-      contentBefore={<Avatar name={"Mary Joe"} src={faker.image.avatar()} />}
-      primary="Mary Joe"
-      secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
-      contentAfter={<IconChevronRight />}
-    />
-  </List>
-</Layer>
+/** @jsx jsx */
+
+function Example() {
+  return (
+    <Layer css={{ overflow: "hidden", maxWidth: "100%", width: "450px" }}>
+      <List>
+        <ListItem
+          contentBefore={
+            <Avatar name={"Ben McMahen"} src={faker.image.avatar()} />
+          }
+          primary="Ben McMahen"
+          secondary="Minim do minim cupidatat veniam aliquip sunt exercitation enim nisi nulla."
+          contentAfter={<IconChevronRight />}
+        />
+        <ListItem
+          contentBefore={
+            <Avatar name={"Ben McMahen"} src={faker.image.avatar()} />
+          }
+          primary="Joe Chen"
+          secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
+          contentAfter={<IconChevronRight />}
+        />
+        <ListItem
+          contentBefore={
+            <Avatar name={"Lynn Apple"} src={faker.image.avatar()} />
+          }
+          primary="Lynn Apple"
+          secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
+          contentAfter={<IconChevronRight />}
+        />
+        <ListItem
+          contentBefore={
+            <Avatar name={"Mary Joe"} src={faker.image.avatar()} />
+          }
+          primary="Mary Joe"
+          secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
+          contentAfter={<IconChevronRight />}
+        />
+      </List>
+    </Layer>
+  );
+}
 ```
 
 ```jsx
-<Layer className="List-example">
-  <Toolbar className="List-toolbar">
-    <Text gutter={false} variant="h6">
-      My Chat App
-    </Text>
-  </Toolbar>
-  <Component initialState={{ value: 0 }}>
-    {({ state, setState }) => (
+/** @jsx jsx */
+
+function Example() {
+  const [index, setIndex] = React.useState(0);
+
+  return (
+    <Layer className="List-example">
+      <Toolbar className="List-toolbar">
+        <Text gutter={false} variant="h6">
+          Messenger
+        </Text>
+      </Toolbar>
+
       <Tabs
         className="List-tabs"
         variant="evenly-spaced"
-        onChange={i => setState({ value: i })}
-        value={state.value}
+        onChange={i => setIndex(i)}
+        value={index}
       >
-        <Tab>Family</Tab>
-        <Tab>Work</Tab>
-        <Tab>Favorites</Tab>
-        <Tab>Groups</Tab>
+        <Tab id="family">Family</Tab>
+        <Tab id="work">Work</Tab>
+        <Tab id="favorites">Favorites</Tab>
+        <Tab id="groups">Groups</Tab>
       </Tabs>
-    )}
-  </Component>
-  <div>
-    <List>
-      <ListItem
-        contentBefore={
-          <Avatar name={"Lynn Apple"} src={faker.image.avatar()} />
-        }
-        primary="Lynn Apple"
-        wrap={false}
-        secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
-        contentAfter={<Badge>1</Badge>}
-      />
-      <ListItem
-        contentBefore={<Avatar name={"Mary Joe"} src={faker.image.avatar()} />}
-        primary="Mary Joe"
-        wrap={false}
-        secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
-        contentAfter={<Badge>4</Badge>}
-      />
-    </List>
-  </div>
-</Layer>
+
+      <Pager value={index} onRequestChange={i => setIndex(i)}>
+        <TabPanel id="family">
+          <List>
+            <ListItem
+              contentBefore={
+                <Avatar name={"Lynn Apple"} src={faker.image.avatar()} />
+              }
+              primary="Lynn Apple"
+              wrap={false}
+              secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
+              contentAfter={<Badge>1</Badge>}
+            />
+            <ListItem
+              contentBefore={
+                <Avatar name={"Mary Joe"} src={faker.image.avatar()} />
+              }
+              primary="Mary Joe"
+              wrap={false}
+              secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
+              contentAfter={<Badge>4</Badge>}
+            />
+          </List>
+        </TabPanel>
+        <TabPanel id="work" className="Tab-panel">
+          <Text>Work</Text>
+        </TabPanel>
+        <TabPanel id="favorites" className="Tab-panel">
+          <Text>Favorites</Text>
+        </TabPanel>
+        <TabPanel id="groups" className="Tab-panel">
+          <Text>Groups</Text>
+        </TabPanel>
+      </Pager>
+    </Layer>
+  );
+}
 ```
 
 #### Using sections
@@ -115,57 +148,67 @@ Sancho exports the following components to create lists:
 Sections provide sticky headers via the `title` prop.
 
 ```jsx
-<Layer
-  style={{
-    overflowY: "scroll",
-    maxHeight: "300px",
-    maxWidth: "100%",
-    width: "450px"
-  }}
->
-  <List>
-    <ListSection title="Friends">
-      <ListItem
-        contentBefore={
-          <Avatar name={"Ben McMahen"} src={faker.image.avatar()} />
-        }
-        primary="Ben McMahen"
-        secondary="Minim do minim cupidatat veniam aliquip sunt exercitation enim nisi nulla."
-        contentAfter={<IconChevronRight />}
-      />
-      <ListItem
-        contentBefore={
-          <Avatar name={"Ben McMahen"} src={faker.image.avatar()} />
-        }
-        primary="Joe Chen"
-        secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
-        contentAfter={<IconChevronRight />}
-      />
-    </ListSection>
-    <ListSection title="Family">
-      <ListItem
-        contentBefore={
-          <Avatar name={"Lynn Apple"} src={faker.image.avatar()} />
-        }
-        primary="Lynn Apple"
-        secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
-        contentAfter={<IconChevronRight />}
-      />
-      <ListItem
-        contentBefore={<Avatar name={"Mary Joe"} src={faker.image.avatar()} />}
-        primary="Mary Joe"
-        secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
-        contentAfter={<IconChevronRight />}
-      />
-      <ListItem
-        contentBefore={<Avatar name={"Mary Joe"} src={faker.image.avatar()} />}
-        primary="Mary Joe"
-        secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
-        contentAfter={<IconChevronRight />}
-      />
-    </ListSection>
-  </List>
-</Layer>
+/** @jsx jsx */
+
+function Example() {
+  return (
+    <Layer
+      css={{
+        overflowY: "scroll",
+        maxHeight: "300px",
+        maxWidth: "100%",
+        width: "450px"
+      }}
+    >
+      <List>
+        <ListSection title="Friends">
+          <ListItem
+            contentBefore={
+              <Avatar name={"Ben McMahen"} src={faker.image.avatar()} />
+            }
+            primary="Ben McMahen"
+            secondary="Minim do minim cupidatat veniam aliquip sunt exercitation enim nisi nulla."
+            contentAfter={<IconChevronRight />}
+          />
+          <ListItem
+            contentBefore={
+              <Avatar name={"Ben McMahen"} src={faker.image.avatar()} />
+            }
+            primary="Joe Chen"
+            secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
+            contentAfter={<IconChevronRight />}
+          />
+        </ListSection>
+        <ListSection title="Family">
+          <ListItem
+            contentBefore={
+              <Avatar name={"Lynn Apple"} src={faker.image.avatar()} />
+            }
+            primary="Lynn Apple"
+            secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
+            contentAfter={<IconChevronRight />}
+          />
+          <ListItem
+            contentBefore={
+              <Avatar name={"Mary Joe"} src={faker.image.avatar()} />
+            }
+            primary="Mary Joe"
+            secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
+            contentAfter={<IconChevronRight />}
+          />
+          <ListItem
+            contentBefore={
+              <Avatar name={"Mary Joe"} src={faker.image.avatar()} />
+            }
+            primary="Mary Joe"
+            secondary="Proident irure cupidatat cupidatat elit eiusmod mollit."
+            contentAfter={<IconChevronRight />}
+          />
+        </ListSection>
+      </List>
+    </Layer>
+  );
+}
 ```
 
 #### Disabling wrap
@@ -246,24 +289,22 @@ You can combine `ListItem` with `Skeleton` to create loading states.
 You can combine `useInfiniteScroll`, `ScrollView`, and `List` to create infinitely scrollable lists.
 For very long lists you may want to consider using a windowing infinite scroller instead.
 
-```.jsx
-import faker from "faker";
-import React from "react";
-import { useInfiniteScroll, Skeleton, List, ListItem } from "sancho";
-
-function fetchdata() {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      resolve();
-    }, 500);
-  });
-}
+```jsx
+/** @jsx jsx */
 
 function Example() {
   const ref = React.useRef();
   const [items, setItems] = React.useState(
     Array.from(new Array(10)).map(() => faker.name.firstName())
   );
+
+  function fetchdata() {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve();
+      }, 500);
+    });
+  }
 
   const [page, setPage] = React.useState(0);
 
@@ -282,7 +323,7 @@ function Example() {
   });
 
   return (
-    <ScrollView innerRef={ref}>
+    <ScrollView overflowY css={{ height: "300px" }} innerRef={ref}>
       <List>
         {items.map(item => (
           <ListItem key={item} primary={item} />
@@ -292,7 +333,7 @@ function Example() {
             interactive={false}
             aria-live="polite"
             aria-busy="true"
-            primary={<Skeleton />}
+            primary={<Skeleton animated css={{ width: "150px" }} />}
           />
         )}
       </List>

@@ -29,25 +29,36 @@ Sancho exports these components to create dialogs:
 #### Basic usage
 
 ```jsx expanded
-<Component initialState={{ isOpen: false }}>
-  {({ state, setState }) => (
+/** @jsx jsx */
+
+function DialogExample() {
+  const [open, setOpen] = React.useState(false);
+  const theme = useTheme();
+
+  return (
     <React.Fragment>
-      <Button onPress={() => setState({ isOpen: true })}>View dialog</Button>
+      <Button onPress={() => setOpen(true)}>View dialog</Button>
       <Dialog
-        isOpen={state.isOpen}
-        onRequestClose={() => setState({ isOpen: false })}
+        isOpen={open}
+        onRequestClose={() => setOpen(false)}
         title="Dialog title"
       >
-        <div className="Dialog-example">
+        <div css={{ padding: theme.spaces.lg }}>
           <Text>Dialog content</Text>
-          <div>
+          <div
+            css={{
+              display: "flex",
+              marginTop: theme.spaces.lg,
+              justifyContent: "flex-end"
+            }}
+          >
             <Button intent="primary">Save</Button>
           </div>
         </div>
       </Dialog>
     </React.Fragment>
-  )}
-</Component>
+  );
+}
 ```
 
 #### Fullscreen mobile example
@@ -55,23 +66,35 @@ Sancho exports these components to create dialogs:
 This option enables fullscreen on mobile devices, which is typically a better user experience.
 
 ```jsx
-<Component initialState={{ isOpen: false }}>
-  {({ state, setState }) => (
+function DialogExample() {
+  const [open, setOpen] = React.useState(false);
+  const theme = useTheme();
+
+  return (
     <React.Fragment>
-      <Button onPress={() => setState({ isOpen: true })}>Show Dialog</Button>
+      <Button onPress={() => setOpen(true)}>View dialog</Button>
       <Dialog
-        isOpen={state.isOpen}
         mobileFullscreen
-        onRequestClose={() => setState({ isOpen: false })}
-        title="Hello world!"
+        isOpen={open}
+        onRequestClose={() => setOpen(false)}
+        title="Dialog title"
       >
-        <div className="Dialog-example">
-          <Text>Hello world</Text>
+        <div css={{ padding: theme.spaces.lg }}>
+          <Text>Dialog content</Text>
+          <div
+            css={{
+              display: "flex",
+              marginTop: theme.spaces.lg,
+              justifyContent: "flex-end"
+            }}
+          >
+            <Button intent="primary">Save</Button>
+          </div>
         </div>
       </Dialog>
     </React.Fragment>
-  )}
-</Component>
+  );
+}
 ```
 
 #### Without a title
@@ -79,22 +102,30 @@ This option enables fullscreen on mobile devices, which is typically a better us
 When a title isn't provided, a header isn't added.
 
 ```jsx
-<Component initialState={{ isOpen: false }}>
-  {({ state, setState }) => (
+function DialogExample() {
+  const [open, setOpen] = React.useState(false);
+  const theme = useTheme();
+
+  return (
     <React.Fragment>
-      <Button onPress={() => setState({ isOpen: true })}>Show Dialog</Button>
-      <Dialog
-        isOpen={state.isOpen}
-        onRequestClose={() => setState({ isOpen: false })}
-      >
-        <div className="Dialog-example">
-          <Text>Hello world</Text>
-          <Button onPress={() => setState({ isOpen: false })}>Cancel</Button>
+      <Button onPress={() => setOpen(true)}>View Dialog</Button>
+      <Dialog isOpen={open} onRequestClose={() => setOpen(false)}>
+        <div css={{ padding: theme.spaces.lg }}>
+          <Text>Dialog content</Text>
+          <div
+            css={{
+              display: "flex",
+              marginTop: theme.spaces.lg,
+              justifyContent: "flex-end"
+            }}
+          >
+            <Button intent="primary">Save</Button>
+          </div>
         </div>
       </Dialog>
     </React.Fragment>
-  )}
-</Component>
+  );
+}
 ```
 
 <Props names={["Dialog"]} />

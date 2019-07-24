@@ -33,43 +33,58 @@ Full instructions can be found on [react-page-controller](https://github.com/bmc
 Try swiping the views below on a touch-based device.
 
 ```jsx
-<Component initialState={{ value: 0 }}>
-  {({ state, setState }) => (
+/** @jsx jsx */
+
+function PagerExample() {
+  const [page, setPage] = React.useState(0);
+  const theme = useTheme();
+
+  return (
     <DarkMode>
       <Pager
-        className="PagerExample"
-        value={state.value}
-        onRequestChange={i => setState({ value: i })}
+        css={{
+          "& .Gesture-view__pane > *": {
+            padding: "100px",
+            display: "flex",
+            justifyContent: "center",
+            boxSizing: "border-box",
+            width: "100%",
+            flex: 1,
+            alignItems: "center"
+          }
+        }}
+        value={page}
+        onRequestChange={i => setPage(i)}
       >
-        <div style={{ background: "#4a9eda" }}>
-          <Button variant="outline" onPress={() => setState({ value: 1 })}>
+        <div css={{ background: "#4a9eda" }}>
+          <Button variant="outline" onPress={() => setPage(1)}>
             Next
           </Button>
         </div>
-        <div style={{ background: "#7f8a93" }}>
-          <Button variant="outline" onPress={() => setState({ value: 2 })}>
+        <div css={{ background: "#7f8a93" }}>
+          <Button variant="outline" onPress={() => setPage(2)}>
             Next
           </Button>
         </div>
-        <div style={{ background: "#9966e0" }}>
-          <Button variant="outline" onPress={() => setState({ value: 3 })}>
+        <div css={{ background: "#9966e0" }}>
+          <Button variant="outline" onPress={() => setPage(3)}>
             Next
           </Button>
         </div>
-        <div style={{ background: "#e066ad" }}>
-          <Button variant="outline" onPress={() => setState({ value: 4 })}>
+        <div css={{ background: "#e066ad" }}>
+          <Button variant="outline" onPress={() => setPage(4)}>
             Next
           </Button>
         </div>
-        <div style={{ background: "#d7c938" }}>
-          <Button variant="outline" onPress={() => setState({ value: 0 })}>
+        <div css={{ background: "#d7c938" }}>
+          <Button variant="outline" onPress={() => setPage(0)}>
             Back to start
           </Button>
         </div>
       </Pager>
     </DarkMode>
-  )}
-</Component>
+  );
+}
 ```
 
 <Props names={["Pager"]} />
