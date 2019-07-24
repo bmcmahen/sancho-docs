@@ -1,0 +1,221 @@
+import { Container } from "sancho";
+import { Article } from "../../components/Layout";
+import { Props } from "../../components/Props";
+import SEO from "../../components/SEO";
+import { Nav } from "../../components/Nav";
+
+<Nav title="ComboBox" />
+<SEO title="ComboBox" />
+
+<Container>
+<Article sidebar={[
+  { id: 'ComboBox', name: 'ComboBox' },
+  { id: 'Basic usage', name: 'Basic usage' },
+    { id: 'Autocomplete', name: 'Autocomplete' },
+  { id: 'Custom ComboBoxOption Example', name: 'Custom Rendering'},
+  { id: 'Props', name: 'API' }
+]}>
+
+# ComboBox
+
+Sancho exports the following components which can be used to create a ComboBox or Autocomplete style component.
+
+- **ComboBox**: The wrapper component for your components.
+- **ComboBoxInput**: The input component used for querying.
+- **ComboBoxList**: A popup container for your listed options.
+- **ComboBoxOption**: An individual option to appear in the popover list.
+- **ComboBoxOptionText**: An optional component used for highlighting currently typed text.
+
+#### Basic usage
+
+```jsx expanded
+/** @jsx jsx */
+
+function Example() {
+  // generate mock data
+  const [entries, setEntries] = React.useState(
+    new Array(100).fill(null).map(() => ({
+      id: faker.random.uuid(),
+      name: faker.name.firstName() + " " + faker.name.lastName(),
+      image: faker.image.avatar()
+    }))
+  );
+
+  const [query, setQuery] = React.useState("");
+
+  const filteredResults = !query
+    ? []
+    : entries
+        .filter(
+          entry => entry.name.toLowerCase().indexOf(query.toLowerCase()) > -1
+        )
+        .slice(0, 10);
+
+  return (
+    <ComboBox
+      query={query}
+      onQueryChange={v => setQuery(v)}
+      onSelect={v => setQuery(v)}
+    >
+      <ComboBoxInput
+        css={{ maxWidth: "250px" }}
+        aria-label="Query users"
+        placeholder="Search for users"
+      />
+
+      {query && filteredResults.length > 0 && (
+        <ComboBoxList
+          css={{
+            maxHeight: "300px",
+            zIndex: 10,
+            overflow: "scroll"
+          }}
+          aria-label="Query users"
+        >
+          {filteredResults.map(entry => (
+            <ComboBoxOption value={entry.name} key={entry.id} />
+          ))}
+        </ComboBoxList>
+      )}
+    </ComboBox>
+  );
+}
+```
+
+#### Autocomplete
+
+To enable autocomplete using keyboard navigation use the `autocomplete` prop.
+
+```jsx
+/** @jsx jsx */
+
+function Example() {
+  // generate mock data
+  const [entries, setEntries] = React.useState(
+    new Array(100).fill(null).map(() => ({
+      id: faker.random.uuid(),
+      name: faker.name.firstName() + " " + faker.name.lastName(),
+      image: faker.image.avatar()
+    }))
+  );
+
+  const [query, setQuery] = React.useState("");
+
+  const filteredResults = !query
+    ? []
+    : entries
+        .filter(
+          entry => entry.name.toLowerCase().indexOf(query.toLowerCase()) > -1
+        )
+        .slice(0, 10);
+
+  return (
+    <ComboBox
+      query={query}
+      autocomplete
+      onQueryChange={v => setQuery(v)}
+      onSelect={v => setQuery(v)}
+    >
+      <ComboBoxInput
+        css={{ maxWidth: "250px" }}
+        aria-label="Query users"
+        placeholder="Search for users"
+      />
+
+      {query && filteredResults.length > 0 && (
+        <ComboBoxList
+          css={{
+            maxHeight: "300px",
+            zIndex: 10,
+            overflow: "scroll"
+          }}
+          aria-label="Query users"
+        >
+          {filteredResults.map(entry => (
+            <ComboBoxOption value={entry.name} key={entry.id} />
+          ))}
+        </ComboBoxList>
+      )}
+    </ComboBox>
+  );
+}
+```
+
+#### Custom ComboBoxOption Example
+
+`ComboBoxOption` can render a child instead of the standard `value` string. This allows you to build
+more complex search features. The below example renders an `ListItem`
+with an `Avatar` and it uses the `ComboBoxOptionText` component to provide
+completion highlighting.
+
+```jsx
+/** @jsx jsx */
+
+function Example() {
+  // generate mock data
+  const [entries, setEntries] = React.useState(
+    new Array(100).fill(null).map(() => ({
+      id: faker.random.uuid(),
+      name: faker.name.firstName() + " " + faker.name.lastName(),
+      image: faker.image.avatar()
+    }))
+  );
+
+  const [query, setQuery] = React.useState("");
+
+  const filteredResults = !query
+    ? []
+    : entries
+        .filter(
+          entry => entry.name.toLowerCase().indexOf(query.toLowerCase()) > -1
+        )
+        .slice(0, 10);
+
+  return (
+    <ComboBox
+      query={query}
+      onQueryChange={v => setQuery(v)}
+      onSelect={v => setQuery(v)}
+    >
+      <ComboBoxInput
+        css={{ maxWidth: "250px" }}
+        aria-label="Query users"
+        placeholder="Search for users"
+        autocomplete
+      />
+
+      {query && filteredResults.length && (
+        <ComboBoxList
+          css={{
+            maxHeight: "200px",
+            zIndex: 10,
+            overflow: "scroll"
+          }}
+          aria-label="Query users"
+        >
+          {filteredResults.map(entry => (
+            <ComboBoxOption
+              css={{ padding: 0 }}
+              value={entry.name}
+              key={entry.id}
+            >
+              <ListItem
+                interactive={false}
+                primary={<ComboBoxOptionText value={entry.name} />}
+                contentBefore={
+                  <Avatar size="sm" name={entry.name} src={entry.image} />
+                }
+              />
+            </ComboBoxOption>
+          ))}
+        </ComboBoxList>
+      )}
+    </ComboBox>
+  );
+}
+```
+
+<Props names={["ComboBox"]} />
+
+</Article>
+</Container>

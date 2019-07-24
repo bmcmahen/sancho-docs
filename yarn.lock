@@ -1654,6 +1654,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-highlight-words@^0.16.0":
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/@types/react-highlight-words/-/react-highlight-words-0.16.0.tgz#bcd67e9724fb5f070c955732f604068de5cbe30b"
+  integrity sha512-bSVlhM5OXLO67UZD/orsoT1lS5p7w8ffoDis3TtU1mqmXW7epHHt4kB7QmmZzwXjgzRm++yOo6Xpp7PhRFBpXA==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-swipeable-views@^0.12.2":
   version "0.12.2"
   resolved "https://registry.yarnpkg.com/@types/react-swipeable-views/-/react-swipeable-views-0.12.2.tgz#5b50bfbe2e42043f5de85a11087bcfbcb813610e"
@@ -6522,6 +6529,11 @@ hex-color-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/hex-color-regex/-/hex-color-regex-1.1.0.tgz#4c06fccb4602fe2602b3c93df82d7e7dbf1a8a8e"
   integrity sha512-l9sfDFsuqtOqKDsQdqrMRk0U85RZc0RtOR9yPI7mRVOa4FsR/BVnZ0shmQRM96Ji99kYZP/7hn1cedc1+ApsTQ==
 
+highlight-words-core@^1.2.0:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/highlight-words-core/-/highlight-words-core-1.2.2.tgz#1eff6d7d9f0a22f155042a00791237791b1eeaaa"
+  integrity sha512-BXUKIkUuh6cmmxzi5OIbUJxrG8OAk2MqoL1DtO3Wo9D2faJg2ph5ntyuQeLqaHJmzER6H5tllCDA9ZnNe9BVGg==
+
 hmac-drbg@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
@@ -8213,6 +8225,11 @@ mem@^4.0.0:
     map-age-cleaner "^0.1.1"
     mimic-fn "^1.0.0"
     p-is-promise "^2.0.0"
+
+memoize-one@^4.0.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-4.1.0.tgz#a2387c58c03fff27ca390c31b764a79addf3f906"
+  integrity sha512-2GApq0yI/b22J2j9rhbrAlsHb0Qcz+7yWxeLG8h+95sl1XPUgeLimQSOdur4Vw7cUhrBHwaUZxWFZueojqNRzA==
 
 memory-fs@^0.4.0, memory-fs@^0.4.1, memory-fs@~0.4.1:
   version "0.4.1"
@@ -10345,6 +10362,15 @@ react-helmet@^5.2.0:
     prop-types "^15.5.4"
     react-side-effect "^1.1.0"
 
+react-highlight-words@^0.16.0:
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/react-highlight-words/-/react-highlight-words-0.16.0.tgz#4b4b9824e3d2b98789d3e3b3aedb5e961ae1b7cf"
+  integrity sha512-q34TwCSJOL+5pVDv6LUj3amaoyXdNDwd7zRqVAvceOrO9g1haWLAglK6WkGLMNUa3PFN8EgGedLg/k8Gpndxqg==
+  dependencies:
+    highlight-words-core "^1.2.0"
+    memoize-one "^4.0.0"
+    prop-types "^15.5.8"
+
 react-hot-loader@^4.6.2:
   version "4.7.1"
   resolved "https://registry.yarnpkg.com/react-hot-loader/-/react-hot-loader-4.7.1.tgz#1260b939297859cff35aff61412887a92c9b4275"
@@ -11121,10 +11147,10 @@ safe-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sancho@^3.4.2:
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/sancho/-/sancho-3.4.2.tgz#812abf3ba2fb65638c2be762519a150193c69fab"
-  integrity sha512-zj92qeX/gD7fzN3ZMSP8YVHg6Nh85rnRH63Mi3ibZ3rthWs1K3UBcwfVQlJAzBqJTMLh6Nr5v7Dkg9TpQB/+GA==
+sancho@^3.5.1:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/sancho/-/sancho-3.5.1.tgz#b16153505e3dad77579b935afcf5457368d0b503"
+  integrity sha512-YV+w0D3wobwrJoZFAVw/4GWH0i20sUGhGUAtxwbdHTXcmQc/hg7f98Q1aflblErHRxmDV6EfI8N37Dy7/xq9Tw==
   dependencies:
     "@reach/alert" "^0.1.2"
     "@reach/skip-nav" "^0.1.2"
@@ -11135,6 +11161,7 @@ sancho@^3.4.2:
     "@types/prop-types" "15.7.0"
     "@types/react" "16.8.4"
     "@types/react-dom" "16.8.2"
+    "@types/react-highlight-words" "^0.16.0"
     "@types/react-swipeable-views" "^0.12.2"
     classnames "^2.2.6"
     color "^3.1.0"
@@ -11147,6 +11174,7 @@ sancho@^3.4.2:
     raf-schd "^4.0.1"
     react-gesture-responder "^2.1.0"
     react-gesture-stack "^1.3.1"
+    react-highlight-words "^0.16.0"
     react-page-controller "^3.0.1"
     react-popper "^1.3.3"
     react-remove-scroll "^2.0.4"

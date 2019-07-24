@@ -156,6 +156,7 @@ const components = [
   { title: "Badge", path: "/components/badge/" },
   { title: "Breadcrumbs", path: "/components/breadcrumb/" },
   { title: "Button", path: "/components/button/" },
+  { title: "ComboBox", path: "/components/combobox" },
   { title: "Collapse", path: "/components/collapse/" },
   { title: "Container", path: "/components/container/" },
   { title: "Dialog", path: "/components/dialog/" },
