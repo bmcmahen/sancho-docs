@@ -10340,17 +10340,17 @@ react-gesture-responder@^2.1.0:
     "@types/react-dom" "^16.8.3"
     tslib "^1.9.3"
 
-react-gesture-stack@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/react-gesture-stack/-/react-gesture-stack-1.3.1.tgz#296d2e0ef9e25257c16159c9b010a402b1f0d4e0"
-  integrity sha512-/lfE1uQp8IgI88Kfl2GG6DXGFsuxxspDNtjEbSonud2I4udUTR+D7X0ybrsj6q20dwGYX3Q/yduPF8Ud925MTA==
+react-gesture-stack@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/react-gesture-stack/-/react-gesture-stack-1.3.2.tgz#426c23aed054556e99de4627e8fe89d4a6f32c66"
+  integrity sha512-QSpFXF74yee4KmiO6QmqYAH7yfoDlDC4z2+GYKAUGqDhT/vJCWGBVi3YKNZ3JaReGx+hT5ahRv47suNJnUAWIQ==
   dependencies:
     "@types/react" "^16.8.10"
     "@types/react-dom" "^16.8.3"
-    react-remove-scroll "^2.0.4"
     react-spring "^9.0.0-beta.31"
     resize-observer-polyfill "^1.5.1"
     tslib "^1.9.3"
+    use-scroll-lock "^1.0.0"
 
 react-helmet@^5.2.0:
   version "5.2.0"
@@ -11147,10 +11147,10 @@ safe-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sancho@^3.5.2:
-  version "3.5.2"
-  resolved "https://registry.yarnpkg.com/sancho/-/sancho-3.5.2.tgz#6059065a10de3e7b86230ed3ebef728939226d61"
-  integrity sha512-uSkFNJR0kk3fyDk/eme2lySzJa4L/9zCE0hxSCH0sA/Dfon3WSGulXyGiSOp6gnZVrlWIbFkoHJmJBvCvrfSsg==
+sancho@^3.5.4:
+  version "3.5.4"
+  resolved "https://registry.yarnpkg.com/sancho/-/sancho-3.5.4.tgz#896e1b6473f6d41b6a0a9aa488d96df8b4524286"
+  integrity sha512-CTSr6i0eUC5NIzjtAL3GTkaHmcePFGzPB0IGKXZ4T1arim9auvpXipSF4EG110qK8OiY1sr19eeRqwnxwJSfnA==
   dependencies:
     "@reach/alert" "^0.1.2"
     "@reach/skip-nav" "^0.1.2"
@@ -11173,7 +11173,7 @@ sancho@^3.5.2:
     prop-types "^15.7.2"
     raf-schd "^4.0.1"
     react-gesture-responder "^2.1.0"
-    react-gesture-stack "^1.3.1"
+    react-gesture-stack "^1.3.2"
     react-highlight-words "^0.16.0"
     react-page-controller "^3.0.1"
     react-popper "^1.3.3"

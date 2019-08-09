@@ -61,7 +61,8 @@ const Layout = ({ children }) => {
                     WebkitFontSmoothing: "antialiased"
                   },
                   "body *": {
-                    userSelect: "none"
+                    userSelect: "none",
+                    WebkitTapHighlightColor: "transparent"
                   }
                 }}
               />
