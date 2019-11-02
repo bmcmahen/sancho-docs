@@ -56,12 +56,10 @@ const Layout = ({ children }) => {
                     backgroundColor: theme.colors.background.default
                   },
                   body: {
-                    userSelect: "none",
                     margin: 0,
                     WebkitFontSmoothing: "antialiased"
                   },
                   "body *": {
-                    userSelect: "none",
                     WebkitTapHighlightColor: "transparent"
                   }
                 }}
