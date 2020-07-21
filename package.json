@@ -27,7 +27,7 @@
     "gatsby-source-filesystem": "^2.0.23",
     "gatsby-transformer-react-docgen": "^3.0.5",
     "gatsby-transformer-sharp": "^2.1.14",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "prism-react-renderer": "^0.1.5",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
