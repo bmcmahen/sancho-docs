@@ -14,7 +14,7 @@
     "faker": "^4.1.0",
     "fast-glob": "^2.2.6",
     "focus-visible": "^4.1.5",
-    "gatsby": "^2.4.0",
+    "gatsby": "^2.32.13",
     "gatsby-image": "^2.0.30",
     "gatsby-mdx": "^0.4.0",
     "gatsby-plugin-emotion": "^4.0.4",
